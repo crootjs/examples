@@ -4,7 +4,7 @@
 
 Contoh penggunaan sweetalert
 ```js
-import { addCSS } from "https://cdn.jsdelivr.net/gh/jscroot/lib@0.0.7/element.js";
+import { addCSS } from "https://cdn.jsdelivr.net/gh/jscroot/lib@0.0.8/element.js";
 import Swal from "https://cdn.jsdelivr.net/npm/sweetalert2@11/src/sweetalert2.js";
 
 await addCSS("https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.css");
