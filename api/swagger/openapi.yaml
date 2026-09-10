@@ -1,136 +1,116 @@
 openapi: 3.0.3
 info:
-  title: Dokumen API Cloud Function - OpenAPI 3.0
+  title: Example Notes API
   description: >-
-    Jelaskan disini apa saja yang perlu dijelaskan
-    termasuk informasi yang diperlukan untuk dinilai
-    term of service isi dari link repo dari swagger ini
-  termsOfService: https://github.com/jscroot/examples/tree/main/api/swagger
-  contact:
-    email: awangga@gmail.com
-  license:
-    name: Peda Package
-    url: https://pkg.go.dev/github.com/petapedia/peda
-  version: 1.0.11
+    A minimal example backend used to show how an OpenAPI/Swagger-documented
+    API pairs with a CrootJS frontend. See usage.js in this example folder
+    for the matching getJSON/postJSON/putJSON/deleteJSON calls. Replace this
+    spec with your own backend's documentation — the pairing pattern is what
+    matters, not this specific API.
+  version: 1.0.0
 externalDocs:
-  description: Repo GCF
-  url: https://petapedia.github.io/gcf/
+  description: CrootJS api.js reference
+  url: https://croot.js.org/docs/api/
 servers:
-  - url: https://asia-southeast2-awangga.cloudfunctions.net
+  - url: https://api.example.com
 tags:
-  - name: data
-    description: Data Geo Spasial
-    externalDocs:
-      description: Deskripsi dan Kode Program
-      url: https://petapedia.github.io/gcf/get/
-  - name: auth
-    description: Auth to Access to API
-    externalDocs:
-      description: Deskripsi dan Kode Program
-      url: https://petapedia.github.io/gcf/post/
-  - name: user
-    description: Get Token and Authorize
+  - name: notes
+    description: CRUD operations on notes
 paths:
-  /petapedia:
+  /notes:
     get:
       tags:
-        - data
-      summary: Get Data Geospasial
-      description: List Data Geospasial
-      operationId: getGeoJSON
+        - notes
+      summary: List all notes
+      operationId: listNotes
       responses:
         '200':
-          description: successful operation
+          description: A list of notes
           content:
             application/json:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/Peta'
-        '400':
-          description: Invalid status value
-  /petapedia-post:
+                  $ref: '#/components/schemas/Note'
     post:
       tags:
-        - auth
-      summary: Login get Token
-      description: Login and Get User Token
-      operationId: authService
+        - notes
+      summary: Create a note
+      operationId: createNote
       requestBody:
+        required: true
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Auth'
+              $ref: '#/components/schemas/NoteInput'
       responses:
-        '200':
-          description: successful operation
+        '201':
+          description: Note created
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/AuthResponse'
-        '405':
-          description: Invalid input
-      security:
-        - token:
-            - write:apiKey
-            - read:apiKey
+                $ref: '#/components/schemas/Note'
+  /notes/{id}:
+    put:
+      tags:
+        - notes
+      summary: Update a note
+      operationId: updateNote
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/NoteInput'
+      responses:
+        '200':
+          description: Note updated
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Note'
+        '404':
+          description: Note not found
+    delete:
+      tags:
+        - notes
+      summary: Delete a note
+      operationId: deleteNote
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Note deleted
+        '404':
+          description: Note not found
 components:
   schemas:
-    Peta:
+    NoteInput:
       type: object
+      required:
+        - title
       properties:
-        type:
+        title:
           type: string
-        geometry:
-          type: object
-          properties:
-            type: 
-              type: string
-            coordinates: 
-              type: array
-        properties:
-          type: object
-          properties:
-            name:
-              type: string
-    Auth:
-      type: object
-      properties:
-        username:
-          type: string
-          example: petped
-        password:
-          type: string
-          example: secret
-    AuthResponse:
-      type: object
-      properties:
-        status:
-          type: bool
+          example: Buy groceries
+        done:
+          type: boolean
           example: false
-        message:
-          type: string
-          example: fehguy
-        token:
-          type: string
-          example: fehguy
-  requestBodies:
-    AuthReq:
-      description: Request Authentication
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Auth'
-    UserArray:
-      description: List of user object
-      content:
-        application/json:
-          schema:
-            type: array
-            items:
-              $ref: '#/components/schemas/AuthResponse'
-  securitySchemes:
-    token:
-      type: apiKey
-      name: token
-      in: header
+    Note:
+      allOf:
+        - $ref: '#/components/schemas/NoteInput'
+        - type: object
+          properties:
+            id:
+              type: string
+              example: "64f1a2b3c4d5e6f708192a3b"

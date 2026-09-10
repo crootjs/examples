@@ -1,13 +1,59 @@
-<html>
-    <head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CrootJS Example - Notes API Docs (Swagger)</title>
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/swagger-ui-dist@5/swagger-ui.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="intro">
+            <h1>Notes API — Documented with Swagger, Called with CrootJS</h1>
+            <p>
+                This is an example of pairing an OpenAPI/Swagger-documented backend with a CrootJS
+                frontend. The spec below (<a href="./openapi.yaml">openapi.yaml</a>) describes a
+                small example API; <a href="./usage.js">usage.js</a> shows the matching
+                <code>getJSON</code>/<code>postJSON</code>/<code>putJSON</code>/<code>deleteJSON</code>
+                calls from <a href="https://croot.js.org/docs/api/">api.js</a>. Fork this folder and
+                replace <code>openapi.yaml</code> with your own backend's spec to document it the
+                same way.
+            </p>
+        </div>
 
-<link rel="stylesheet" type="text/css" href="https://unpkg.com/swagger-ui-dist@5/swagger-ui.css"/>
+        <div id="swagger-ui"></div>
 
-        <title>JSCroot API Documentation</title>
-    </head>
-    <body>
-        <div id="swagger-ui"></div> <!-- Div to hold the UI component -->
+        <div class="usage-section">
+            <h2>Calling This API from a CrootJS Frontend</h2>
+            <p>Each function below corresponds 1:1 to an <code>operationId</code> in <code>openapi.yaml</code>.</p>
+            <pre class="code-block"><code><span class="comment">// usage.js</span>
+<span class="keyword">import</span> { <span class="function">getJSON</span>, <span class="function">postJSON</span>, <span class="function">putJSON</span>, <span class="function">deleteJSON</span> } <span class="keyword">from</span> <span class="string">"https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.5/api.min.js"</span>;
 
-        <script type="module" src="./swagger.js"></script>
-    </body>
+<span class="keyword">const</span> API_URL = <span class="string">"https://api.example.com"</span>;
+
+<span class="comment">// GET /notes — listNotes</span>
+<span class="keyword">export function</span> <span class="function">listNotes</span>(onResult) {
+    <span class="function">getJSON</span>(`${API_URL}/notes`, onResult);
+}
+
+<span class="comment">// POST /notes — createNote</span>
+<span class="keyword">export function</span> <span class="function">createNote</span>(note, onResult) {
+    <span class="function">postJSON</span>(`${API_URL}/notes`, note, onResult);
+}
+
+<span class="comment">// PUT /notes/{id} — updateNote</span>
+<span class="keyword">export function</span> <span class="function">updateNote</span>(id, note, onResult) {
+    <span class="function">putJSON</span>(`${API_URL}/notes/${id}`, note, onResult);
+}
+
+<span class="comment">// DELETE /notes/{id} — deleteNote</span>
+<span class="keyword">export function</span> <span class="function">removeNote</span>(id, onResult) {
+    <span class="function">deleteJSON</span>(`${API_URL}/notes/${id}`, {}, onResult);
+}</code></pre>
+        </div>
+    </div>
+
+    <script type="module" src="./swagger.js"></script>
+</body>
 </html>
