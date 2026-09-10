@@ -1,6 +1,6 @@
 // How to call the API documented in openapi.yaml from a CrootJS frontend.
 // Each function here corresponds 1:1 to an operationId in openapi.yaml.
-import { getJSON, postJSON, putJSON, deleteJSON } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.8/api.min.js";
+import { getJSON, postJSON, putJSON, deleteJSON } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.9/api.min.js";
 
 const API_URL = "https://api.example.com";
 
