@@ -1,5 +1,14 @@
 # examples
-Welcome to JSCroot Tutorial. To begin with this section you must know about Vanilla JS ES6+ script first. 
+
+[← croot.js.org](https://croot.js.org/) · [docs](https://croot.js.org/docs/) · [lib](https://croot.js.org/lib/)
+
+Welcome to CrootJS Tutorial. To begin with this section you must know about Vanilla JS ES6+ script first.
+
+## Coding Conventions (Mandatory)
+
+Every example in this repo must keep HTML, CSS, and JS in separate files and load JS as `<script type="module">` — no inline `<style>`/`<script>` blocks, no `onclick`/`style=""` attributes. Full rules: https://croot.js.org/docs/conventions
+
+Using an AI coding agent? Drop [`CLAUDE.md`](CLAUDE.md) (in this repo, or `curl -o CLAUDE.md https://raw.githubusercontent.com/crootjs/lib/main/CLAUDE.md`) into your project root so it follows this automatically.
 
 ## Section Steps
 Please follow every step in every section :
