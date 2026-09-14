@@ -1,5 +1,4 @@
-import { postWithToken } from "https://jscroot.github.io/api/croot.js";
-import {setInner,getValue} from "https://jscroot.github.io/element/croot.js";
+import { onClick } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.12/element.min.js";
 import PostSignUp from "./postfunction.js";
 
-window.PostSignUp = PostSignUp;
+onClick("button",PostSignUp);

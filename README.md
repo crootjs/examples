@@ -18,8 +18,8 @@ Please follow every step in every section :
 ## Cookies based User Session Handling
 To check the login cookies and redirect to the login page if the login cookie doesn't exist
 ```js
-import {getCookie} from "https://cdn.jsdelivr.net/gh/jscroot/cookie@0.0.1/croot.js";
-import {redirect} from "https://cdn.jsdelivr.net/gh/jscroot/url@0.0.9/croot.js";
+import {getCookie} from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.12/cookie.min.js";
+import {redirect} from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.12/url.min.js";
 
 //check if login cookies is exist
 if(!getCookie("login")){
@@ -30,8 +30,9 @@ if(!getCookie("login")){
 ## Form Handling
 Get data from Form and Post to the server
 ```js
-import {onClick,getValue} from "https://cdn.jsdelivr.net/gh/jscroot/element@0.1.5/croot.js";
-import { postWithToken } from "https://cdn.jsdelivr.net/gh/jscroot/api@0.0.6/croot.js";
+import {onClick,getValue} from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.12/element.min.js";
+import {postJSON} from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.12/api.min.js";
+import {getCookie} from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.12/cookie.min.js";
 
 onClick("submit",PostSignUp);
 
@@ -44,30 +45,32 @@ function PostSignUp(){
         "pekerjaan":getValue("pekerjaan"),
         "alamat":getValue("alamat")
     }
-    postWithToken("https://ped.fly.dev/auth/userdata","login",getCookie("login"),datainjson,responseFunction);
+    // postJSON(url, data, callback, tokenkey, tokenvalue) — token di dua argumen terakhir.
+    postJSON("https://ped.fly.dev/auth/userdata",datainjson,responseFunction,"login",getCookie("login"));
 }
 
-function responseFunction(result){
-    console.log(result);
+function responseFunction(response){
+    // Selalu dipanggil, termasuk saat request gagal total (status 0).
+    console.log(response.status, response.data);
 }
 ```
 
 ## Async Handling
 This is a sample of a four-step run of the js command, where js can be run in serial and parallel mode:
 ```js
-import {functionName, runFunction} from "https://cdn.jsdelvr.com/gh/jscroot/croot.js";
+import {addCSS, addJS, runAfterDOM, runAfterAll} from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.12/element.min.js";
 // Step 1: run and wait until finish execute
-await functionName(arg);
+await addCSS("https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css");
 // Step 2: Just run without waiting until finished, immediately go to the next step
-runFunction(arg);
+addJS("https://code.jquery.com/jquery-3.6.0.min.js");
 // Step 3: Run after HTML loaded
-document.addEventListener('DOMContentLoaded', function() {
+runAfterDOM(function() {
   // initial HTML document has been completely loaded and parsed, without waiting
   // for stylesheets, images, and subframes to finish loading
   console.log('DOM fully loaded and parsed');
 });
 // Step 4: Run after all loaded
-window.addEventListener('load', (event) => {
+runAfterAll(function() {
     //This includes after-all assets like images, scripts, and CSS files.
     //Loaded
     console.log('The page has fully loaded');

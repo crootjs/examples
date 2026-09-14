@@ -1,0 +1,90 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 30px 16px;
+    color: #333;
+}
+
+.card {
+    background-color: #fff;
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.card h1 {
+    margin-top: 0;
+    text-align: center;
+}
+
+.lead {
+    color: #555;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.demo {
+    border-top: 1px solid #eee;
+    padding-top: 16px;
+    margin-bottom: 16px;
+}
+
+.demo h2 {
+    font-size: 17px;
+    margin: 0 0 4px;
+}
+
+.demo p {
+    color: #666;
+    font-size: 14px;
+    margin: 0 0 12px;
+}
+
+code {
+    background-color: #f0f0f0;
+    border-radius: 3px;
+    padding: 1px 4px;
+    font-size: 13px;
+}
+
+.button-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+button {
+    padding: 10px 16px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+button.danger {
+    background-color: #dc3545;
+}
+
+button.danger:hover {
+    background-color: #b02a37;
+}
+
+.result {
+    display: block;
+    margin-top: 24px;
+    padding: 12px;
+    background-color: #f8f9fa;
+    border-left: 4px solid #007bff;
+    border-radius: 4px;
+    font-size: 14px;
+    color: #555;
+}

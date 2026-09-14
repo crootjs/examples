@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SweetAlert2 + CrootJS</title>
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="sweetalert.js"></script>
+</head>
+<body>
+
+  <main class="card">
+    <h1>SweetAlert2 + CrootJS</h1>
+    <p class="lead">
+      Empat pola dialog yang paling sering dipakai, semuanya digerakkan lewat
+      helper <code>element.js</code> dan <code>api.js</code> dari CrootJS.
+    </p>
+
+    <section class="demo">
+      <h2>1. Alert dasar</h2>
+      <p>Satu handler untuk semua tombol lewat <code>onClicks()</code>.</p>
+      <div class="button-row">
+        <button class="alert-btn" data-type="success">Success</button>
+        <button class="alert-btn" data-type="error">Error</button>
+        <button class="alert-btn" data-type="warning">Warning</button>
+        <button class="alert-btn" data-type="info">Info</button>
+        <button class="alert-btn" data-type="question">Question</button>
+      </div>
+    </section>
+
+    <section class="demo">
+      <h2>2. Konfirmasi sebelum menghapus</h2>
+      <p>Dialog ditunggu dengan <code>await</code>, aksi jalan kalau <code>isConfirmed</code>.</p>
+      <div class="button-row">
+        <button id="btn-confirm" class="danger">Hapus data</button>
+      </div>
+    </section>
+
+    <section class="demo">
+      <h2>3. Form di dalam dialog</h2>
+      <p>Input divalidasi hidup-hidup lewat <code>onInput()</code> + <code>validatePhoneNumber()</code>, lalu dicek lagi di <code>preConfirm</code>.</p>
+      <div class="button-row">
+        <button id="btn-form">Isi form</button>
+      </div>
+    </section>
+
+    <section class="demo">
+      <h2>4. Loading saat request</h2>
+      <p><code>Swal.showLoading()</code> dibuka sebelum <code>getJSON()</code> dan ditutup di callback-nya.</p>
+      <div class="button-row">
+        <button id="btn-load">Ambil data</button>
+      </div>
+    </section>
+
+    <output id="result" class="result">Belum ada aksi.</output>
+  </main>
+
+</body>
+</html>

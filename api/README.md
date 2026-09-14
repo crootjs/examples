@@ -1,12 +1,12 @@
 # RESTFull API Example
 
-Swagger Documentation on Github Pages : [Demo](./swagger/) - [Source Code](https://github.com/jscroot/examples/tree/main/api/swagger)
+Swagger Documentation on Github Pages : [Demo](./swagger/) - [Source Code](https://github.com/crootjs/examples/tree/main/api/swagger)
 
 ## GET 
 
 ### From File
 
-[Demo](./get/fromfile/) - [Source Code](https://github.com/jscroot/examples/tree/main/api/get/fromfile)
+[Demo](./get/fromfile/) - [Source Code](https://github.com/crootjs/examples/tree/main/api/get/fromfile)
 
 html file
 
@@ -38,18 +38,16 @@ html file
 get.js
 
 ```js
-import { get } from "https://jscroot.github.io/api/croot.js";
-import {setInner,addChild } from "https://jscroot.github.io/element/croot.js";
+import { getJSON } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.12/api.min.js";
 import {URLGeoJson,responseData} from "./getfunction.js";
 
-get(URLGeoJson,responseData);
+getJSON(URLGeoJson,responseData);
 ```
 
 getfunction.js
 
 ```js
-import { get } from "https://jscroot.github.io/api/croot.js";
-import {setInner,addChild } from "https://jscroot.github.io/element/croot.js";
+import { addChild } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.12/element.min.js";
 
 export let URLGeoJson = "./data.json";
 export let tableTag="tr";
@@ -60,9 +58,15 @@ export let tableTemplate=`
 <td>#KORDINAT#</td>
 `
 
-export function responseData(results){
-    console.log(results.features);
-    results.features.forEach(isiRow);
+// getJSON memanggil callback dengan { status, data } — bukan body respons
+// langsung — dan status 0 berarti request gagal total (offline/timeout).
+export function responseData(response){
+    if (response.status !== 200) {
+        console.log("gagal mengambil data, status:", response.status);
+        return;
+    }
+    console.log(response.data.features);
+    response.data.features.forEach(isiRow);
 }
 
 export function isiRow(value){
@@ -74,7 +78,7 @@ export function isiRow(value){
 
 ### From Goocle Cloud Function
 
-[Demo](./get/fromgcf/) - [Source Code](https://github.com/jscroot/examples/tree/main/api/get/fromgcf)
+[Demo](./get/fromgcf/) - [Source Code](https://github.com/crootjs/examples/tree/main/api/get/fromgcf)
 
 html
 
@@ -106,18 +110,16 @@ html
 get.js
 
 ```js
-import { get } from "https://jscroot.github.io/api/croot.js";
-import {setInner,addChild } from "https://jscroot.github.io/element/croot.js";
+import { getJSON } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.12/api.min.js";
 import {URLGeoJson,responseData} from "./getfunction.js";
 
-get(URLGeoJson,responseData);
+getJSON(URLGeoJson,responseData);
 ```
 
 getfunction.js
 
 ```js
-import { get } from "https://jscroot.github.io/api/croot.js";
-import {setInner,addChild } from "https://jscroot.github.io/element/croot.js";
+import { addChild } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.12/element.min.js";
 
 export let URLGeoJson = "https://asia-southeast2-awangga.cloudfunctions.net/petapedia";
 export let tableTag="tr";
@@ -128,9 +130,15 @@ export let tableTemplate=`
 <td>#KORDINAT#</td>
 `
 
-export function responseData(results){
-    console.log(results);
-    results.forEach(isiRow);
+// getJSON memanggil callback dengan { status, data } — bukan body respons
+// langsung — dan status 0 berarti request gagal total (offline/timeout).
+export function responseData(response){
+    if (response.status !== 200) {
+        console.log("gagal mengambil data, status:", response.status);
+        return;
+    }
+    console.log(response.data);
+    response.data.forEach(isiRow);
 }
 
 export function isiRow(value){
@@ -143,7 +151,7 @@ export function isiRow(value){
 ## POST
 ### Form Catch Response
 
-[Demo](./post/toapi/) - [Source Code](https://github.com/jscroot/examples/tree/main/api/post/toapi)
+[Demo](./post/toapi/) - [Source Code](https://github.com/crootjs/examples/tree/main/api/post/toapi)
 
 html file
 ```html
@@ -168,7 +176,7 @@ html file
 </div>
 <div class="field">
   <div class="control">
-      <button class="button is-link is-light" type="submit" id="button" onclick="PostSignUp()">Submit</button>
+      <button class="button is-link is-light" type="submit" id="button">Submit</button>
     </div>
   </div>
 
@@ -185,18 +193,17 @@ html file
 post.js
 
 ```js
-import { postWithToken } from "https://jscroot.github.io/api/croot.js";
-import {setInner,getValue} from "https://jscroot.github.io/element/croot.js";
+import { onClick } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.12/element.min.js";
 import PostSignUp from "./postfunction.js";
 
-window.PostSignUp = PostSignUp;
+onClick("button",PostSignUp);
 ```
 
 postfunction.js
 
 ```js
-import { postWithToken } from "https://jscroot.github.io/api/croot.js";
-import {setInner,getValue} from "https://jscroot.github.io/element/croot.js";
+import { setInner,getValue } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.12/element.min.js";
+import { postJSON } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.12/api.min.js";
 
 export default function PostSignUp(){
     let target_url = "https://eol0j1lmdtbpzp.m.pipedream.net";
@@ -207,21 +214,27 @@ export default function PostSignUp(){
         "namabelakang": getValue("lname")
     }
 
-    postWithToken(target_url,tokenkey,tokenvalue,datainjson,responseData);
+    // Token pindah ke dua argumen terakhir: postJSON(url, data, callback, tokenkey, tokenvalue).
+    postJSON(target_url,datainjson,responseData,tokenkey,tokenvalue);
 
 }
 
 
 
-function responseData(result){
-    setInner("pesan",result.success);
+function responseData(response){
+    // status 0 = request gagal total (offline, DNS gagal, CORS ditolak, timeout 15 detik).
+    if (response.status === 0) {
+        setInner("pesan","Request gagal, cek koneksi atau server sedang down.");
+        return;
+    }
+    setInner("pesan",response.data.success);
 }
 ```
 
 ### Login and Save Token to Cookies
 
-[Demo](./post/togcf/) - [Source Code](https://github.com/jscroot/examples/tree/main/api/post/togcf)
-![image](https://github.com/jscroot/examples/assets/11188109/c5c6c6c7-f012-4108-b369-23c0856c3520)
+[Demo](./post/togcf/) - [Source Code](https://github.com/crootjs/examples/tree/main/api/post/togcf)
+![image](https://github.com/crootjs/examples/assets/11188109/c5c6c6c7-f012-4108-b369-23c0856c3520)
 
 html file
 ```html
@@ -246,7 +259,7 @@ html file
 </div>
 <div class="field">
   <div class="control">
-      <button class="button is-link is-light" type="submit" id="button" onclick="PostSignUp()">Submit</button>
+      <button class="button is-link is-light" type="submit" id="button">Submit</button>
     </div>
   </div>
 
@@ -263,18 +276,17 @@ html file
 post.js
 
 ```js
-import { postWithToken } from "https://jscroot.github.io/api/croot.js";
-import {setInner,getValue} from "https://jscroot.github.io/element/croot.js";
+import { onClick } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.12/element.min.js";
 import PostSignUp from "./postfunction.js";
 
-window.PostSignUp = PostSignUp;
+onClick("button",PostSignUp);
 ```
 
 postfunction.js
 ```js
-import { postWithToken } from "https://jscroot.github.io/api/croot.js";
-import {setInner,getValue} from "https://jscroot.github.io/element/croot.js";
-import {setCookieWithExpireHour} from "https://jscroot.github.io/cookie/croot.js";
+import { setInner,getValue } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.12/element.min.js";
+import { postJSON } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.12/api.min.js";
+import { setCookieWithExpireHour } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.12/cookie.min.js";
 
 export default function PostSignUp(){
     let target_url = "https://asia-southeast2-awangga.cloudfunctions.net/petapedia-post";
@@ -285,12 +297,20 @@ export default function PostSignUp(){
         "password": getValue("password")
     }
 
-    postWithToken(target_url,tokenkey,tokenvalue,datainjson,responseData);
+    // Token pindah ke dua argumen terakhir: postJSON(url, data, callback, tokenkey, tokenvalue).
+    postJSON(target_url,datainjson,responseData,tokenkey,tokenvalue);
 
 }
 
-function responseData(result){
-    setInner("pesan",result.message);
-    setCookieWithExpireHour("token",result.token,2);
+
+
+function responseData(response){
+    // status 0 = request gagal total (offline, DNS gagal, CORS ditolak, timeout 15 detik).
+    if (response.status === 0) {
+        setInner("pesan","Request gagal, cek koneksi atau server sedang down.");
+        return;
+    }
+    setInner("pesan",response.data.message);
+    setCookieWithExpireHour("token",response.data.token,2);
 }
 ```

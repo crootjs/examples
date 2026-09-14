@@ -2,39 +2,43 @@
 
 ## SweetAlert
 
-Contoh penggunaan sweetalert
+[Demo](./sweetalert/) and [Source Code](https://github.com/crootjs/examples/tree/main/element/sweetalert)
+
+SweetAlert2 mengurus tampilan dialog; CrootJS mengurus event, pembacaan input,
+validasi, dan request-nya. Paket npm SweetAlert2 hanya mengirim JS lewat ES
+module, jadi CSS-nya dimuat terpisah dengan `addCSS()`.
+
 ```js
-import { addCSS } from "https://cdn.jsdelivr.net/gh/jscroot/lib@0.0.11/element.js";
+import { onClick, getValue, addCSS } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.12/element.min.js";
 import Swal from "https://cdn.jsdelivr.net/npm/sweetalert2@11/src/sweetalert2.js";
 
 await addCSS("https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.css");
 
+// Alert biasa
+Swal.fire('Success', 'File uploaded successfully!', 'success');
 
-if (result.status === 200) {
-    Swal.fire('Success', 'File uploaded successfully!', 'success');
-} else {
-    Swal.fire('Error', 'File upload failed!', 'error');
-}
-
-// Tampilkan SweetAlert loading sebelum memulai upload
+// Tampilkan loading sebelum request dimulai
 Swal.fire({
-        title: 'Uploading...',
-        text: 'Please wait while your file is being uploaded.',
-        allowOutsideClick: false,
-        showConfirmButton: false,
-        willOpen: () => {
-            Swal.showLoading(); // Tampilkan loading indicator
-        }
+    title: 'Uploading...',
+    text: 'Please wait while your file is being uploaded.',
+    allowOutsideClick: false,
+    showConfirmButton: false,
+    willOpen: () => {
+        Swal.showLoading();
+    }
 });
 
-// Tutup SweetAlert loading setelah upload selesai
+// Tutup loading setelah request selesai
 Swal.close();
 ```
-Lengkapnya [disini](sweetalert.js)
+
+Contoh lengkapnya di [`sweetalert/`](./sweetalert/): alert per tipe, konfirmasi
+sebelum menghapus, form dengan validasi di dalam dialog, dan indikator loading
+saat `getJSON()` berjalan.
 
 ## Set
 
-[Demo](./set/) and [Source Code](https://github.com/jscroot/examples/tree/main/element/set)
+[Demo](./set/) and [Source Code](https://github.com/crootjs/examples/tree/main/element/set)
 
 index.html  
 ```html
@@ -53,8 +57,8 @@ index.html
 ```
 setinner.js  
 ```js
-import { setInner } from "https://jscroot.github.io/element/croot.js";
-import * as croot from "https://jscroot.github.io/element/croot.js";
+import { setInner } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.12/element.min.js";
+import * as croot from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.12/element.min.js";
 
 
 setInner("demo","Dari croot.js import fungsi");
@@ -63,7 +67,7 @@ croot.setInner("demo2","Dari croot.js import fungsi dengan nama croot");
 
 ## SVG
 
-[Demo](./svg/) and [Source Code](https://github.com/jscroot/examples/tree/main/element/svg)
+[Demo](./svg/) and [Source Code](https://github.com/crootjs/examples/tree/main/element/svg)
 
 index.html  
 ```html
@@ -83,8 +87,8 @@ index.html
 
 index.js  
 ```js
-import { setInner } from "https://jscroot.github.io/element/croot.js";
-import * as croot from "https://jscroot.github.io/element/croot.js";
+import { setInner } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.12/element.min.js";
+import * as croot from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.12/element.min.js";
 
 
 setInner("demo","anu");

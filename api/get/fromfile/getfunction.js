@@ -1,5 +1,4 @@
-import { get } from "https://jscroot.github.io/api/croot.js";
-import {setInner,addChild } from "https://jscroot.github.io/element/croot.js";
+import { addChild } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.12/element.min.js";
 
 export let URLGeoJson = "./data.json";
 export let tableTag="tr";
@@ -10,9 +9,15 @@ export let tableTemplate=`
 <td>#KORDINAT#</td>
 `
 
-export function responseData(results){
-    console.log(results.features);
-    results.features.forEach(isiRow);
+// getJSON memanggil callback dengan { status, data } — bukan body respons
+// langsung — dan status 0 berarti request gagal total (offline/timeout).
+export function responseData(response){
+    if (response.status !== 200) {
+        console.log("gagal mengambil data, status:", response.status);
+        return;
+    }
+    console.log(response.data.features);
+    response.data.features.forEach(isiRow);
 }
 
 export function isiRow(value){
@@ -20,4 +25,3 @@ export function isiRow(value){
     console.log(content);
     addChild("lokasi",tableTag,tableRowClass,content);
 }
-

@@ -1,6 +1,6 @@
-import { postWithToken } from "https://jscroot.github.io/api/croot.js";
-import {setInner,getValue} from "https://jscroot.github.io/element/croot.js";
-import {setCookieWithExpireHour} from "https://jscroot.github.io/cookie/croot.js";
+import { setInner,getValue } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.12/element.min.js";
+import { postJSON } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.12/api.min.js";
+import { setCookieWithExpireHour } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.12/cookie.min.js";
 
 export default function PostSignUp(){
     let target_url = "https://asia-southeast2-awangga.cloudfunctions.net/petapedia-post";
@@ -11,13 +11,19 @@ export default function PostSignUp(){
         "password": getValue("password")
     }
 
-    postWithToken(target_url,tokenkey,tokenvalue,datainjson,responseData);
+    // Token pindah ke dua argumen terakhir: postJSON(url, data, callback, tokenkey, tokenvalue).
+    postJSON(target_url,datainjson,responseData,tokenkey,tokenvalue);
 
 }
 
 
 
-function responseData(result){
-    setInner("pesan",result.message);
-    setCookieWithExpireHour("token",result.token,2);
+function responseData(response){
+    // status 0 = request gagal total (offline, DNS gagal, CORS ditolak, timeout 15 detik).
+    if (response.status === 0) {
+        setInner("pesan","Request gagal, cek koneksi atau server sedang down.");
+        return;
+    }
+    setInner("pesan",response.data.message);
+    setCookieWithExpireHour("token",response.data.token,2);
 }
