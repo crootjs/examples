@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Membaca GeoJSON + CrootJS</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="index.js"></script>
+</head>
+<body>
+
+  <main class="card">
+    <h1>Membaca GeoJSON + CrootJS</h1>
+    <p class="lead">
+      <code>geo.js</code> mengambil dan memvalidasi datanya, lalu meringkasnya
+      (kotak pembatas, titik tengah, nama properti). Leaflet hanya menggambar hasilnya.
+    </p>
+
+    <section class="demo">
+      <h2>1. Dari URL</h2>
+      <p><code>getGeoJSON()</code> — link halaman file GitHub (<code>/blob/</code>) boleh dipakai langsung.</p>
+      <div class="input-row">
+        <input id="url" type="url" value="https://github.com/petapedia/geojson/blob/main/contoh.geojson">
+        <button id="btn-load">Muat</button>
+      </div>
+    </section>
+
+    <section class="demo">
+      <h2>2. Dari file lokal</h2>
+      <p><code>readGeoJSONFile()</code> membaca file yang dipilih, tanpa mengunggahnya ke mana pun.</p>
+      <input id="file" type="file" accept=".geojson,.json">
+    </section>
+
+    <output id="status" class="result">Belum ada data.</output>
+
+    <div id="map" class="map"></div>
+
+    <div class="table-wrap">
+      <table>
+        <thead id="head"></thead>
+        <tbody id="rows"></tbody>
+      </table>
+    </div>
+  </main>
+
+</body>
+</html>

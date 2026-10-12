@@ -1,4 +1,4 @@
-import { addChild } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.12/element.min.js";
+import { addChild } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.13/element.min.js";
 
 export let URLGeoJson = "./data.json";
 export let tableTag="tr";

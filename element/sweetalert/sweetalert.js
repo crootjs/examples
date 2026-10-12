@@ -1,9 +1,9 @@
 // Contoh pemakaian SweetAlert2 bersama CrootJS.
 // SweetAlert2 mengurus tampilan dialognya; CrootJS mengurus event, pembacaan
 // nilai input, validasi, dan request ke backend.
-import { onClick, onClicks, onInput, getValue, setInner, addCSS } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.12/element.min.js";
-import { getJSON } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.12/api.min.js";
-import { validatePhoneNumber } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.12/validate.min.js";
+import { onClick, onClicks, onInput, getValue, setInner, addCSS } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.13/element.min.js";
+import { getJSON } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.13/api.min.js";
+import { validatePhoneNumber } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.13/validate.min.js";
 import Swal from "https://cdn.jsdelivr.net/npm/sweetalert2@11/src/sweetalert2.js";
 
 // Handler dipasang duluan: kalau CDN CSS-nya gagal dimuat, addCSS() melempar
