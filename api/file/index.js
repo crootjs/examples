@@ -5,8 +5,8 @@ import {
     getValue,
     getFileSize,
     onClick,
-  } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.15/element.min.js";
-  import { postFile } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.15/api.min.js";
+  } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.16/element.min.js";
+  import { postFile } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.16/api.min.js";
 
   onClick("uploadbutton", uploadImage);
 

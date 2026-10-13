@@ -9,7 +9,7 @@ tanpa library peta eksternal. Fungsi `geo.js` ikut diekspor dari `map.js`, jadi
 cukup satu import.
 
 ```js
-import { createMap, addGeoJSON, fitMap, onMapClick, getGeoJSON, getPropertyKeys } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.15/map.min.js";
+import { createMap, addGeoJSON, fitMap, onMapClick, getGeoJSON, getPropertyKeys } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.16/map.min.js";
 
 // <div id="map"> harus punya tinggi dari CSS.
 createMap("map");
@@ -47,8 +47,8 @@ GeoJSON — dihitung di browser, tanpa layanan rute. Hasilnya Feature LineString
 biasa, jadi langsung bisa digambar dengan `addGeoJSON()`.
 
 ```js
-import { createMap, addGeoJSON, fitMap, getGeoJSON } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.15/map.min.js";
-import { findRoute } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.15/georoute.min.js";
+import { createMap, addGeoJSON, fitMap, getGeoJSON } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.16/map.min.js";
+import { findRoute } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.16/georoute.min.js";
 
 createMap("map");
 
@@ -72,3 +72,26 @@ pin A dan B yang bisa digeser (`mapmarker.js`), garis skala dan tombol "lokasi
 saya" (`mapcontrol.js`), dan jarak garis lurus sebagai pembanding
 (`geomeasure.js`). Data jalannya potongan OpenStreetMap di sekitar kampus ULBI
 (© OpenStreetMap contributors, ODbL).
+
+## Pengelompokan Titik
+
+[Demo](./cluster/) and [Source Code](https://github.com/crootjs/examples/tree/main/geo/cluster)
+
+`mapcluster.js` menggabungkan titik yang berdekatan menjadi gelembung berangka,
+sehingga puluhan ribu titik tetap ringan. Hanya kelompok yang sedang terlihat
+yang digambar.
+
+```js
+import { createMap } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.16/map.min.js";
+import { addCluster } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.16/mapcluster.min.js";
+
+createMap("map", { center: [110, -7.3], zoom: 6 });
+
+// data: GeoJSON berisi fitur-fitur Point. Klik gelembung untuk memperbesar,
+// klik titik satuan untuk melihat properties-nya.
+const removeCluster = addCluster("map", data);
+```
+
+Contoh lengkapnya di [`cluster/`](./cluster/) bisa diganti antara 1.000,
+20.000, dan 100.000 titik acak, dan menampilkan berapa milidetik persiapannya
+di perangkatmu.

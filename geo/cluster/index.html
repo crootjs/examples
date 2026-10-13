@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pengelompokan Titik + CrootJS</title>
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="index.js"></script>
+</head>
+<body>
+
+  <main class="card">
+    <h1>Pengelompokan Titik + CrootJS</h1>
+    <p class="lead">
+      Puluhan ribu titik tetap ringan di peta: yang berdekatan digabung menjadi
+      gelembung berangka, dan pecah saat di-zoom.
+    </p>
+
+    <section class="demo">
+      <h2>Klik sebuah gelembung untuk memperbesarnya</h2>
+      <p>
+        <code>addCluster()</code> dari <code>mapcluster.js</code> hanya menggambar
+        kelompok yang sedang terlihat, jadi jumlah elemen di halaman ditentukan
+        ukuran layar, bukan jumlah data.
+      </p>
+      <div class="input-row">
+        <label for="jumlah">Jumlah titik:</label>
+        <select id="jumlah">
+          <option value="1000">1.000</option>
+          <option value="20000" selected>20.000</option>
+          <option value="100000">100.000</option>
+        </select>
+      </div>
+    </section>
+
+    <div id="map" class="map"></div>
+
+    <output id="status" class="result">Menyiapkan titik...</output>
+
+    <p class="credit">
+      Titik-titiknya data contoh: posisi acak di sekitar 40 lokasi di Pulau Jawa,
+      bukan data sungguhan.
+    </p>
+  </main>
+
+</body>
+</html>

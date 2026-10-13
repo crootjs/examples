@@ -1,14 +1,14 @@
 // Contoh rute di atas data jalan GeoJSON, memakai modul-modul peta CrootJS:
 //   map.js        peta dan gambar datanya (sekaligus mengekspor fungsi geo.js)
 //   mapmarker.js  pin A dan B yang bisa digeser
-//   mapcontrol.js garis skala dan tombol "lokasi saya"
+//   mapcontrol.js garis skala, tombol "lokasi saya", dan tombol live tracking
 //   georoute.js   rute terpendek di sepanjang garis-garis di dalam data; ikut mengekspor
 //                 fungsi geomeasure.js, di sini getDistance() untuk jarak garis lurus
-import { createMap, addGeoJSON, fitMap, onMapClick, getGeoJSON } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.15/map.min.js";
-import { addMarker } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.15/mapmarker.min.js";
-import { addScaleBar, addLocateButton } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.15/mapcontrol.min.js";
-import { findRoute, getDistance } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.15/georoute.min.js";
-import { setInnerText } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.15/element.min.js";
+import { createMap, addGeoJSON, fitMap, onMapClick, getGeoJSON } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.16/map.min.js";
+import { addMarker } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.16/mapmarker.min.js";
+import { addScaleBar, addLocateButton, addTrackButton } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.16/mapcontrol.min.js";
+import { findRoute, getDistance } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.16/georoute.min.js";
+import { setInnerText } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.16/element.min.js";
 
 let roads = null;             // data jalan, diisi setelah termuat
 let removeRoute = () => {};   // penghapus garis rute yang sedang tampil
@@ -17,6 +17,8 @@ let fitted = false;           // tampilan hanya dipaskan ke rute pertama, tidak 
 createMap("map", { center: [107.5759, -6.8736], zoom: 16 });
 addScaleBar("map");
 addLocateButton("map");
+// Tombol ini mengikuti lokasi perangkat terus-menerus sampai diklik lagi.
+addTrackButton("map");
 
 // Dua pin yang bisa digeser. Setiap kali salah satunya selesai digeser, rutenya dihitung ulang.
 const start = addMarker("map", [107.575914, -6.8732098], { color: "#16a34a", label: "A", title: "Titik awal", draggable: true, onDragEnd: showRoute });
