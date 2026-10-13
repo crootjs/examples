@@ -1,17 +1,13 @@
-// Contoh membaca data geospasial (GeoJSON) dengan geo.js dari CrootJS.
-// geo.js mengurus pengambilan, validasi, dan ringkasan datanya; Leaflet hanya
-// dipakai untuk menggambar hasilnya di peta.
-import { getGeoJSON, readGeoJSONFile, getBBox, getCenter, getPropertyKeys, toLatLng } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.13/geo.min.js";
-import { onClick, onChange, getValue, setInnerText, container } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.13/element.min.js";
-import * as L from "https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet-src.esm.js";
+// Contoh membaca dan menampilkan data geospasial (GeoJSON) dengan CrootJS saja, tanpa
+// library peta eksternal: geo.js mengurus pengambilan dan validasi datanya, map.js
+// menggambarnya. Fungsi geo.js ikut diekspor dari map.js, jadi cukup satu import.
+import { createMap, addGeoJSON, clearMap, fitMap, onMapClick, getGeoJSON, readGeoJSONFile, getCenter, getPropertyKeys } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.14/map.min.js";
+import { onClick, onChange, getValue, setInnerText, container } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.14/element.min.js";
 
-// Peta dibuka di Indonesia dulu; begitu data masuk, tampilannya dipaskan ke datanya.
-const map = L.map("map").setView([-2.5, 118], 4);
-L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
-    maxZoom: 19,
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-}).addTo(map);
-let layer = null;
+// Tanpa center dan zoom peta dibuka di Indonesia; begitu data masuk, tampilannya
+// dipaskan ke datanya.
+createMap("map");
+onMapClick("map", showClick);
 
 onClick("btn-load", loadFromURL);
 onChange("file", loadFromFile);
@@ -60,23 +56,29 @@ function loadFromFile() {
 // Apa pun sumbernya, data yang sampai di sini selalu FeatureCollection dengan
 // properties berupa object, jadi feature.properties aman diakses tanpa cek null.
 function showData(data) {
-    const bbox = getBBox(data);
+    // Data lama dibuang dulu, lalu data baru digambar dan tampilannya dipaskan.
+    // Popup berisi properties tiap fitur sudah bawaan addGeoJSON().
+    clearMap("map");
+    addGeoJSON("map", data);
+    fitMap("map", data);
+
+    // center null kalau tidak ada satu pun fitur yang punya koordinat.
     const center = getCenter(data);
-
-    if (layer) layer.remove();
-    layer = L.geoJSON(data, { onEachFeature: bindPopup }).addTo(map);
-
-    // bbox dan center null kalau tidak ada satu pun fitur yang punya koordinat.
-    if (bbox) {
-        // bbox GeoJSON berurutan [minLng, minLat, maxLng, maxLat], sedangkan Leaflet
-        // meminta sudut-sudutnya sebagai [lat, lng] — toLatLng() yang membaliknya.
-        map.fitBounds([toLatLng([bbox[0], bbox[1]]), toLatLng([bbox[2], bbox[3]])], { maxZoom: 18, padding: [24, 24] });
+    if (center) {
         setInnerText("status", `${data.features.length} fitur dimuat. Titik tengah (lng, lat): ${center[0].toFixed(6)}, ${center[1].toFixed(6)}`);
     } else {
         setInnerText("status", `${data.features.length} fitur dimuat, tanpa koordinat.`);
     }
 
     renderTable(data);
+}
+
+// 3. Klik peta.
+// position selalu [lng, lat] titik yang diklik; feature berisi fitur yang kena
+// klik, atau null kalau yang diklik peta dasarnya.
+function showClick(position, feature) {
+    const where = `${position[0].toFixed(6)}, ${position[1].toFixed(6)}`;
+    setInnerText("click", feature ? `Klik di ${where} — mengenai fitur bertipe ${feature.geometry.type}.` : `Klik di ${where} — peta dasar.`);
 }
 
 // Satu kolom per nama properti. getPropertyKeys() menggabungkan nama properti dari
@@ -91,8 +93,8 @@ function renderTable(data) {
     ])));
 }
 
-// Isi sel dan popup dipasang lewat textContent, bukan innerHTML: datanya berasal
-// dari URL/file sembarang, jadi tidak boleh ikut dieksekusi sebagai HTML.
+// Isi sel dipasang lewat textContent, bukan innerHTML: datanya berasal dari
+// URL/file sembarang, jadi tidak boleh ikut dieksekusi sebagai HTML.
 function rowOf(cellTag, values) {
     const row = document.createElement("tr");
     values.forEach((value) => {
@@ -101,15 +103,6 @@ function rowOf(cellTag, values) {
         row.appendChild(cell);
     });
     return row;
-}
-
-function bindPopup(feature, featureLayer) {
-    const lines = Object.entries(feature.properties).map(([key, value]) => `${key}: ${formatValue(value)}`);
-    if (lines.length === 0) return;
-    const popup = document.createElement("div");
-    popup.className = "popup";
-    popup.textContent = lines.join("\n");
-    featureLayer.bindPopup(popup);
 }
 
 function formatValue(value) {

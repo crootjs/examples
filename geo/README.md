@@ -4,12 +4,15 @@
 
 [Demo](./geojson/) and [Source Code](https://github.com/crootjs/examples/tree/main/geo/geojson)
 
-`geo.js` mengambil dan memvalidasi GeoJSON; Leaflet hanya menggambar hasilnya.
-Dari mana pun datanya datang, callback selalu menerima `FeatureCollection`
-dengan `properties` berupa object.
+`geo.js` mengambil dan memvalidasi GeoJSON, `map.js` menggambarnya di peta —
+tanpa library peta eksternal. Fungsi `geo.js` ikut diekspor dari `map.js`, jadi
+cukup satu import.
 
 ```js
-import { getGeoJSON, getBBox, getPropertyKeys, toLatLng } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.13/geo.min.js";
+import { createMap, addGeoJSON, fitMap, onMapClick, getGeoJSON, getPropertyKeys } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.14/map.min.js";
+
+// <div id="map"> harus punya tinggi dari CSS.
+createMap("map");
 
 // Link halaman file GitHub (/blob/) boleh dipakai langsung.
 getGeoJSON("https://github.com/petapedia/geojson/blob/main/contoh.geojson", (response) => {
@@ -21,12 +24,16 @@ getGeoJSON("https://github.com/petapedia/geojson/blob/main/contoh.geojson", (res
     console.log(response.data.features.length);   // 3
     console.log(getPropertyKeys(response.data));  // ["Gedung", "Kampus"]
 
-    // GeoJSON: [lng, lat]. Leaflet: [lat, lng].
-    const bbox = getBBox(response.data);
-    console.log(toLatLng([bbox[0], bbox[1]]), toLatLng([bbox[2], bbox[3]]));
+    addGeoJSON("map", response.data); // klik sebuah fitur untuk melihat properties-nya
+    fitMap("map", response.data);
+});
+
+// position = [lng, lat]; feature = fitur yang kena klik, atau null.
+onMapClick("map", (position, feature) => {
+    console.log(position, feature ? feature.properties : "peta dasar");
 });
 ```
 
 Contoh lengkapnya di [`geojson/`](./geojson/): memuat dari URL, membaca file
-lokal dengan `readGeoJSONFile()`, menggambar di peta Leaflet, dan membuat tabel
-properti dari `getPropertyKeys()`.
+lokal dengan `readGeoJSONFile()`, menggambar di peta dengan `map.js`, membaca
+koordinat klik, dan membuat tabel properti dari `getPropertyKeys()`.

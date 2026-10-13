@@ -90,13 +90,16 @@ button:hover {
     color: #555;
 }
 
+/* Peta mengisi elemen ini sepenuhnya, jadi tingginya wajib ditentukan di sini. */
 .map {
     height: 360px;
+    margin-bottom: 16px;
     border-radius: 4px;
+    overflow: hidden;
 }
 
-.popup {
-    white-space: pre-line;
+.demo .result {
+    margin: 0;
 }
 
 .table-wrap {
