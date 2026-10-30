@@ -1,8 +1,8 @@
 // Contoh membaca dan menampilkan data geospasial (GeoJSON) dengan CrootJS saja, tanpa
 // library peta eksternal: geo.js mengurus pengambilan dan validasi datanya, map.js
 // menggambarnya. Fungsi geo.js ikut diekspor dari map.js, jadi cukup satu import.
-import { createMap, addGeoJSON, clearMap, fitMap, onMapClick, getGeoJSON, readGeoJSONFile, getCenter, getPropertyKeys } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.17/map.min.js";
-import { onClick, onChange, getValue, setInnerText, container } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.17/element.min.js";
+import { createMap, addGeoJSON, clearMap, fitMap, onMapClick, getGeoJSON, readGeoJSONFile, getCenter, getPropertyKeys } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.18/map.min.js";
+import { onClick, onChange, getValue, setInnerText, container } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.18/element.min.js";
 
 // Tanpa center dan zoom peta dibuka di Indonesia; begitu data masuk, tampilannya
 // dipaskan ke datanya.

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alat Survei + CrootJS</title>
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="index.js"></script>
+</head>
+<body>
+
+  <main class="card">
+    <h1>Alat Survei + CrootJS</h1>
+    <p class="lead">
+      Ukur jarak dan luas, baca koordinat dalam grid proyek, tempelkan master plan,
+      lalu unduh tampilannya sebagai PNG.
+    </p>
+
+    <section class="demo">
+      <h2>Pakai tombol penggaris dan poligon di kiri atas</h2>
+      <p>
+        Klik titik-titik di peta, lalu klik ganda (atau tombol Selesai) untuk menutup
+        pengukuran. Koordinat di kiri bawah memakai grid lokal contoh lewat
+        <code>createAffineTransform()</code>; klik peta untuk menahan dan menyalinnya.
+        Garis ungu tipis adalah 5.600 garis yang digambar dengan
+        <code>renderer: "canvas"</code>.
+      </p>
+      <div class="actions">
+        <label for="transparansi">Master plan:</label>
+        <input type="range" id="transparansi" min="0" max="100" value="60">
+        <button type="button" id="unduh">Unduh PNG</button>
+      </div>
+    </section>
+
+    <div id="map" class="map"></div>
+
+    <output id="status" class="result">Belum ada pengukuran.</output>
+
+    <p class="credit">
+      Master plan, grid, dan jaringan garis di sini data contoh buatan, bukan data
+      sungguhan.
+    </p>
+  </main>
+
+</body>
+</html>

@@ -1,4 +1,4 @@
-import { getJSON } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.17/api.min.js";
+import { getJSON } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.18/api.min.js";
 import {URLGeoJson,responseData} from "./getfunction.js";
 
 getJSON(URLGeoJson,responseData);
