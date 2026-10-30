@@ -1,4 +1,4 @@
-import { addChild } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.16/element.min.js";
+import { addChild } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.17/element.min.js";
 
 export let URLGeoJson = "https://asia-southeast2-awangga.cloudfunctions.net/petapedia";
 export let tableTag="tr";

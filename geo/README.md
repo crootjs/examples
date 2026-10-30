@@ -9,7 +9,7 @@ tanpa library peta eksternal. Fungsi `geo.js` ikut diekspor dari `map.js`, jadi
 cukup satu import.
 
 ```js
-import { createMap, addGeoJSON, fitMap, onMapClick, getGeoJSON, getPropertyKeys } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.16/map.min.js";
+import { createMap, addGeoJSON, fitMap, onMapClick, getGeoJSON, getPropertyKeys } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.17/map.min.js";
 
 // <div id="map"> harus punya tinggi dari CSS.
 createMap("map");
@@ -47,8 +47,8 @@ GeoJSON — dihitung di browser, tanpa layanan rute. Hasilnya Feature LineString
 biasa, jadi langsung bisa digambar dengan `addGeoJSON()`.
 
 ```js
-import { createMap, addGeoJSON, fitMap, getGeoJSON } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.16/map.min.js";
-import { findRoute } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.16/georoute.min.js";
+import { createMap, addGeoJSON, fitMap, getGeoJSON } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.17/map.min.js";
+import { findRoute } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.17/georoute.min.js";
 
 createMap("map");
 
@@ -82,8 +82,8 @@ sehingga puluhan ribu titik tetap ringan. Hanya kelompok yang sedang terlihat
 yang digambar.
 
 ```js
-import { createMap } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.16/map.min.js";
-import { addCluster } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.16/mapcluster.min.js";
+import { createMap } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.17/map.min.js";
+import { addCluster } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.17/mapcluster.min.js";
 
 createMap("map", { center: [110, -7.3], zoom: 6 });
 
@@ -95,3 +95,40 @@ const removeCluster = addCluster("map", data);
 Contoh lengkapnya di [`cluster/`](./cluster/) bisa diganti antara 1.000,
 20.000, dan 100.000 titik acak, dan menampilkan berapa milidetik persiapannya
 di perangkatmu.
+
+## Lapisan dan Peta Dasar
+
+[Demo](./layers/) and [Source Code](https://github.com/crootjs/examples/tree/main/geo/layers)
+
+Peta teknis dengan lapisan bernama: tiap lapisan bisa disembunyikan, diganti
+gayanya, dan diatur urutan tumpuknya tanpa menggambar ulang, dan peta dasarnya
+bisa diganti tanpa membuat ulang peta.
+
+```js
+import { createMap, addGeoJSON, fitMap } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.17/map.min.js";
+import { addBasemapControl, addLayerControl } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.17/mapcontrol.min.js";
+
+createMap("map", { maxZoom: 21 });
+
+addGeoJSON("map", zona, {
+    name: "zona",
+    style: { strokeDasharray: [6, 4] },             // garis putus-putus
+    hoverStyle: { strokeWidth: 4 },                 // highlight saat kursor di atasnya
+    tooltip: (feature) => feature.properties.nama,
+    label: "kode",                                  // label di titik berat polygon
+});
+addGeoJSON("map", blok, { name: "blok", minZoom: 18 }); // hanya tampil dari dekat
+
+addBasemapControl("map", [
+    { name: "Jalan" },
+    { name: "Satelit", tiles: ESRI_IMAGERY, maxNativeZoom: 18, attribution: "Tiles © Esri" },
+    { name: "Hybrid", tiles: ESRI_IMAGERY, labels: ESRI_LABELS, maxNativeZoom: 18, attribution: "Tiles © Esri" },
+]);
+addLayerControl("map", ["zona", "blok"]);
+
+fitMap("map", zona, { right: 190 }); // sisakan ruang untuk panel di kanan
+```
+
+Contoh lengkapnya di [`layers/`](./layers/): zona dengan tooltip, jalur fiber
+terpasang (utuh) dan rencana (putus-putus), kontur berlabel yang muncul mulai
+zoom 17, dan denah blok mulai zoom 18. Semua datanya buatan.

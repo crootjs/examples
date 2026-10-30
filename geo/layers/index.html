@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lapisan dan Peta Dasar + CrootJS</title>
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="index.js"></script>
+</head>
+<body>
+
+  <main class="card">
+    <h1>Lapisan dan Peta Dasar + CrootJS</h1>
+    <p class="lead">
+      Peta teknis: zona, jalur fiber, kontur, dan denah blok, dengan peta dasar
+      jalan, satelit, atau hybrid.
+    </p>
+
+    <section class="demo">
+      <h2>Ganti peta dasar dan centang lapisan di pojok kanan atas</h2>
+      <p>
+        <code>addBasemapControl()</code> dan <code>addLayerControl()</code> dari
+        <code>mapcontrol.js</code> hanya mengganti tile dan visibilitas: data, popup,
+        dan tampilan tetap. Arahkan kursor ke sebuah zona untuk melihat tooltip-nya;
+        denah blok baru muncul di zoom 18 ke atas.
+      </p>
+    </section>
+
+    <div id="map" class="map"></div>
+
+    <output id="status" class="result">Lapisan aktif: semua.</output>
+
+    <p class="credit">
+      Zona, jalur, kontur, dan blok di sini data contoh buatan, bukan data sungguhan.
+      Citra satelit © Esri.
+    </p>
+  </main>
+
+</body>
+</html>
