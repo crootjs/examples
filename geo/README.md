@@ -9,7 +9,7 @@ tanpa library peta eksternal. Fungsi `geo.js` ikut diekspor dari `map.js`, jadi
 cukup satu import.
 
 ```js
-import { createMap, addGeoJSON, fitMap, onMapClick, getGeoJSON, getPropertyKeys } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.21/map.min.js";
+import { createMap, addGeoJSON, fitMap, onMapClick, getGeoJSON, getPropertyKeys } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.22/map.min.js";
 
 // <div id="map"> harus punya tinggi dari CSS.
 createMap("map");
@@ -47,8 +47,8 @@ GeoJSON — dihitung di browser, tanpa layanan rute. Hasilnya Feature LineString
 biasa, jadi langsung bisa digambar dengan `addGeoJSON()`.
 
 ```js
-import { createMap, addGeoJSON, fitMap, getGeoJSON } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.21/map.min.js";
-import { findRoute } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.21/georoute.min.js";
+import { createMap, addGeoJSON, fitMap, getGeoJSON } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.22/map.min.js";
+import { findRoute } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.22/georoute.min.js";
 
 createMap("map");
 
@@ -82,8 +82,8 @@ sehingga puluhan ribu titik tetap ringan. Hanya kelompok yang sedang terlihat
 yang digambar.
 
 ```js
-import { createMap } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.21/map.min.js";
-import { addCluster } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.21/mapcluster.min.js";
+import { createMap } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.22/map.min.js";
+import { addCluster } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.22/mapcluster.min.js";
 
 createMap("map", { center: [110, -7.3], zoom: 6 });
 
@@ -105,8 +105,8 @@ gayanya, dan diatur urutan tumpuknya tanpa menggambar ulang, dan peta dasarnya
 bisa diganti tanpa membuat ulang peta.
 
 ```js
-import { createMap, addGeoJSON, fitMap } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.21/map.min.js";
-import { addBasemapControl, addLayerControl } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.21/mapcontrol.min.js";
+import { createMap, addGeoJSON, fitMap } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.22/map.min.js";
+import { addBasemapControl, addLayerControl } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.22/mapcontrol.min.js";
 
 createMap("map", { maxZoom: 21 });
 
@@ -144,10 +144,10 @@ grid proyek, gambar master plan bergeoreferensi, ribuan garis di canvas, layar
 penuh, dan unduh tampilan sebagai PNG.
 
 ```js
-import { createMap, addGeoJSON } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.21/map.min.js";
-import { addCoordinateControl, addFullscreenButton } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.21/mapcontrol.min.js";
-import { addMeasureControl, addImageOverlay, downloadMapImage } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.21/maptools.min.js";
-import { createAffineTransform } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.21/geomeasure.min.js";
+import { createMap, addGeoJSON } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.22/map.min.js";
+import { addCoordinateControl, addFullscreenButton } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.22/mapcontrol.min.js";
+import { addMeasureControl, addImageOverlay, downloadMapImage } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.22/maptools.min.js";
+import { createAffineTransform } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.22/geomeasure.min.js";
 
 createMap("map", { maxZoom: 21 });
 
@@ -169,3 +169,37 @@ Contoh lengkapnya di [`survey/`](./survey/): master plan yang sudut-sudutnya
 dihitung dari grid (jadi ikut miring seperti gridnya) dengan penggeser
 transparansi, 5.600 saluran contoh dengan tooltip, dan status hasil ukur dan
 unduhan. Semua datanya buatan.
+
+## Heatmap dan Peta Cakupan
+
+[Demo](./heatmap/) and [Source Code](https://github.com/crootjs/examples/tree/main/geo/heatmap)
+
+Titik-titik hasil drive test sebagai heatmap kepadatan, atau sebagai petak
+persegi/heksagon berwarna menurut rata-rata RSRP, seperti peta cakupan sinyal.
+
+```js
+import { createMap } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.22/map.min.js";
+import { addHeatmap, addGridMap } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.22/mapheat.min.js";
+
+createMap("map", { center: [107.5935, -6.8975], zoom: 14 });
+
+// data: GeoJSON titik, atau array [lng, lat, nilai]
+addGridMap("map", pengukuran, {
+    shape: "hex",
+    cellMeters: 150,                                // petak tetap 150 m di lapangan
+    breaks: [
+        { value: -140, color: "#d7191c", label: "Sangat lemah" },
+        { value: -100, color: "#ffffbf", label: "Sedang" },
+        { value: -80, color: "#1a9641", label: "Sangat baik" },
+    ],
+    legend: { title: "RSRP rata-rata (dBm)" },
+    onClick: (cell) => console.log(cell.value, cell.count),
+});
+
+addHeatmap("map", pengukuran, { scale: "sqrt", legend: true }); // di mana pengukurannya padat
+```
+
+Contoh lengkapnya di [`heatmap/`](./heatmap/): 12.000 titik pengukuran di
+sekitar tiga BTS, pilihan heksagon 150 m, petak 28 piksel yang dikelompokkan
+ulang saat di-zoom, atau heatmap dengan skala linear/akar/log, plus status
+nilai petak yang diklik. Semua datanya buatan.

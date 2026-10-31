@@ -38,7 +38,7 @@ html file
 get.js
 
 ```js
-import { getJSON } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.21/api.min.js";
+import { getJSON } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.22/api.min.js";
 import {URLGeoJson,responseData} from "./getfunction.js";
 
 getJSON(URLGeoJson,responseData);
@@ -47,7 +47,7 @@ getJSON(URLGeoJson,responseData);
 getfunction.js
 
 ```js
-import { addChild } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.21/element.min.js";
+import { addChild } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.22/element.min.js";
 
 export let URLGeoJson = "./data.json";
 export let tableTag="tr";
@@ -110,7 +110,7 @@ html
 get.js
 
 ```js
-import { getJSON } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.21/api.min.js";
+import { getJSON } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.22/api.min.js";
 import {URLGeoJson,responseData} from "./getfunction.js";
 
 getJSON(URLGeoJson,responseData);
@@ -119,7 +119,7 @@ getJSON(URLGeoJson,responseData);
 getfunction.js
 
 ```js
-import { addChild } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.21/element.min.js";
+import { addChild } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.22/element.min.js";
 
 export let URLGeoJson = "https://asia-southeast2-awangga.cloudfunctions.net/petapedia";
 export let tableTag="tr";
@@ -193,7 +193,7 @@ html file
 post.js
 
 ```js
-import { onClick } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.21/element.min.js";
+import { onClick } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.22/element.min.js";
 import PostSignUp from "./postfunction.js";
 
 onClick("button",PostSignUp);
@@ -202,8 +202,8 @@ onClick("button",PostSignUp);
 postfunction.js
 
 ```js
-import { setInner,getValue } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.21/element.min.js";
-import { postJSON } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.21/api.min.js";
+import { setInner,getValue } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.22/element.min.js";
+import { postJSON } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.22/api.min.js";
 
 export default function PostSignUp(){
     let target_url = "https://eol0j1lmdtbpzp.m.pipedream.net";
@@ -276,7 +276,7 @@ html file
 post.js
 
 ```js
-import { onClick } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.21/element.min.js";
+import { onClick } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.22/element.min.js";
 import PostSignUp from "./postfunction.js";
 
 onClick("button",PostSignUp);
@@ -284,9 +284,9 @@ onClick("button",PostSignUp);
 
 postfunction.js
 ```js
-import { setInner,getValue } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.21/element.min.js";
-import { postJSON } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.21/api.min.js";
-import { setCookieWithExpireHour } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.21/cookie.min.js";
+import { setInner,getValue } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.22/element.min.js";
+import { postJSON } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.22/api.min.js";
+import { setCookieWithExpireHour } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.22/cookie.min.js";
 
 export default function PostSignUp(){
     let target_url = "https://asia-southeast2-awangga.cloudfunctions.net/petapedia-post";

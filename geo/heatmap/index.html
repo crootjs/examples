@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Heatmap dan Peta Cakupan + CrootJS</title>
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="index.js"></script>
+</head>
+<body>
+
+  <main class="card">
+    <h1>Heatmap dan Peta Cakupan + CrootJS</h1>
+    <p class="lead">
+      12.000 titik hasil drive test ditampilkan sebagai heatmap kepadatan, atau sebagai
+      petak berwarna menurut rata-rata RSRP seperti peta cakupan sinyal.
+    </p>
+
+    <section class="demo">
+      <h2>Ganti tampilan, lalu klik sebuah petak</h2>
+      <p>
+        <code>addHeatmap()</code> menunjukkan di mana pengukurannya banyak;
+        <code>addGridMap()</code> menunjukkan kuat sinyalnya. Petak persegi ukurannya
+        tetap di layar dan dikelompokkan ulang saat di-zoom; petak heksagon 150 m tetap
+        di lapangan.
+      </p>
+      <div class="actions">
+        <label for="tampilan">Tampilan:</label>
+        <select id="tampilan">
+          <option value="hex">Cakupan RSRP, heksagon 150 m</option>
+          <option value="square">Cakupan RSRP, petak 28 px</option>
+          <option value="heat">Heatmap kepadatan pengukuran</option>
+        </select>
+        <label for="skala">Skala heatmap:</label>
+        <select id="skala">
+          <option value="sqrt">Akar (sqrt)</option>
+          <option value="linear">Linear</option>
+          <option value="log">Log</option>
+        </select>
+      </div>
+    </section>
+
+    <div id="map" class="map"></div>
+
+    <output id="status" class="result">Klik sebuah petak untuk melihat nilainya.</output>
+
+    <p class="credit">
+      Titik pengukuran, BTS, dan nilai RSRP di sini data contoh buatan, bukan data
+      sungguhan.
+    </p>
+  </main>
+
+</body>
+</html>
