@@ -4,11 +4,11 @@
 //   mapcontrol.js garis skala, tombol "lokasi saya", dan tombol live tracking
 //   georoute.js   rute terpendek di sepanjang garis-garis di dalam data; ikut mengekspor
 //                 fungsi geomeasure.js, di sini getDistance() untuk jarak garis lurus
-import { createMap, addGeoJSON, fitMap, onMapClick, getGeoJSON } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.22/map.min.js";
-import { addMarker } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.22/mapmarker.min.js";
-import { addScaleBar, addLocateButton, addTrackButton } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.22/mapcontrol.min.js";
-import { findRoute, getDistance } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.22/georoute.min.js";
-import { setInnerText } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.22/element.min.js";
+import { createMap, addGeoJSON, fitMap, onMapClick, getGeoJSON } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.23/map.min.js";
+import { addMarker } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.23/mapmarker.min.js";
+import { addScaleBar, addLocateButton, addTrackButton } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.23/mapcontrol.min.js";
+import { findRoute, getDistance } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.23/georoute.min.js";
+import { setInnerText } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.23/element.min.js";
 
 let roads = null;             // data jalan, diisi setelah termuat
 let removeRoute = () => {};   // penghapus garis rute yang sedang tampil

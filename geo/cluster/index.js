@@ -2,10 +2,10 @@
 //   map.js        petanya
 //   mapcluster.js menggabungkan titik yang berdekatan menjadi gelembung berangka
 //   mapcontrol.js garis skala
-import { createMap } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.22/map.min.js";
-import { addCluster } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.22/mapcluster.min.js";
-import { addScaleBar } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.22/mapcontrol.min.js";
-import { onChange, getValue, setInnerText } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.22/element.min.js";
+import { createMap } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.23/map.min.js";
+import { addCluster } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.23/mapcluster.min.js";
+import { addScaleBar } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.23/mapcontrol.min.js";
+import { onChange, getValue, setInnerText } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.23/element.min.js";
 
 let removeCluster = () => {}; // penghapus kelompok yang sedang tampil
 

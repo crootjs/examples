@@ -1,6 +1,6 @@
-import { setInner,getValue } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.22/element.min.js";
-import { postJSON } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.22/api.min.js";
-import { setCookieWithExpireHour } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.22/cookie.min.js";
+import { setInner,getValue } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.23/element.min.js";
+import { postJSON } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.23/api.min.js";
+import { setCookieWithExpireHour } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.23/cookie.min.js";
 
 export default function PostSignUp(){
     let target_url = "https://asia-southeast2-awangga.cloudfunctions.net/petapedia-post";

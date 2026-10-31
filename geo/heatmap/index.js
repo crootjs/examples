@@ -1,11 +1,11 @@
 // Contoh heatmap dan peta cakupan sinyal dari titik-titik drive test.
 //   map.js        petanya, plus lokasi BTS sebagai titik GeoJSON di atas lapisan panas
-//   mapcontrol.js garis skala
+//   mapcontrol.js garis skala, dan menu klik kanan (tekan lama di layar sentuh)
 //   mapheat.js    heatmap kepadatan dan peta petak (persegi/heksagon) menurut rata-rata RSRP
-import { createMap, addGeoJSON } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.22/map.min.js";
-import { addScaleBar } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.22/mapcontrol.min.js";
-import { addHeatmap, addGridMap } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.22/mapheat.min.js";
-import { onChange, getValue, setInnerText } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.22/element.min.js";
+import { createMap, addGeoJSON, setMapView } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.23/map.min.js";
+import { addScaleBar, addContextMenu } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.23/mapcontrol.min.js";
+import { addHeatmap, addGridMap } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.23/mapheat.min.js";
+import { onChange, getValue, setValue, setInnerText } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.23/element.min.js";
 
 const SITES = [
     { nama: "BTS Sukajadi", position: [107.5905, -6.8890] },
@@ -52,7 +52,7 @@ function show() {
             `Petak di ${cell.center[1].toFixed(5)}, ${cell.center[0].toFixed(5)}: rata-rata ${cell.value.toFixed(1)} dBm `
             + `(${cell.min} s.d. ${cell.max}) dari ${cell.count} pengukuran - ${cell.label}.`),
     });
-    setInnerText("status", "Klik sebuah petak untuk melihat nilainya.");
+    setInnerText("status", "Klik sebuah petak untuk melihat nilainya, atau klik kanan untuk menu.");
 }
 show();
 onChange("tampilan", show);
@@ -65,6 +65,33 @@ addGeoJSON("map", {
 }, {
     style: { radius: 7, fill: "#111827", stroke: "#fff", strokeWidth: 2, fillOpacity: 1 },
     popup: (feature) => feature.properties.nama,
+});
+
+// Menu klik kanan: isinya disusun ulang setiap kali dibuka, menurut apa yang ada di titik itu.
+// BTS adalah fitur GeoJSON (feature); petak cakupan bukan, jadi dicari dengan cellAt().
+const VIEWS = [["hex", "Cakupan RSRP, heksagon 150 m"], ["square", "Cakupan RSRP, petak 28 px"], ["heat", "Heatmap kepadatan"]];
+addContextMenu("map", (position, feature) => {
+    const cell = !feature && layer.cellAt ? layer.cellAt(position) : null;
+    return [
+        "coordinates",
+        "center",
+        "-",
+        feature && { label: "Zoom ke " + feature.properties.nama, icon: "📡", onClick: () => setMapView("map", feature.geometry.coordinates, 17) },
+        cell && { label: `${cell.value.toFixed(1)} dBm · ${cell.count} pengukuran`, icon: "📶", disabled: true },
+        cell && { label: "Detail petak ini", onClick: () => setInnerText("status",
+            `Petak ${cell.label}: rata-rata ${cell.value.toFixed(1)} dBm, terendah ${cell.min}, tertinggi ${cell.max}.`) },
+        "-",
+        { label: "Tampilan", items: VIEWS.map(([value, label]) => ({
+            label: (getValue("tampilan") === value ? "✓ " : "") + label,
+            onClick: () => {
+                setValue("tampilan", value);
+                show();
+            },
+        })) },
+        { label: "Kembali ke semua BTS", onClick: () => setMapView("map", [107.5935, -6.8975], 14) },
+        "zoom-in",
+        "zoom-out",
+    ];
 });
 
 // Data contoh: titik-titik di sepanjang "jalan" acak di sekitar BTS. RSRP turun menurut
