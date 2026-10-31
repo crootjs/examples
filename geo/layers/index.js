@@ -1,9 +1,9 @@
 // Contoh peta teknis dengan lapisan bernama dan beberapa peta dasar.
 //   map.js        petanya: lapisan bernama, garis putus-putus, label, hover
-//   mapcontrol.js pilihan peta dasar, daftar centang lapisan, garis skala
-import { createMap, addGeoJSON, fitMap, getLayers } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.19/map.min.js";
-import { addBasemapControl, addLayerControl, addScaleBar } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.19/mapcontrol.min.js";
-import { setInnerText } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.19/element.min.js";
+//   mapcontrol.js pilihan peta dasar (kartu bergambar), daftar centang lapisan, garis skala
+import { createMap, addGeoJSON, fitMap, getLayers } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.20/map.min.js";
+import { addBasemapControl, setBasemap, addLayerControl, addScaleBar } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.20/mapcontrol.min.js";
+import { setInnerText, onClick } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.20/element.min.js";
 
 const ESRI_IMAGERY = "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}";
 const ESRI_LABELS = "https://server.arcgisonline.com/ArcGIS/rest/services/Reference/World_Boundaries_and_Places/MapServer/tile/{z}/{y}/{x}";
@@ -50,11 +50,17 @@ addGeoJSON("map", data.blocks, {
     label: "nomor",
 });
 
+// Gaya kartu: gambar tiap kartu diambil dari tile peta dasarnya sendiri di titik dan zoom
+// thumbnail (bawaan: pusat dan zoom peta saat ini). Kartu Hybrid = citra + tile label.
 addBasemapControl("map", [
     { name: "Jalan" }, // tanpa tiles = OpenStreetMap
     { name: "Satelit", tiles: ESRI_IMAGERY, maxNativeZoom: 18, attribution: "Tiles © Esri" },
     { name: "Hybrid", tiles: ESRI_IMAGERY, labels: ESRI_LABELS, maxNativeZoom: 18, attribution: "Tiles © Esri" },
-]);
+], {
+    style: "cards",
+    thumbnailZoom: 15,
+    onChange: (basemap) => setInnerText("basemap", "Peta dasar: " + basemap.name + "."),
+});
 addLayerControl("map", [
     { name: "zona", label: "Batas zona" },
     { name: "fiber", label: "Jalur fiber" },
@@ -62,6 +68,9 @@ addLayerControl("map", [
     { name: "blok", label: "Denah blok (zoom 18+)" },
 ], { onChange: showActiveLayers });
 addScaleBar("map");
+
+// Mengganti peta dasar dari kode: kartunya ikut berpindah, onChange ikut terpanggil.
+onClick("to-satellite", () => setBasemap("map", "Satelit"));
 
 // Panel di pojok kanan atas lebarnya sekitar 170 piksel: data dipaskan di sisa ruangnya.
 fitMap("map", area, { right: 190 });

@@ -21,13 +21,16 @@
       <p>
         <code>addBasemapControl()</code> dan <code>addLayerControl()</code> dari
         <code>mapcontrol.js</code> hanya mengganti tile dan visibilitas: data, popup,
-        dan tampilan tetap. Arahkan kursor ke sebuah zona untuk melihat tooltip-nya;
-        denah blok baru muncul di zoom 18 ke atas.
+        dan tampilan tetap. Kartu peta dasar terbuka saat diarahkan kursor (diketuk di
+        ponsel). Arahkan kursor ke sebuah zona untuk melihat tooltip-nya; denah blok baru
+        muncul di zoom 18 ke atas.
       </p>
+      <button type="button" id="to-satellite" class="button">Ganti ke Satelit dari kode</button>
     </section>
 
     <div id="map" class="map"></div>
 
+    <output id="basemap" class="result">Peta dasar: Jalan.</output>
     <output id="status" class="result">Lapisan aktif: semua.</output>
 
     <p class="credit">

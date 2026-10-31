@@ -9,7 +9,7 @@ tanpa library peta eksternal. Fungsi `geo.js` ikut diekspor dari `map.js`, jadi
 cukup satu import.
 
 ```js
-import { createMap, addGeoJSON, fitMap, onMapClick, getGeoJSON, getPropertyKeys } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.19/map.min.js";
+import { createMap, addGeoJSON, fitMap, onMapClick, getGeoJSON, getPropertyKeys } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.20/map.min.js";
 
 // <div id="map"> harus punya tinggi dari CSS.
 createMap("map");
@@ -47,8 +47,8 @@ GeoJSON — dihitung di browser, tanpa layanan rute. Hasilnya Feature LineString
 biasa, jadi langsung bisa digambar dengan `addGeoJSON()`.
 
 ```js
-import { createMap, addGeoJSON, fitMap, getGeoJSON } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.19/map.min.js";
-import { findRoute } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.19/georoute.min.js";
+import { createMap, addGeoJSON, fitMap, getGeoJSON } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.20/map.min.js";
+import { findRoute } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.20/georoute.min.js";
 
 createMap("map");
 
@@ -82,8 +82,8 @@ sehingga puluhan ribu titik tetap ringan. Hanya kelompok yang sedang terlihat
 yang digambar.
 
 ```js
-import { createMap } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.19/map.min.js";
-import { addCluster } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.19/mapcluster.min.js";
+import { createMap } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.20/map.min.js";
+import { addCluster } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.20/mapcluster.min.js";
 
 createMap("map", { center: [110, -7.3], zoom: 6 });
 
@@ -105,8 +105,8 @@ gayanya, dan diatur urutan tumpuknya tanpa menggambar ulang, dan peta dasarnya
 bisa diganti tanpa membuat ulang peta.
 
 ```js
-import { createMap, addGeoJSON, fitMap } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.19/map.min.js";
-import { addBasemapControl, addLayerControl } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.19/mapcontrol.min.js";
+import { createMap, addGeoJSON, fitMap } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.20/map.min.js";
+import { addBasemapControl, addLayerControl } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.20/mapcontrol.min.js";
 
 createMap("map", { maxZoom: 21 });
 
@@ -123,13 +123,15 @@ addBasemapControl("map", [
     { name: "Jalan" },
     { name: "Satelit", tiles: ESRI_IMAGERY, maxNativeZoom: 18, attribution: "Tiles © Esri" },
     { name: "Hybrid", tiles: ESRI_IMAGERY, labels: ESRI_LABELS, maxNativeZoom: 18, attribution: "Tiles © Esri" },
-]);
+], { style: "cards" });                             // kartu bergambar seperti Google Maps
 addLayerControl("map", ["zona", "blok"]);
 
 fitMap("map", zona, { right: 190 }); // sisakan ruang untuk panel di kanan
 ```
 
-Contoh lengkapnya di [`layers/`](./layers/): zona dengan tooltip, jalur fiber
+Peta dasarnya dipilih dari kartu bergambar: gambar tiap kartu diambil dari tile
+peta dasar itu sendiri, dan tombol di bawah peta menggantinya dari kode dengan
+`setBasemap`. Contoh lengkapnya di [`layers/`](./layers/): zona dengan tooltip, jalur fiber
 terpasang (utuh) dan rencana (putus-putus), kontur berlabel yang muncul mulai
 zoom 17, dan denah blok mulai zoom 18. Semua datanya buatan.
 
@@ -142,10 +144,10 @@ grid proyek, gambar master plan bergeoreferensi, ribuan garis di canvas, layar
 penuh, dan unduh tampilan sebagai PNG.
 
 ```js
-import { createMap, addGeoJSON } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.19/map.min.js";
-import { addCoordinateControl, addFullscreenButton } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.19/mapcontrol.min.js";
-import { addMeasureControl, addImageOverlay, downloadMapImage } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.19/maptools.min.js";
-import { createAffineTransform } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.19/geomeasure.min.js";
+import { createMap, addGeoJSON } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.20/map.min.js";
+import { addCoordinateControl, addFullscreenButton } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.20/mapcontrol.min.js";
+import { addMeasureControl, addImageOverlay, downloadMapImage } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.20/maptools.min.js";
+import { createAffineTransform } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.20/geomeasure.min.js";
 
 createMap("map", { maxZoom: 21 });
 
