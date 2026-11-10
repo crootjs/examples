@@ -20,8 +20,8 @@ Please follow every step in every section :
 ## Cookies based User Session Handling
 To check the login cookies and redirect to the login page if the login cookie doesn't exist
 ```js
-import {getCookie} from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.25/cookie.min.js";
-import {redirect} from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.25/url.min.js";
+import {getCookie} from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.26/cookie.min.js";
+import {redirect} from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.26/url.min.js";
 
 //check if login cookies is exist
 if(!getCookie("login")){
@@ -32,9 +32,9 @@ if(!getCookie("login")){
 ## Form Handling
 Get data from Form and Post to the server
 ```js
-import {onClick,getValue} from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.25/element.min.js";
-import {postJSON} from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.25/api.min.js";
-import {getCookie} from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.25/cookie.min.js";
+import {onClick,getValue} from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.26/element.min.js";
+import {postJSON} from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.26/api.min.js";
+import {getCookie} from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.26/cookie.min.js";
 
 onClick("submit",PostSignUp);
 
@@ -60,7 +60,7 @@ function responseFunction(response){
 ## Async Handling
 This is a sample of a four-step run of the js command, where js can be run in serial and parallel mode:
 ```js
-import {addCSS, addJS, runAfterDOM, runAfterAll} from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.25/element.min.js";
+import {addCSS, addJS, runAfterDOM, runAfterAll} from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.26/element.min.js";
 // Step 1: run and wait until finish execute
 await addCSS("https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css");
 // Step 2: Just run without waiting until finished, immediately go to the next step

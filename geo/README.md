@@ -9,7 +9,7 @@ tanpa library peta eksternal. Fungsi `geo.js` ikut diekspor dari `map.js`, jadi
 cukup satu import.
 
 ```js
-import { createMap, addGeoJSON, fitMap, onMapClick, getGeoJSON, getPropertyKeys } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.25/map.min.js";
+import { createMap, addGeoJSON, fitMap, onMapClick, getGeoJSON, getPropertyKeys } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.26/map.min.js";
 
 // <div id="map"> harus punya tinggi dari CSS.
 createMap("map");
@@ -47,8 +47,8 @@ GeoJSON — dihitung di browser, tanpa layanan rute. Hasilnya Feature LineString
 biasa, jadi langsung bisa digambar dengan `addGeoJSON()`.
 
 ```js
-import { createMap, addGeoJSON, fitMap, getGeoJSON } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.25/map.min.js";
-import { findRoute } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.25/georoute.min.js";
+import { createMap, addGeoJSON, fitMap, getGeoJSON } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.26/map.min.js";
+import { findRoute } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.26/georoute.min.js";
 
 createMap("map");
 
@@ -82,8 +82,8 @@ sehingga puluhan ribu titik tetap ringan. Hanya kelompok yang sedang terlihat
 yang digambar.
 
 ```js
-import { createMap } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.25/map.min.js";
-import { addCluster } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.25/mapcluster.min.js";
+import { createMap } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.26/map.min.js";
+import { addCluster } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.26/mapcluster.min.js";
 
 createMap("map", { center: [110, -7.3], zoom: 6 });
 
@@ -105,8 +105,8 @@ gayanya, dan diatur urutan tumpuknya tanpa menggambar ulang, dan peta dasarnya
 bisa diganti tanpa membuat ulang peta.
 
 ```js
-import { createMap, addGeoJSON, fitMap } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.25/map.min.js";
-import { addBasemapControl, addLayerControl } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.25/mapcontrol.min.js";
+import { createMap, addGeoJSON, fitMap } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.26/map.min.js";
+import { addBasemapControl, addLayerControl } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.26/mapcontrol.min.js";
 
 createMap("map", { maxZoom: 21 });
 
@@ -144,10 +144,10 @@ grid proyek, gambar master plan bergeoreferensi, ribuan garis di canvas, layar
 penuh, dan unduh tampilan sebagai PNG.
 
 ```js
-import { createMap, addGeoJSON } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.25/map.min.js";
-import { addCoordinateControl, addFullscreenButton } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.25/mapcontrol.min.js";
-import { addMeasureControl, addImageOverlay, downloadMapImage } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.25/maptools.min.js";
-import { createAffineTransform } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.25/geomeasure.min.js";
+import { createMap, addGeoJSON } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.26/map.min.js";
+import { addCoordinateControl, addFullscreenButton } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.26/mapcontrol.min.js";
+import { addMeasureControl, addImageOverlay, downloadMapImage } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.26/maptools.min.js";
+import { createAffineTransform } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.26/geomeasure.min.js";
 
 createMap("map", { maxZoom: 21 });
 
@@ -170,6 +170,24 @@ dihitung dari grid (jadi ikut miring seperti gridnya) dengan penggeser
 transparansi, 5.600 saluran contoh dengan tooltip, dan status hasil ukur dan
 unduhan. Semua datanya buatan.
 
+## Gambar di Peta
+
+[Demo](./draw/) and [Source Code](https://github.com/crootjs/examples/tree/main/geo/draw)
+
+Menggambar titik, garis, dan area, lalu mengubah bentuknya (geser simpul,
+tambah simpul dari titik tengah ruas, hapus simpul). Hasilnya GeoJSON yang
+langsung diukur dan bisa diunduh.
+
+```js
+import { addDrawControl } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.26/mapdraw.min.js";
+
+const drawing = addDrawControl("map", {
+    properties: (type) => ({ nama: type + " baru" }),
+    onChange: (collection) => console.log(collection.features.length),
+});
+drawing.getData(); // FeatureCollection
+```
+
 ## Heatmap dan Peta Cakupan
 
 [Demo](./heatmap/) and [Source Code](https://github.com/crootjs/examples/tree/main/geo/heatmap)
@@ -178,8 +196,8 @@ Titik-titik hasil drive test sebagai heatmap kepadatan, atau sebagai petak
 persegi/heksagon berwarna menurut rata-rata RSRP, seperti peta cakupan sinyal.
 
 ```js
-import { createMap } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.25/map.min.js";
-import { addHeatmap, addGridMap } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.25/mapheat.min.js";
+import { createMap } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.26/map.min.js";
+import { addHeatmap, addGridMap } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.26/mapheat.min.js";
 
 createMap("map", { center: [107.5935, -6.8975], zoom: 14 });
 
@@ -203,7 +221,7 @@ Menu klik kanan (tekan lama di layar sentuh) dari `mapcontrol.js`, yang isinya
 menyesuaikan apa yang ada di titik itu:
 
 ```js
-import { addContextMenu } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.25/mapcontrol.min.js";
+import { addContextMenu } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.26/mapcontrol.min.js";
 
 addContextMenu("map", (position, feature) => {
     const cell = feature ? null : cakupan.cellAt(position);   // petak bukan fitur GeoJSON

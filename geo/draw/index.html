@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gambar di Peta + CrootJS</title>
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="index.js"></script>
+</head>
+<body>
+
+  <main class="card">
+    <h1>Gambar di Peta + CrootJS</h1>
+    <p class="lead">
+      Gambar titik, garis, dan area langsung di peta, ubah bentuknya, lalu ambil
+      hasilnya sebagai GeoJSON.
+    </p>
+
+    <section class="demo">
+      <h2>Pilih alat di pojok kiri atas peta</h2>
+      <p>
+        Titik: klik sekali. Garis dan area: klik titik-titiknya, lalu klik ganda
+        atau <b>Selesai</b> (area juga bisa ditutup dengan mengklik titik pertama).
+        <b>Ubah</b>: klik fitur, geser simpulnya, tarik titik tengah untuk menambah
+        simpul, klik ganda (atau tekan lama) simpul untuk menghapus.
+      </p>
+      <div class="actions">
+        <button type="button" id="download">Unduh GeoJSON</button>
+        <button type="button" id="clear">Hapus semua</button>
+      </div>
+    </section>
+
+    <div id="map" class="map"></div>
+
+    <section class="output">
+      <h2>Fitur yang digambar</h2>
+      <ol id="features" class="features-list"></ol>
+      <p id="empty" class="empty">Belum ada. Contoh di peta sudah bisa diubah atau dihapus.</p>
+
+      <h2><label for="geojson">GeoJSON</label></h2>
+      <textarea id="geojson" class="geojson" readonly></textarea>
+    </section>
+
+    <p class="credit">
+      Peta dasar © kontributor OpenStreetMap. Area contoh hanya ilustrasi.
+    </p>
+  </main>
+
+</body>
+</html>

@@ -9,7 +9,7 @@ tanpa Three.js atau library lain. Putar, zoom, klik sebuah bagian, atau buka
 file `.glb` sendiri.
 
 ```js
-import { createViewer, loadModel, getParts, highlightPart, fitView, onModelClick } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.25/model3d.min.js";
+import { createViewer, loadModel, getParts, highlightPart, fitView, onModelClick } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.26/model3d.min.js";
 
 createViewer("viewer", { autoRotate: 12 });
 loadModel("viewer", "../models/bts.glb", (info, error) => {
@@ -36,8 +36,8 @@ atau digeser/diputar/diskala dengan gizmo, lalu hasilnya diunduh sebagai
 `.glb` baru.
 
 ```js
-import { setPartTransform, setPartColor } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.25/model3d.min.js";
-import { addHotspot, enableTransform, downloadGLB } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.25/model3dtools.min.js";
+import { setPartTransform, setPartColor } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.26/model3d.min.js";
+import { addHotspot, enableTransform, downloadGLB } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.26/model3dtools.min.js";
 
 setPartTransform("editor", "Sektor_2", { rotation: [0, -150, 0] });   // azimuth 150°
 setPartTransform("editor", "Antena_2", { rotation: [6, 0, 0] });      // downtilt 6°
@@ -59,7 +59,7 @@ animasi perakitan dengan slider waktu, pisahkan bagian-bagiannya, potong
 menaranya, dan kuis "klik bagian X".
 
 ```js
-import { playAnimation, explodeModel, addSection } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.25/model3dtools.min.js";
+import { playAnimation, explodeModel, addSection } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.26/model3dtools.min.js";
 
 const animasi = playAnimation("model", "Perakitan", { onUpdate: (t) => setValue("time", t) });
 onInput("time", () => animasi.seek(Number(getValue("time"))));

@@ -1,9 +1,9 @@
 // Contoh peta teknis dengan lapisan bernama dan beberapa peta dasar.
 //   map.js        petanya: lapisan bernama, garis putus-putus, label, hover
 //   mapcontrol.js pilihan peta dasar (kartu bergambar), daftar centang lapisan, garis skala
-import { createMap, addGeoJSON, fitMap, getLayers } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.25/map.min.js";
-import { addBasemapControl, setBasemap, addLayerControl, addScaleBar } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.25/mapcontrol.min.js";
-import { setInnerText, onClick } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.25/element.min.js";
+import { createMap, addGeoJSON, fitMap, getLayers } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.26/map.min.js";
+import { addBasemapControl, setBasemap, addLayerControl, addScaleBar } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.26/mapcontrol.min.js";
+import { setInnerText, onClick } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.26/element.min.js";
 
 const ESRI_IMAGERY = "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}";
 const ESRI_LABELS = "https://server.arcgisonline.com/ArcGIS/rest/services/Reference/World_Boundaries_and_Places/MapServer/tile/{z}/{y}/{x}";

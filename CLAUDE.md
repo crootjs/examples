@@ -6,6 +6,8 @@ This repo holds working, live-deployed examples for [CrootJS](https://github.com
 
 Every example must follow CrootJS's coding conventions: HTML, CSS, and JS in separate files; no inline `<style>`/`<script>` blocks; no `onclick`/`style=""` attributes; JS loaded as `<script type="module">`. Full rules: https://croot.js.org/docs/conventions
 
+Examples must also follow the **no AI slop** rules (no invented APIs, no dead code, no fake content, verified in a browser before committing): https://croot.js.org/docs/conventions#4-no-ai-slop
+
 ## When adding or editing an example
 
 - Import CrootJS from a pinned CDN version tag, never `@latest`.
