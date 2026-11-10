@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Editor Antena BTS 3D + CrootJS</title>
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="index.js"></script>
+</head>
+<body>
+
+  <main class="card">
+    <h1>Editor Antena BTS 3D + CrootJS</h1>
+    <p class="lead">
+      Atur azimuth dan downtilt antena tiap sektor, ganti warna, geser atau putar
+      bagian mana pun dengan gizmo, lalu unduh hasilnya sebagai file .glb baru.
+    </p>
+
+    <div class="layout">
+      <div id="editor" class="viewer"></div>
+
+      <div class="panel">
+        <section>
+          <h2>Sektor</h2>
+          <table class="sectors">
+            <thead>
+              <tr><th scope="col">Sektor</th><th scope="col">Azimuth (°)</th><th scope="col">Tilt (°)</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td><input type="number" id="az1" class="sector-input" min="0" max="359" step="1" value="0" aria-label="Azimuth sektor 1"></td>
+                <td><input type="number" id="tilt1" class="sector-input" min="-10" max="20" step="0.5" value="4" aria-label="Tilt sektor 1"></td>
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td><input type="number" id="az2" class="sector-input" min="0" max="359" step="1" value="120" aria-label="Azimuth sektor 2"></td>
+                <td><input type="number" id="tilt2" class="sector-input" min="-10" max="20" step="0.5" value="4" aria-label="Tilt sektor 2"></td>
+              </tr>
+              <tr>
+                <th scope="row">3</th>
+                <td><input type="number" id="az3" class="sector-input" min="0" max="359" step="1" value="240" aria-label="Azimuth sektor 3"></td>
+                <td><input type="number" id="tilt3" class="sector-input" min="-10" max="20" step="0.5" value="4" aria-label="Tilt sektor 3"></td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section>
+          <h2>Bagian terpilih: <span id="selected">—</span></h2>
+          <p class="hint">Klik sebuah bagian di model untuk memilihnya.</p>
+          <div class="row">
+            <label for="color">Warna</label>
+            <input type="color" id="color" value="#f59e0b" disabled>
+            <button type="button" id="reset-color" class="small" disabled>Warna asli</button>
+          </div>
+          <div class="row">
+            <label><input type="checkbox" id="hide" disabled> Sembunyikan</label>
+          </div>
+          <div class="row modes" role="group" aria-label="Mode gizmo">
+            <button type="button" id="mode-translate" class="mode" disabled>Geser</button>
+            <button type="button" id="mode-rotate" class="mode" disabled>Putar</button>
+            <button type="button" id="mode-scale" class="mode" disabled>Skala</button>
+            <button type="button" id="mode-off" class="mode" disabled>Selesai</button>
+          </div>
+          <output id="transform" class="transform">—</output>
+        </section>
+
+        <section>
+          <button type="button" id="download" class="primary">Unduh .glb</button>
+        </section>
+      </div>
+    </div>
+
+    <p class="credit">
+      Model menara BTS dibuat khusus untuk contoh CrootJS (CC0). Tahan Shift saat
+      memutar dengan gizmo untuk kelipatan 15°.
+    </p>
+  </main>
+
+</body>
+</html>

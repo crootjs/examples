@@ -2,10 +2,10 @@
 //   map.js        petanya, plus lokasi BTS sebagai titik GeoJSON di atas lapisan panas
 //   mapcontrol.js garis skala, dan menu klik kanan (tekan lama di layar sentuh)
 //   mapheat.js    heatmap kepadatan dan peta petak (persegi/heksagon) menurut rata-rata RSRP
-import { createMap, addGeoJSON, setMapView } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.23/map.min.js";
-import { addScaleBar, addContextMenu } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.23/mapcontrol.min.js";
-import { addHeatmap, addGridMap } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.23/mapheat.min.js";
-import { onChange, getValue, setValue, setInnerText } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.23/element.min.js";
+import { createMap, addGeoJSON, setMapView } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.24/map.min.js";
+import { addScaleBar, addContextMenu } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.24/mapcontrol.min.js";
+import { addHeatmap, addGridMap } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.24/mapheat.min.js";
+import { onChange, getValue, setValue, setInnerText } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.24/element.min.js";
 
 const SITES = [
     { nama: "BTS Sukajadi", position: [107.5905, -6.8890] },

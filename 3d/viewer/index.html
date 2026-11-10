@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Penampil Model 3D + CrootJS</title>
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="index.js"></script>
+</head>
+<body>
+
+  <main class="card">
+    <h1>Penampil Model 3D + CrootJS</h1>
+    <p class="lead">
+      Model glTF/GLB ditampilkan langsung di browser dengan WebGL, tanpa Three.js
+      atau library lain.
+    </p>
+
+    <section class="demo">
+      <h2>Putar, zoom, lalu klik sebuah bagian</h2>
+      <p>
+        Geser untuk memutar, roda mouse atau pinch untuk zoom, klik kanan + geser
+        (atau dua jari) untuk menggeser pandangan, klik ganda untuk memusatkan.
+        Buka file <code>.glb</code> sendiri untuk mencoba model lain.
+      </p>
+      <div class="actions">
+        <label class="file">
+          Buka file .glb / .gltf
+          <input type="file" id="file" accept=".glb,.gltf,model/gltf-binary,model/gltf+json">
+        </label>
+        <button type="button" id="reset">Lihat semua</button>
+        <button type="button" id="spin">Putar otomatis</button>
+      </div>
+    </section>
+
+    <div class="layout">
+      <div id="viewer" class="viewer"></div>
+      <nav class="parts" aria-label="Bagian model">
+        <h3>Bagian</h3>
+        <ul id="parts"></ul>
+      </nav>
+    </div>
+
+    <output id="status" class="result">Memuat model...</output>
+
+    <p class="credit">
+      Model menara BTS dibuat khusus untuk contoh CrootJS (CC0).
+    </p>
+  </main>
+
+</body>
+</html>
