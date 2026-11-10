@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BTS 3D di Peta + CrootJS</title>
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="index.js"></script>
+</head>
+<body>
+
+  <main class="card">
+    <h1>BTS 3D di Peta + CrootJS</h1>
+    <p class="lead">
+      Model 3D menara BTS di koordinatnya, menghadap azimuth sektor pertamanya.
+    </p>
+
+    <section class="demo">
+      <h2>Klik menara, lalu putar arah hadapnya</h2>
+      <p>
+        Ukuran model dilebihkan 3x supaya terlihat jelas. Zoom keluar di bawah 15 dan
+        model disembunyikan; zoom masuk untuk melihat detailnya.
+      </p>
+      <div class="actions">
+        <label for="heading">Azimuth sektor 1:</label>
+        <input type="range" id="heading" min="0" max="359" value="30" disabled>
+        <output id="heading-text">—</output>
+      </div>
+    </section>
+
+    <div id="map" class="map"></div>
+
+    <output id="status" class="result">Klik sebuah menara.</output>
+
+    <p class="credit">
+      Peta dasar © kontributor OpenStreetMap. Lokasi dan model BTS adalah contoh,
+      bukan data sungguhan.
+    </p>
+  </main>
+
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Peta Offline (PMTiles) + CrootJS</title>
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="index.js"></script>
+</head>
+<body>
+
+  <main class="card">
+    <h1>Peta Offline (PMTiles) + CrootJS</h1>
+    <p class="lead">
+      Peta dasar dari satu file PMTiles - tanpa server tile. Buka file dari perangkat
+      sendiri, dan peta tetap jalan walau internet putus.
+    </p>
+
+    <section class="demo">
+      <h2>Contoh file, atau file Anda sendiri</h2>
+      <p>
+        Peta di bawah membaca <code>data/toner.pmtiles</code> (dunia, zoom 0-3) langsung
+        dari GitHub Pages, sepotong-sepotong. Pilih file <code>.pmtiles</code> raster
+        dari perangkat untuk membukanya tanpa jaringan.
+      </p>
+      <div class="actions">
+        <label for="file">File PMTiles:</label>
+        <input type="file" id="file" accept=".pmtiles">
+      </div>
+    </section>
+
+    <div id="map" class="map"></div>
+
+    <output id="status" class="result">Memuat data/toner.pmtiles...</output>
+
+    <p class="credit">
+      Tile contoh: Stamen Toner oleh Stamen Design (CC BY 3.0), data © kontributor
+      OpenStreetMap (ODbL), dari repositori PMTiles milik Protomaps.
+    </p>
+  </main>
+
+</body>
+</html>

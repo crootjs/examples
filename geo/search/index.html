@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cari Alamat di Peta + CrootJS</title>
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="index.js"></script>
+</head>
+<body>
+
+  <main class="card">
+    <h1>Cari Alamat di Peta + CrootJS</h1>
+    <p class="lead">
+      Cari tempat dari nama atau alamat, atau klik peta untuk mengetahui alamat di titik itu.
+    </p>
+
+    <section class="demo">
+      <h2>Ketik di kotak pencarian, lalu Enter</h2>
+      <p>
+        Contoh: <code>Gedung Sate</code>, <code>Jalan Braga Bandung</code>,
+        <code>Stasiun Gambir</code>. Pencarian memakai Nominatim dari OpenStreetMap,
+        yang hanya boleh dipakai sesekali (paling banyak 1 permintaan per detik).
+      </p>
+    </section>
+
+    <div id="map" class="map"></div>
+
+    <output id="status" class="result">Klik peta untuk melihat alamatnya.</output>
+
+    <p class="credit">Peta dan data alamat © kontributor OpenStreetMap.</p>
+  </main>
+
+</body>
+</html>
