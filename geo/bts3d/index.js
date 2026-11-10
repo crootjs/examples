@@ -1,9 +1,9 @@
 // Tiga menara BTS 3D di peta. Klik menara untuk memilihnya; slider memutar azimuth-nya.
-import { createMap } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.27/map.min.js";
+import { createMap } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.28/map.min.js";
 // highlightPart diimpor dari mapmodel.js (yang mengekspor ulang model3d.js), supaya penampil
 // model di peta dan fungsinya berasal dari salinan modul yang sama.
-import { addModel, highlightPart } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.27/mapmodel.min.js";
-import { onInput, getValue, setValue, setInnerText } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.27/element.min.js";
+import { addModel, highlightPart } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.28/mapmodel.min.js";
+import { onInput, getValue, setValue, setInnerText } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.28/element.min.js";
 
 const SITES = [
     { name: "BTS Dago", position: [107.6135, -6.8875], heading: 30 },

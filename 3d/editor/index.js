@@ -1,9 +1,9 @@
 // Editor antena BTS: azimuth/tilt per sektor, label 3D, warna, gizmo, dan ekspor GLB.
 //   model3d.js       penampil, warna, sembunyikan, posisi/rotasi lewat kode, klik bagian
 //   model3dtools.js  label yang menempel di model, gizmo geser/putar/skala, unduh .glb
-import { createViewer, loadModel, onModelClick, highlightPart, setPartColor, setPartVisible, getPartTransform, setPartTransform, fitView } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.27/model3d.min.js";
-import { addHotspot, enableTransform, downloadGLB } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.27/model3dtools.min.js";
-import { onClick, onChange, onInputs, getValue, setValue, setInnerText } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.27/element.min.js";
+import { createViewer, loadModel, onModelClick, highlightPart, setPartColor, setPartVisible, getPartTransform, setPartTransform, fitView } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.28/model3d.min.js";
+import { addHotspot, enableTransform, downloadGLB } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.28/model3dtools.min.js";
+import { onClick, onChange, onInputs, getValue, setValue, setInnerText } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.28/element.min.js";
 
 const SECTORS = [1, 2, 3];
 const BUTTONS = ["color", "reset-color", "hide", "mode-translate", "mode-rotate", "mode-scale", "mode-off"];

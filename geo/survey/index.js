@@ -3,11 +3,11 @@
 //   mapcontrol.js koordinat kursor (dalam grid lokal), layar penuh, garis skala
 //   maptools.js   alat ukur, master plan bergeoreferensi, ekspor PNG
 //   geomeasure.js transformasi grid lokal <-> lng/lat dari titik kontrol
-import { createMap, addGeoJSON } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.27/map.min.js";
-import { addCoordinateControl, addFullscreenButton, addScaleBar } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.27/mapcontrol.min.js";
-import { addMeasureControl, addImageOverlay, downloadMapImage } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.27/maptools.min.js";
-import { createAffineTransform } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.27/geomeasure.min.js";
-import { onClick, onInput, getValue, setInnerText } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.27/element.min.js";
+import { createMap, addGeoJSON } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.28/map.min.js";
+import { addCoordinateControl, addFullscreenButton, addScaleBar } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.28/mapcontrol.min.js";
+import { addMeasureControl, addImageOverlay, downloadMapImage } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.28/maptools.min.js";
+import { createAffineTransform } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.28/geomeasure.min.js";
+import { onClick, onInput, getValue, setInnerText } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.28/element.min.js";
 
 createMap("map", { center: [107.5762, -6.8737], zoom: 17, maxZoom: 21 });
 
