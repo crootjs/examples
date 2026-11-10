@@ -9,7 +9,7 @@ tanpa Three.js atau library lain. Putar, zoom, klik sebuah bagian, atau buka
 file `.glb` sendiri.
 
 ```js
-import { createViewer, loadModel, getParts, highlightPart, fitView, onModelClick } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.24/model3d.min.js";
+import { createViewer, loadModel, getParts, highlightPart, fitView, onModelClick } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.25/model3d.min.js";
 
 createViewer("viewer", { autoRotate: 12 });
 loadModel("viewer", "../models/bts.glb", (info, error) => {
@@ -36,8 +36,8 @@ atau digeser/diputar/diskala dengan gizmo, lalu hasilnya diunduh sebagai
 `.glb` baru.
 
 ```js
-import { setPartTransform, setPartColor } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.24/model3d.min.js";
-import { addHotspot, enableTransform, downloadGLB } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.24/model3dtools.min.js";
+import { setPartTransform, setPartColor } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.25/model3d.min.js";
+import { addHotspot, enableTransform, downloadGLB } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.25/model3dtools.min.js";
 
 setPartTransform("editor", "Sektor_2", { rotation: [0, -150, 0] });   // azimuth 150°
 setPartTransform("editor", "Antena_2", { rotation: [6, 0, 0] });      // downtilt 6°
@@ -50,7 +50,28 @@ const gizmo = enableTransform("editor", "Kabinet", "translate", (info) => {
 downloadGLB("editor", "bts-editan.glb");
 ```
 
+## Materi 3D: Anatomi Menara BTS
+
+[Demo](./belajar/) and [Source Code](https://github.com/crootjs/examples/tree/main/3d/belajar)
+
+Contoh materi pembelajaran: klik bagian untuk membaca fungsinya, putar
+animasi perakitan dengan slider waktu, pisahkan bagian-bagiannya, potong
+menaranya, dan kuis "klik bagian X".
+
+```js
+import { playAnimation, explodeModel, addSection } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.25/model3dtools.min.js";
+
+const animasi = playAnimation("model", "Perakitan", { onUpdate: (t) => setValue("time", t) });
+onInput("time", () => animasi.seek(Number(getValue("time"))));
+
+onInput("explode", () => explodeModel("model", Number(getValue("explode")), { part: "Menara", animate: false }));
+
+const potongan = addSection("model", { axis: "x", color: "#facc15" });
+onInput("cut-position", () => potongan.set({ position: Number(getValue("cut-position")) }));
+```
+
 Model menara BTS di [`models/bts.glb`](./models/bts.glb) dibuat khusus untuk
 contoh ini (CC0): menara merah-putih, platform, tiga sektor antena
 (`Sektor_1`–`Sektor_3`, masing-masing berisi `Tiang_n` dan `Antena_n`),
-microwave, penangkal petir, kabinet, dan pondasi.
+microwave, penangkal petir, kabinet, dan pondasi, plus animasi `Perakitan`
+(7 detik) yang menurunkan bagian-bagian atas ke tempatnya satu per satu.

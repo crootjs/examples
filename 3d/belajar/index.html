@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Materi 3D: Anatomi Menara BTS + CrootJS</title>
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="index.js"></script>
+</head>
+<body>
+
+  <main class="card">
+    <h1>Materi 3D: Anatomi Menara BTS</h1>
+    <p class="lead">
+      Contoh materi pembelajaran interaktif: klik bagian untuk penjelasannya, putar
+      animasi perakitan, pisahkan bagian-bagiannya, atau potong menaranya.
+    </p>
+
+    <div class="layout">
+      <div id="model" class="viewer"></div>
+
+      <div class="panel">
+        <section class="explain" aria-live="polite">
+          <h2 id="part-name">Klik sebuah bagian</h2>
+          <p id="part-text">Putar model dengan menggesernya. Klik antena, platform, kabinet, atau bagian lain untuk membaca fungsinya.</p>
+        </section>
+
+        <section>
+          <h3>Animasi perakitan</h3>
+          <div class="row">
+            <button type="button" id="play">Putar</button>
+            <button type="button" id="reset">Posisi akhir</button>
+          </div>
+          <label class="slider" for="time">Waktu <output id="time-text">0,0 s</output></label>
+          <input type="range" id="time" min="0" max="7" step="0.01" value="0">
+        </section>
+
+        <section>
+          <h3>Pisahkan bagian</h3>
+          <label class="slider" for="explode">Jarak <output id="explode-text">0%</output></label>
+          <input type="range" id="explode" min="0" max="1" step="0.01" value="0">
+        </section>
+
+        <section>
+          <h3>Potongan melintang</h3>
+          <div class="row">
+            <label><input type="checkbox" id="cut"> Potong</label>
+            <select id="axis" aria-label="Arah potongan">
+              <option value="x">Tegak (kiri-kanan)</option>
+              <option value="z">Tegak (depan-belakang)</option>
+              <option value="y">Mendatar</option>
+            </select>
+          </div>
+          <label class="slider" for="cut-position">Letak <output id="cut-text">50%</output></label>
+          <input type="range" id="cut-position" min="0" max="1" step="0.01" value="0.5">
+        </section>
+
+        <section>
+          <h3>Kuis</h3>
+          <button type="button" id="quiz">Mulai kuis</button>
+          <p id="quiz-text" class="quiz" aria-live="polite"></p>
+        </section>
+      </div>
+    </div>
+
+    <p class="credit">
+      Model menara BTS dibuat khusus untuk contoh CrootJS (CC0). Penjelasan disederhanakan
+      untuk keperluan contoh.
+    </p>
+  </main>
+
+</body>
+</html>

@@ -1,6 +1,6 @@
 // Penampil model 3D: memuat GLB, daftar bagian, klik untuk memilih, dan buka file sendiri.
-import { createViewer, loadModel, getParts, highlightPart, fitView, onModelClick, setAutoRotate } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.24/model3d.min.js";
-import { onClick, onChange, setInnerText } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.24/element.min.js";
+import { createViewer, loadModel, getParts, highlightPart, fitView, onModelClick, setAutoRotate } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.25/model3d.min.js";
+import { onClick, onChange, setInnerText } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.25/element.min.js";
 
 createViewer("viewer", { autoRotate: 12 });
 loadModel("viewer", "../models/bts.glb", responseFunction);
