@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>croot.css - Framework CSS CrootJS</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.32/croot.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.33/icons.min.css">
   <link rel="stylesheet" href="style.css">
   <script type="module" src="index.js"></script>
 </head>
@@ -16,6 +17,7 @@
       <li><a href="#dasar" aria-current="page">Dasar</a></li>
       <li><a href="#form">Form</a></li>
       <li><a href="#komponen">Komponen</a></li>
+      <li><a href="#ikon">Ikon</a></li>
       <li><button type="button" id="tema" class="secondary">Tema: otomatis</button></li>
     </ul>
   </header>
@@ -104,6 +106,72 @@
       <div class="alert danger">Gagal mengirim.</div>
       <label for="kemajuan">Kemajuan</label>
       <progress id="kemajuan" max="100" value="60">60%</progress>
+    </section>
+
+    <section id="ikon" class="stack">
+      <h2>Ikon</h2>
+      <p>
+        <code>icons.min.css</code> dimuat terpisah (sekitar 2 KB gzip), jadi halaman tanpa ikon tidak ikut
+        mengunduhnya. Ikon mengikuti warna dan ukuran teks di sekitarnya.
+      </p>
+      <div class="cluster">
+        <button type="button" id="ikon-unduh"><span class="icon icon-download" aria-hidden="true"></span> Unduh</button>
+        <button type="button" class="secondary" id="ikon-cari"><span class="icon icon-search" aria-hidden="true"></span><span class="visually-hidden">Cari</span></button>
+      </div>
+      <div class="alert success"><span class="icon icon-check" aria-hidden="true"></span> Berhasil disimpan.</div>
+      <div class="alert danger"><span class="icon icon-warning" aria-hidden="true"></span> Gagal mengirim.</div>
+      <p class="ikon-besar"><span class="icon icon-star" aria-hidden="true"></span> Ukuran mengikuti <code>font-size</code>.</p>
+      <ul class="ikon-galeri">
+          <li><span class="icon icon-menu" aria-hidden="true"></span><code>icon-menu</code></li>
+          <li><span class="icon icon-close" aria-hidden="true"></span><code>icon-close</code></li>
+          <li><span class="icon icon-search" aria-hidden="true"></span><code>icon-search</code></li>
+          <li><span class="icon icon-home" aria-hidden="true"></span><code>icon-home</code></li>
+          <li><span class="icon icon-user" aria-hidden="true"></span><code>icon-user</code></li>
+          <li><span class="icon icon-users" aria-hidden="true"></span><code>icon-users</code></li>
+          <li><span class="icon icon-settings" aria-hidden="true"></span><code>icon-settings</code></li>
+          <li><span class="icon icon-plus" aria-hidden="true"></span><code>icon-plus</code></li>
+          <li><span class="icon icon-minus" aria-hidden="true"></span><code>icon-minus</code></li>
+          <li><span class="icon icon-edit" aria-hidden="true"></span><code>icon-edit</code></li>
+          <li><span class="icon icon-trash" aria-hidden="true"></span><code>icon-trash</code></li>
+          <li><span class="icon icon-download" aria-hidden="true"></span><code>icon-download</code></li>
+          <li><span class="icon icon-upload" aria-hidden="true"></span><code>icon-upload</code></li>
+          <li><span class="icon icon-arrow-up" aria-hidden="true"></span><code>icon-arrow-up</code></li>
+          <li><span class="icon icon-arrow-down" aria-hidden="true"></span><code>icon-arrow-down</code></li>
+          <li><span class="icon icon-arrow-left" aria-hidden="true"></span><code>icon-arrow-left</code></li>
+          <li><span class="icon icon-arrow-right" aria-hidden="true"></span><code>icon-arrow-right</code></li>
+          <li><span class="icon icon-chevron-up" aria-hidden="true"></span><code>icon-chevron-up</code></li>
+          <li><span class="icon icon-chevron-down" aria-hidden="true"></span><code>icon-chevron-down</code></li>
+          <li><span class="icon icon-chevron-left" aria-hidden="true"></span><code>icon-chevron-left</code></li>
+          <li><span class="icon icon-chevron-right" aria-hidden="true"></span><code>icon-chevron-right</code></li>
+          <li><span class="icon icon-check" aria-hidden="true"></span><code>icon-check</code></li>
+          <li><span class="icon icon-warning" aria-hidden="true"></span><code>icon-warning</code></li>
+          <li><span class="icon icon-info" aria-hidden="true"></span><code>icon-info</code></li>
+          <li><span class="icon icon-login" aria-hidden="true"></span><code>icon-login</code></li>
+          <li><span class="icon icon-logout" aria-hidden="true"></span><code>icon-logout</code></li>
+          <li><span class="icon icon-calendar" aria-hidden="true"></span><code>icon-calendar</code></li>
+          <li><span class="icon icon-clock" aria-hidden="true"></span><code>icon-clock</code></li>
+          <li><span class="icon icon-bell" aria-hidden="true"></span><code>icon-bell</code></li>
+          <li><span class="icon icon-mail" aria-hidden="true"></span><code>icon-mail</code></li>
+          <li><span class="icon icon-phone" aria-hidden="true"></span><code>icon-phone</code></li>
+          <li><span class="icon icon-pin" aria-hidden="true"></span><code>icon-pin</code></li>
+          <li><span class="icon icon-map" aria-hidden="true"></span><code>icon-map</code></li>
+          <li><span class="icon icon-file" aria-hidden="true"></span><code>icon-file</code></li>
+          <li><span class="icon icon-folder" aria-hidden="true"></span><code>icon-folder</code></li>
+          <li><span class="icon icon-chart" aria-hidden="true"></span><code>icon-chart</code></li>
+          <li><span class="icon icon-table" aria-hidden="true"></span><code>icon-table</code></li>
+          <li><span class="icon icon-dashboard" aria-hidden="true"></span><code>icon-dashboard</code></li>
+          <li><span class="icon icon-filter" aria-hidden="true"></span><code>icon-filter</code></li>
+          <li><span class="icon icon-sort" aria-hidden="true"></span><code>icon-sort</code></li>
+          <li><span class="icon icon-eye" aria-hidden="true"></span><code>icon-eye</code></li>
+          <li><span class="icon icon-eye-off" aria-hidden="true"></span><code>icon-eye-off</code></li>
+          <li><span class="icon icon-lock" aria-hidden="true"></span><code>icon-lock</code></li>
+          <li><span class="icon icon-unlock" aria-hidden="true"></span><code>icon-unlock</code></li>
+          <li><span class="icon icon-link" aria-hidden="true"></span><code>icon-link</code></li>
+          <li><span class="icon icon-copy" aria-hidden="true"></span><code>icon-copy</code></li>
+          <li><span class="icon icon-refresh" aria-hidden="true"></span><code>icon-refresh</code></li>
+          <li><span class="icon icon-star" aria-hidden="true"></span><code>icon-star</code></li>
+          <li><span class="icon icon-more" aria-hidden="true"></span><code>icon-more</code></li>
+      </ul>
     </section>
   </main>
 

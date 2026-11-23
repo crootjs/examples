@@ -23,3 +23,7 @@ onClick("tema", () => {
 
 onClick("buka", () => document.getElementById("dialog").showModal());
 handleForm("contoh", (data) => toastSuccess(`Terkirim: ${data.nama}`));
+
+// Tombol di bagian "Ikon" hanya contoh; tombol tanpa teks tetap bernama "Cari" lewat teks visually-hidden.
+onClick("ikon-unduh", () => toastSuccess("Contoh: tombol Unduh ditekan"));
+onClick("ikon-cari", () => toastSuccess("Contoh: tombol Cari ditekan"));

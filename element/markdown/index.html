@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Editor Markdown + CrootJS</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.32/croot.min.css">
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="index.js"></script>
+</head>
+<body>
+
+  <main class="container page">
+    <h1>Editor Markdown</h1>
+    <p class="muted">
+      <code>markdown.js</code> mengubah Markdown menjadi HTML yang aman: HTML mentah di-escape dan
+      tautan <code>javascript:</code> ditolak. Pratinjau diperbarui sesudah Anda berhenti mengetik
+      (<code>debounce.js</code>).
+    </p>
+
+    <div class="cluster">
+      <label><input type="checkbox" id="heading-ids" checked> Beri <code>id</code> pada judul</label>
+      <label><input type="checkbox" id="new-tab" checked> Tautan luar di tab baru</label>
+      <button type="button" class="secondary" id="load">Muat contoh.md</button>
+    </div>
+
+    <div class="editor">
+      <section class="pane" aria-labelledby="source-label">
+        <label for="source" id="source-label">Markdown</label>
+        <textarea id="source" spellcheck="false"></textarea>
+      </section>
+
+      <section class="pane" aria-labelledby="preview-title">
+        <h2 id="preview-title" class="pane-title">Pratinjau</h2>
+        <div id="preview" class="preview"></div>
+      </section>
+    </div>
+
+    <details>
+      <summary>HTML yang dihasilkan</summary>
+      <pre id="html" class="html"></pre>
+    </details>
+
+    <p class="visually-hidden" role="status" id="status"></p>
+  </main>
+
+</body>
+</html>

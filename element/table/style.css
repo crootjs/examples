@@ -1,0 +1,22 @@
+/* Hanya tata letak khusus halaman ini; tampilan lainnya dari croot.css dan gaya bawaan table.js. */
+.page {
+    padding-block: 32px 64px;
+    --croot-gap: 48px;
+}
+
+.angka {
+    text-align: right;
+}
+
+.status-selesai {
+    background-color: color-mix(in srgb, var(--croot-success) 20%, transparent);
+}
+
+.status-usulan {
+    background-color: color-mix(in srgb, var(--croot-warning) 20%, transparent);
+}
+
+.detail {
+    min-height: 2rem;
+    padding: 0.2rem 0.7rem;
+}

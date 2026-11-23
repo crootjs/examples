@@ -2,7 +2,7 @@ import { addChild } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.32/element
 
 export let URLGeoJson = "./data.json";
 export let tableTag="tr";
-export let tableRowClass="content is-small";
+export let tableRowClass="";
 export let tableTemplate=`
 <td>#TYPE#</td>
 <td>#NAME#</td>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catatan Offline (PWA) + CrootJS</title>
+  <meta name="theme-color" content="#15803d">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icons/icon-192.png" type="image/png">
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.32/croot.min.css">
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="index.js"></script>
+</head>
+<body>
+
+  <main class="container stack page">
+    <header class="stack">
+      <h1>Catatan Offline</h1>
+      <p class="muted">
+        Contoh <code>pwa.js</code>: halaman ini dan catatannya tetap terbuka tanpa internet, dan
+        bisa dipasang sebagai aplikasi. Catatan hanya tersimpan di browser ini (localStorage).
+      </p>
+      <div class="cluster">
+        <span id="jaringan" class="badge" role="status">Memeriksa koneksi...</span>
+        <span id="mode" class="badge">Dibuka di tab browser</span>
+        <button type="button" id="pasang" hidden>Pasang aplikasi</button>
+      </div>
+    </header>
+
+    <form id="tambah" class="stack">
+      <div>
+        <label for="isi">Catatan baru</label>
+        <textarea id="isi" name="isi" rows="3" required maxlength="1000"></textarea>
+      </div>
+      <div>
+        <button type="submit">Simpan</button>
+      </div>
+    </form>
+
+    <section class="stack" aria-labelledby="judul-daftar">
+      <h2 id="judul-daftar">Catatan</h2>
+      <p id="kosong" class="muted">Belum ada catatan.</p>
+      <ul id="daftar" class="notes"></ul>
+    </section>
+
+    <details>
+      <summary>Cara mencoba mode offline</summary>
+      <ol>
+        <li>Buka halaman ini sekali selagi online, lalu muat ulang (service worker sudah terpasang).</li>
+        <li>Putuskan internet: mode pesawat, atau DevTools → Network → Offline.</li>
+        <li>Muat ulang: halaman, tampilan, dan catatan tetap ada. Catatan baru juga bisa disimpan.</li>
+      </ol>
+    </details>
+  </main>
+
+</body>
+</html>

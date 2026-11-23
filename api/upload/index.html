@@ -4,14 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Unggah File dengan Progres + CrootJS</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.32/croot.min.css">
   <link rel="stylesheet" href="style.css">
   <script type="module" src="index.js"></script>
 </head>
 <body>
 
   <main class="card">
-    <h1>Unggah File dengan Progres + CrootJS</h1>
-    <p class="lead">
+    <h1 class="center">Unggah File dengan Progres + CrootJS</h1>
+    <p class="lead center muted">
       <code>uploadFile</code> dari <code>api.js</code>: kemajuan unggahan, tombol batal,
       dan hasil yang sama bentuknya dengan <code>getJSON</code>.
     </p>
@@ -24,7 +25,7 @@
         bukan file dari perangkat Anda. Di aplikasi sendiri, isi <code>source</code> dengan id
         <code>&lt;input type="file"&gt;</code> dan alamat server Anda.
       </p>
-      <div class="actions">
+      <div class="actions cluster">
         <label for="size">Ukuran file contoh:</label>
         <select id="size">
           <option value="0.5">0,5 MB</option>
@@ -38,7 +39,7 @@
 
     <label for="progress" class="progress-label">Kemajuan</label>
     <progress id="progress" max="1" value="0"></progress>
-    <output id="status" class="result">Belum mengunggah.</output>
+    <output id="status" class="alert result">Belum mengunggah.</output>
   </main>
 
 </body>

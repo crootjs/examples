@@ -1,0 +1,15 @@
+<h1>Beranda</h1>
+<p>
+  Dashboard satu halaman dengan <code>router.js</code>. Isi halaman berganti tanpa memuat ulang,
+  alamatnya tetap bisa di-bookmark, dan tombol back browser berfungsi.
+</p>
+<ul>
+  <li><a href="#/mahasiswa">Daftar mahasiswa</a> memuat data contoh dari file JSON dan bisa dicari (query <code>?q=</code>).</li>
+  <li>Klik satu nama untuk halaman detail dengan parameter, misalnya <a href="#/mahasiswa/2301001">#/mahasiswa/2301001</a>.</li>
+  <li>Menu <a href="#/jadwal">Jadwal</a> sengaja belum dibuat, jadi menampilkan halaman tidak ditemukan.</li>
+</ul>
+<p class="muted">
+  Halaman ini sendiri adalah potongan HTML (<code>pages/beranda.html</code>) yang dimuat router ke
+  dalam <code>&lt;main&gt;</code>. Sesudah pindah halaman, fokus keyboard pindah ke judul dan judulnya
+  diumumkan ke pembaca layar.
+</p>

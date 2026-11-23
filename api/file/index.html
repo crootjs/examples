@@ -4,15 +4,17 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Image Upload</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.32/croot.min.css" />
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div id="inputfile">
-      <input type="file" id="imageInput" accept="image/*" capture />
-      <button id="uploadbutton">Upload Image</button>
-    </div>
-
-    <br />
-    <pre id="isi"></pre>
+    <main class="container page">
+      <div id="inputfile">
+        <input type="file" id="imageInput" accept="image/*" capture />
+        <button id="uploadbutton">Upload Image</button>
+      </div>
+      <pre id="isi"></pre>
+    </main>
     <script type="module" src="./index.js"></script>
   </body>
 </html>

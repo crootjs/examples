@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grafik SVG + CrootJS</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.32/croot.min.css">
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="index.js"></script>
+</head>
+<body>
+
+  <main class="container stack page">
+    <header class="stack">
+      <h1>Grafik SVG + CrootJS</h1>
+      <p>
+        <code>chart.js</code>: grafik batang, garis, dan donat dalam SVG, tanpa library lain.
+        Arahkan penunjuk ke grafik, atau fokus dengan Tab lalu tekan panah kiri/kanan untuk membaca nilainya.
+      </p>
+      <p class="alert">Semua angka di halaman ini <strong>data contoh</strong> karangan, bukan data sungguhan.</p>
+      <div class="cluster">
+        <button type="button" id="ganti">Ganti data contoh</button>
+        <button type="button" id="tumpuk" class="secondary" aria-pressed="false">Batang bertumpuk</button>
+        <button type="button" id="tema" class="secondary">Tema: otomatis</button>
+      </div>
+    </header>
+
+    <section class="card">
+      <h2>Contoh: pendaftar per bulan</h2>
+      <div id="grafik-batang"></div>
+    </section>
+
+    <section class="card">
+      <h2>Contoh: pengunjung situs per bulan</h2>
+      <div id="grafik-garis"></div>
+    </section>
+
+    <section class="card">
+      <h2>Contoh: pendaftar per jalur</h2>
+      <div id="grafik-donat"></div>
+    </section>
+  </main>
+
+</body>
+</html>

@@ -1,0 +1,10 @@
+/* Form, tombol, dan kotak pesan dari croot.css. */
+.page {
+    max-width: 40rem;
+    padding-block: 32px;
+}
+
+/* Kotak pesan baru tampil setelah setInner mengisinya. */
+#pesan:empty {
+    display: none;
+}

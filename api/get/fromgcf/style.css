@@ -1,0 +1,9 @@
+/* Tabel dan tipografi dari croot.css. */
+.page {
+    padding-block: 32px;
+}
+
+/* Deret koordinat tidak berspasi; tanpa ini tabel melebar melewati layar ponsel. */
+td:last-child {
+    overflow-wrap: anywhere;
+}

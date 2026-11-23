@@ -4,14 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Validasi Form + CrootJS</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.32/croot.min.css">
   <link rel="stylesheet" href="style.css">
   <script type="module" src="index.js"></script>
 </head>
 <body>
 
   <main class="card">
-    <h1>Validasi Form + CrootJS</h1>
-    <p class="lead">
+    <h1 class="center">Validasi Form + CrootJS</h1>
+    <p class="lead center muted">
       <code>form.js</code>: pesan di bawah setiap field yang salah, dari atribut HTML biasa
       ditambah aturan sendiri. Coba kirim form kosong, lalu perbaiki satu per satu.
     </p>
@@ -60,7 +61,7 @@
         <label><input type="checkbox" name="setuju" required> Saya setuju data ini dipakai untuk contoh</label>
       </div>
 
-      <div class="actions">
+      <div class="actions cluster">
         <button type="submit">Daftar</button>
         <button type="button" id="isi" class="secondary">Isi contoh data</button>
       </div>

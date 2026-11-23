@@ -1,0 +1,46 @@
+/* Hanya tata letak khusus halaman ini; tampilan lainnya dari croot.css. */
+.page {
+    max-width: 40rem;
+    padding-block: 32px 64px;
+}
+
+.cluster {
+    align-items: center;
+}
+
+.notes {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.notes li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 12px;
+    border: 1px solid var(--croot-border);
+    border-radius: var(--croot-radius);
+    background-color: var(--croot-surface);
+}
+
+.notes p {
+    flex: 1;
+    margin: 0;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+}
+
+.notes time {
+    display: block;
+    color: var(--croot-muted);
+    font-size: 0.85em;
+}
+
+.offline {
+    border-color: var(--croot-warning);
+    color: var(--croot-warning);
+}

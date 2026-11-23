@@ -16,8 +16,9 @@ Please follow every step in every section :
 2. [Form Handling and RESTFull API](./api/)
 3. [Geospatial Data](./geo/)
 4. [3D Model](./3d/)
+5. [Aplikasi offline (PWA)](./pwa/): catatan sederhana yang tetap terbuka tanpa internet dan bisa dipasang, dengan `pwa.js` dan `serviceworker.js`
 
-Styling: [croot.css showcase](./css/) — the 2 KB CSS framework used by the newer examples (`<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.32/croot.min.css">`).
+Styling: [croot.css showcase](./css/) — the 2 KB CSS framework used by the examples, plus the gallery of the 49 `icons.css` icons (`<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.32/croot.min.css">`).
 
 ## Cookies based User Session Handling
 To check the login cookies and redirect to the login page if the login cookie doesn't exist

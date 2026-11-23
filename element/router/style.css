@@ -1,0 +1,40 @@
+/* Tata letak dashboard; warna, tabel, dan .nav dari croot.css. */
+.page {
+    padding-block: 24px 48px;
+}
+
+/* Judul diberi tabindex="-1" oleh router supaya bisa difokus; tanpa cincin fokus karena
+   judul bukan kontrol yang bisa dipakai. */
+.page h1:focus {
+    outline: none;
+}
+
+.search {
+    margin-bottom: 16px;
+}
+
+.search input {
+    flex: 1 1 12rem;
+    width: auto;
+    margin: 0;
+}
+
+/* Tabel boleh digeser sendiri di layar sempit, halaman tidak ikut melebar. */
+.table-wrap {
+    overflow-x: auto;
+}
+
+.details {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    gap: 8px 16px;
+    max-width: 32rem;
+}
+
+.details dt {
+    font-weight: 600;
+}
+
+.details dd {
+    margin: 0;
+}

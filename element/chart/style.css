@@ -1,0 +1,16 @@
+/* Hanya tata letak halaman ini; tampilan lainnya dari croot.css. */
+.page {
+    padding-block: 32px 64px;
+}
+
+.card h2 {
+    margin-top: 0;
+    font-size: 1.125rem;
+}
+
+/* Tombol sakelar yang sedang aktif tampil seperti tombol utama. */
+button.secondary[aria-pressed="true"] {
+    background-color: var(--croot-accent);
+    border-color: var(--croot-accent);
+    color: var(--croot-accent-text);
+}

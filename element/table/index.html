@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tabel Data + CrootJS</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.32/croot.min.css">
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="index.js"></script>
+</head>
+<body>
+
+  <main class="container stack page">
+    <section>
+      <h1>Tabel Data + CrootJS</h1>
+      <p>
+        <code>table.js</code>: urut per kolom, cari, dan halaman untuk <code>&lt;table&gt;</code> biasa,
+        tanpa jQuery DataTables. Datanya <strong>data contoh</strong> dari <code>data.json</code>
+        yang dimuat dengan <code>getJSON</code>. Klik judul kolom untuk mengurutkan.
+      </p>
+      <div id="proyek"></div>
+      <p id="terpilih" role="status" class="muted">Belum ada proyek yang dipilih.</p>
+    </section>
+
+    <section>
+      <h2>Mode server (disimulasikan)</h2>
+      <p>
+        Untuk tabel besar, <code>source</code> mengambil satu halaman saja dari server.
+        Di contoh ini "server"-nya fungsi lokal yang memotong data contoh yang sama, dengan jeda 300 ms.
+      </p>
+      <div id="proyek-server"></div>
+    </section>
+  </main>
+
+</body>
+</html>

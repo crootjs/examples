@@ -1,0 +1,54 @@
+/* Tata letak editor; warna, form, dan elemen Markdown dari croot.css. */
+.page {
+    padding-block: 32px 48px;
+}
+
+.editor {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(20rem, 100%), 1fr));
+    gap: 16px;
+    margin-block: 16px;
+}
+
+.pane {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.pane-title {
+    margin: 0 0 0.25rem;
+    font-size: 1rem;
+}
+
+#source {
+    flex: 1;
+    min-height: 28rem;
+    font-family: var(--croot-mono);
+    font-size: 0.9rem;
+}
+
+.preview {
+    flex: 1;
+    min-height: 28rem;
+    padding: var(--croot-space);
+    border: 1px solid var(--croot-border);
+    border-radius: var(--croot-radius);
+    background-color: var(--croot-surface);
+    overflow-wrap: anywhere;
+}
+
+/* Tabel lebar digeser di dalam pratinjau, bukan melebarkan halaman di ponsel. */
+.preview table {
+    display: block;
+    overflow-x: auto;
+}
+
+.preview .task-list-item {
+    list-style: none;
+}
+
+.html {
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+}

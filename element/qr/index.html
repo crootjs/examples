@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kode QR + CrootJS</title>
+  <meta name="description" content="Membuat kode QR sebagai SVG dengan qr.js dari CrootJS, tanpa library lain.">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.32/croot.min.css">
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="index.js"></script>
+</head>
+<body>
+  <main class="container stack">
+    <h1>Kode QR + CrootJS</h1>
+    <p class="muted">
+      <code>qr.js</code> membuat kode QR sebagai SVG, ditulis sendiri tanpa library lain.
+      Ketik teks atau alamat, QR-nya langsung berubah. Pindai dengan kamera ponsel untuk mencoba.
+    </p>
+
+    <form id="pengaturan" class="card stack">
+      <div>
+        <label for="isi">Isi QR</label>
+        <textarea id="isi" name="isi" rows="3">https://croot.js.org</textarea>
+      </div>
+      <div>
+        <label for="ecc">Koreksi kesalahan</label>
+        <select id="ecc" name="ecc">
+          <option value="L">L: QR paling kecil (±7% boleh rusak)</option>
+          <option value="M" selected>M: bawaan (±15%)</option>
+          <option value="Q">Q: ±25%</option>
+          <option value="H">H: paling tahan (±30%)</option>
+        </select>
+      </div>
+    </form>
+
+    <section class="card stack" aria-labelledby="hasil-judul">
+      <h2 id="hasil-judul">Hasil</h2>
+      <div id="qr" class="qr"></div>
+      <p id="info" class="muted" role="status"></p>
+      <div class="cluster">
+        <button type="button" id="unduh">Unduh SVG</button>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

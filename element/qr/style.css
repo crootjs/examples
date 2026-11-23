@@ -1,0 +1,11 @@
+main {
+    max-width: 40rem;
+    padding-block: 2rem;
+}
+
+/* QR tetap hitam di atas putih di mode gelap: pemindai butuh kontras itu. */
+.qr svg {
+    display: block;
+    width: min(100%, 18rem);
+    margin-inline: auto;
+}

@@ -1,0 +1,22 @@
+/* Tombol dan blok kode dari croot.css. */
+.page {
+    padding-block: 32px;
+}
+
+#inputfile {
+    margin-bottom: 1rem;
+}
+
+#inputfile input {
+    margin: 0 0.5rem 0.5rem 0;
+}
+
+/* Blok hasil baru tampil setelah setInner mengisinya. */
+#isi:empty {
+    display: none;
+}
+
+#isi {
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+}

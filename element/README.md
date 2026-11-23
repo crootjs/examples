@@ -1,5 +1,48 @@
 # Element 
 
+## Dashboard dengan Router
+
+[Demo](./router/) and [Source Code](https://github.com/crootjs/examples/tree/main/element/router)
+
+Dashboard satu halaman dengan `router.js` (lib 0.0.33) mode hash: beranda, daftar mahasiswa
+(data contoh) dengan pencarian `?q=`, detail `/mahasiswa/:nim`, dan halaman 404. Sesudah
+pindah halaman, fokus ke judul dan tautan menu yang aktif diberi `aria-current`.
+
+## Tabel Data
+
+[Demo](./table/) and [Source Code](https://github.com/crootjs/examples/tree/main/element/table)
+
+`table.js` (lib 0.0.33), pengganti jQuery DataTables: tabel proyek (data contoh) dari
+`data.json` lewat `getJSON` yang bisa diurut, dicari, dan dibagi per halaman, ditambah
+mode server yang disimulasikan.
+
+## Grafik SVG
+
+[Demo](./chart/) and [Source Code](https://github.com/crootjs/examples/tree/main/element/chart)
+
+Grafik batang, garis, dan donat dari `chart.js` (lib 0.0.33) dengan data contoh, tombol
+ganti data, batang bertumpuk, dan mode gelap. Tooltip juga muncul dengan keyboard.
+
+## Editor Markdown
+
+[Demo](./markdown/) and [Source Code](https://github.com/crootjs/examples/tree/main/element/markdown)
+
+Textarea dengan pratinjau langsung (`markdown.js` + `debounce.js`), memuat file `.md`
+dengan `getMarkdown`, dan bukti bahwa HTML atau tautan `javascript:` di masukan tetap aman.
+
+## Kode QR
+
+[Demo](./qr/) and [Source Code](https://github.com/crootjs/examples/tree/main/element/qr)
+
+`qr.js` (lib 0.0.33): ketik teks atau alamat, kode QR-nya langsung berubah, lalu unduh
+sebagai SVG.
+
+```js
+import { renderQR } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.33/qr.min.js";
+
+renderQR("qr", "https://croot.js.org", { label: "Kode QR ke croot.js.org" });
+```
+
 ## Papan Kanban
 
 [Demo](./kanban/) and [Source Code](https://github.com/crootjs/examples/tree/main/element/kanban)

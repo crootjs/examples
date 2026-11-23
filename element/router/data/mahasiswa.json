@@ -1,0 +1,7 @@
+[
+  { "nim": "2301001", "nama": "Contoh Satu", "prodi": "Teknik Informatika", "angkatan": 2023 },
+  { "nim": "2301002", "nama": "Contoh Dua", "prodi": "Teknik Informatika", "angkatan": 2023 },
+  { "nim": "2302001", "nama": "Contoh Tiga", "prodi": "Sistem Informasi", "angkatan": 2023 },
+  { "nim": "2401001", "nama": "Contoh Empat", "prodi": "Teknik Informatika", "angkatan": 2024 },
+  { "nim": "2402001", "nama": "Contoh Lima", "prodi": "Sistem Informasi", "angkatan": 2024 }
+]

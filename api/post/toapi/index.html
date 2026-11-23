@@ -1,33 +1,30 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-  </head>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>postJSON ke API + CrootJS</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.32/croot.min.css">
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="./post.js"></script>
+</head>
 <body>
-    
-  <div class="field">
-        <label class="label" for="fname">First name:</label>
-        <div class="control">
-        <input class="input" type="text" id="fname" name="fname">
-        </div>
-</div>
-<div class="field">
-        <label class="label" for="lname">Last name:</label>
-        <div class="control">
-        <input class="input" type="text" id="lname" name="lname">
-        </div>
-</div>
-<div class="field">
-  <div class="control">
-      <button class="button is-link is-light" type="submit" id="button">Submit</button>
-    </div>
+
+<main class="container page stack">
+  <h1>postJSON ke API + CrootJS</h1>
+  <div>
+    <label for="fname">First name:</label>
+    <input type="text" id="fname" name="fname">
   </div>
-
-  <div class="container">
-     <div class="notification is-primary" id="pesan"></div>
-    </div>
-
-<script type="module" src="./post.js"></script>
+  <div>
+    <label for="lname">Last name:</label>
+    <input type="text" id="lname" name="lname">
+  </div>
+  <div>
+    <button type="submit" id="button">Submit</button>
+  </div>
+  <div class="alert" id="pesan"></div>
+</main>
 
 </body>
 </html>

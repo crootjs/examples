@@ -8,3 +8,33 @@
     max-width: 32rem;
     --croot-gap: 1rem;
 }
+
+.ikon-besar {
+    font-size: 2rem;
+}
+
+.ikon-galeri {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(10.5rem, 1fr));
+    gap: 0.5rem;
+    padding: 0;
+    list-style: none;
+}
+
+.ikon-galeri li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 0.25rem;
+    border: 1px solid var(--croot-border);
+    border-radius: var(--croot-radius);
+}
+
+.ikon-galeri .icon {
+    font-size: 1.5rem;
+}
+
+.ikon-galeri code {
+    font-size: 0.8rem;
+}
