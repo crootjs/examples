@@ -1,8 +1,8 @@
 // Materi pembelajaran 3D: penjelasan per bagian, animasi perakitan, tampilan meledak,
 // potongan melintang, dan kuis tebak bagian.
-import { createViewer, loadModel, onModelClick, highlightPart, fitView } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.32/model3d.min.js";
-import { playAnimation, explodeModel, addSection, addHotspot, measureModel } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.32/model3dtools.min.js";
-import { onClick, onInput, onChange, getValue, setValue, setInnerText } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.32/element.min.js";
+import { createViewer, loadModel, onModelClick, highlightPart, fitView } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.33/model3d.min.js";
+import { playAnimation, explodeModel, addSection, addHotspot, measureModel } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.33/model3dtools.min.js";
+import { onClick, onInput, onChange, getValue, setValue, setInnerText } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.33/element.min.js";
 
 // Penjelasan per kelompok bagian. Klik pada Tiang_2 atau Antena_2 dicocokkan lewat
 // hit.path, jadi cukup satu penjelasan untuk "Sektor".

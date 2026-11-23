@@ -10,7 +10,7 @@ crootjsServiceWorker({
         "manifest.webmanifest",
         "icons/icon-192.png",
         "icons/icon-512.png",
-        "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.32/croot.min.css",
+        "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.33/croot.min.css",
         "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.33/pwa.min.js",
         "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.33/storage.min.js"
     ]

@@ -1,8 +1,8 @@
 // Peta dasar dari file PMTiles (raster atau vektor): contoh dari server, atau file dari
 // perangkat (tanpa internet).
-import { createMap, setTiles, setMapView } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.32/map.min.js";
-import { openPMTiles } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.32/mapoffline.min.js";
-import { onChange, onClick, setInnerText } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.32/element.min.js";
+import { createMap, setTiles, setMapView } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.33/map.min.js";
+import { openPMTiles } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.33/mapoffline.min.js";
+import { onChange, onClick, setInnerText } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.33/element.min.js";
 
 createMap("map", { tiles: false, center: [118, -2.5], zoom: 3, maxZoom: 6 });
 
