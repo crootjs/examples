@@ -1,12 +1,13 @@
 // Penampil model 3D: memuat GLB, daftar bagian, klik untuk memilih, dan buka file sendiri.
-import { createViewer, loadModel, getParts, highlightPart, fitView, onModelClick, setAutoRotate } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.29/model3d.min.js";
-import { addARButton } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.29/model3dtools.min.js";
-import { onClick, onChange, setInnerText } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.29/element.min.js";
+import { createViewer, loadModel, getParts, highlightPart, fitView, onModelClick, setAutoRotate } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.30/model3d.min.js";
+import { addARButton } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.30/model3dtools.min.js";
+import { onClick, onChange, setInnerText } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.30/element.min.js";
 
 createViewer("viewer", { autoRotate: 12 });
 loadModel("viewer", "../models/bts.glb", responseFunction);
 // Di Android: buka model BTS di ruangan lewat kamera (Scene Viewer). Di perangkat lain tidak muncul.
-addARButton("viewer", "../models/bts.glb", { title: "Menara BTS" });
+// webxr: di Chrome Android ber-ARCore, AR dibuka di dalam halaman; di perangkat lain Scene Viewer.
+addARButton("viewer", "../models/bts.glb", { title: "Menara BTS", webxr: true, scale: 0.1 });
 
 function responseFunction(info, error) {
     if (!info) {

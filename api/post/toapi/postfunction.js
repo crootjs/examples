@@ -1,5 +1,5 @@
-import { setInner,getValue } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.29/element.min.js";
-import { postJSON } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.29/api.min.js";
+import { setInner,getValue } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.30/element.min.js";
+import { postJSON } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.30/api.min.js";
 
 export default function PostSignUp(){
     let target_url = "https://eol0j1lmdtbpzp.m.pipedream.net";

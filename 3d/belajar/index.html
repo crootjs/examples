@@ -13,7 +13,7 @@
     <h1>Materi 3D: Anatomi Menara BTS</h1>
     <p class="lead">
       Contoh materi pembelajaran interaktif: klik bagian untuk penjelasannya, putar
-      animasi perakitan, pisahkan bagian-bagiannya, atau potong menaranya.
+      animasi perakitan, pisahkan bagian-bagiannya, potong menaranya, atau ukur jarak dan sudutnya.
     </p>
 
     <div class="layout">
@@ -53,6 +53,16 @@
           </div>
           <label class="slider" for="cut-position">Letak <output id="cut-text">50%</output></label>
           <input type="range" id="cut-position" min="0" max="1" step="0.01" value="0.5">
+        </section>
+
+        <section>
+          <h3>Ukur</h3>
+          <div class="row">
+            <button type="button" id="measure-distance">Jarak</button>
+            <button type="button" id="measure-angle">Sudut</button>
+            <button type="button" id="measure-stop">Selesai</button>
+          </div>
+          <p id="measure-text" aria-live="polite">Pilih Jarak (2 titik) atau Sudut (3 titik), lalu klik titik-titik di model.</p>
         </section>
 
         <section>

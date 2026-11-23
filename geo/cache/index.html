@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Peta Tetap Tampil Saat Offline + CrootJS</title>
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="index.js"></script>
+</head>
+<body>
+
+  <main class="card">
+    <h1>Peta Tetap Tampil Saat Offline + CrootJS</h1>
+    <p class="lead">
+      <code>cachedTiles</code> dari <code>mapcache.js</code>: setiap tile OpenStreetMap yang
+      pernah tampil disimpan di browser, dan dipakai lagi saat internet putus.
+    </p>
+
+    <section class="demo">
+      <h2>Cara mencobanya</h2>
+      <p>
+        Geser dan zoom peta di sekitar area yang ingin disimpan. Lalu putuskan internet
+        (mode pesawat, atau DevTools → Network → Offline) dan muat ulang halaman: area yang
+        sudah dilihat tetap tampil, area baru kosong. Halaman ini sendiri ikut tersimpan oleh
+        cache browser, jadi biasanya tetap terbuka saat offline.
+      </p>
+      <div class="actions">
+        <button type="button" id="hitung">Hitung tile tersimpan</button>
+        <button type="button" id="hapus">Hapus cache</button>
+      </div>
+    </section>
+
+    <div id="map" class="map"></div>
+
+    <output id="status" class="result">Memuat peta...</output>
+  </main>
+
+</body>
+</html>

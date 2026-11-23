@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unggah File dengan Progres + CrootJS</title>
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="index.js"></script>
+</head>
+<body>
+
+  <main class="card">
+    <h1>Unggah File dengan Progres + CrootJS</h1>
+    <p class="lead">
+      <code>uploadFile</code> dari <code>api.js</code>: kemajuan unggahan, tombol batal,
+      dan hasil yang sama bentuknya dengan <code>getJSON</code>.
+    </p>
+
+    <section class="demo">
+      <h2>File contoh, bukan file Anda</h2>
+      <p>
+        Contoh ini mengirim file berisi byte acak ke <code>httpbin.org</code>, layanan uji publik
+        yang mengembalikan apa yang diterimanya. Karena itu yang dikirim selalu file buatan,
+        bukan file dari perangkat Anda. Di aplikasi sendiri, isi <code>source</code> dengan id
+        <code>&lt;input type="file"&gt;</code> dan alamat server Anda.
+      </p>
+      <div class="actions">
+        <label for="size">Ukuran file contoh:</label>
+        <select id="size">
+          <option value="0.5">0,5 MB</option>
+          <option value="2" selected>2 MB</option>
+          <option value="8">8 MB</option>
+        </select>
+        <button type="button" id="upload">Unggah</button>
+        <button type="button" id="cancel" disabled>Batal</button>
+      </div>
+    </section>
+
+    <label for="progress" class="progress-label">Kemajuan</label>
+    <progress id="progress" max="1" value="0"></progress>
+    <output id="status" class="result">Belum mengunggah.</output>
+  </main>
+
+</body>
+</html>

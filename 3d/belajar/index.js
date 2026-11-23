@@ -1,8 +1,8 @@
 // Materi pembelajaran 3D: penjelasan per bagian, animasi perakitan, tampilan meledak,
 // potongan melintang, dan kuis tebak bagian.
-import { createViewer, loadModel, onModelClick, highlightPart, fitView } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.29/model3d.min.js";
-import { playAnimation, explodeModel, addSection, addHotspot } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.29/model3dtools.min.js";
-import { onClick, onInput, onChange, getValue, setValue, setInnerText } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.29/element.min.js";
+import { createViewer, loadModel, onModelClick, highlightPart, fitView } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.30/model3d.min.js";
+import { playAnimation, explodeModel, addSection, addHotspot, measureModel } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.30/model3dtools.min.js";
+import { onClick, onInput, onChange, getValue, setValue, setInnerText } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.30/element.min.js";
 
 // Penjelasan per kelompok bagian. Klik pada Tiang_2 atau Antena_2 dicocokkan lewat
 // hit.path, jadi cukup satu penjelasan untuk "Sektor".
@@ -115,6 +115,29 @@ function updateSection() {
 onChange("cut", updateSection);
 onChange("axis", updateSection);
 onInput("cut-position", updateSection);
+
+// Alat ukur: klik titik-titik di permukaan model; model BTS dibuat dalam meter.
+let measuring = null;
+function startMeasuring(mode) {
+    if (measuring) measuring.remove();
+    const needed = mode === "angle" ? 3 : 2;
+    setInnerText("measure-text", `Klik ${needed} titik di model.`);
+    measuring = measureModel("model", {
+        mode,
+        onChange: (result) => {
+            setInnerText("measure-text", result.complete
+                ? `${mode === "angle" ? "Sudut" : "Jarak"}: ${result.text}. Klik lagi untuk mengukur ulang.`
+                : `Titik ${result.points.length} dari ${needed}.`);
+        },
+    });
+}
+onClick("measure-distance", () => startMeasuring("distance"));
+onClick("measure-angle", () => startMeasuring("angle"));
+onClick("measure-stop", () => {
+    if (measuring) measuring.remove();
+    measuring = null;
+    setInnerText("measure-text", "Pilih Jarak (2 titik) atau Sudut (3 titik), lalu klik titik-titik di model.");
+});
 
 onClick("quiz", () => {
     question = QUIZ[Math.floor(Math.random() * QUIZ.length)];
