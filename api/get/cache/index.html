@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>getJSON dengan Cache + CrootJS</title>
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="index.js"></script>
+</head>
+<body>
+
+  <main class="card">
+    <h1>getJSON dengan Cache + CrootJS</h1>
+    <p class="lead">
+      Versi rilis terbaru CrootJS dari GitHub API, disimpan 1 menit di localStorage.
+    </p>
+
+    <section class="demo">
+      <h2>Coba muat ulang beberapa kali</h2>
+      <p>
+        Dalam 1 menit, hasilnya diambil dari cache tanpa request. Sesudahnya, request membawa
+        <code>If-None-Match</code>; kalau belum ada rilis baru GitHub menjawab <code>304</code>,
+        yang tidak memotong kuota 60 request per jam.
+      </p>
+    </section>
+
+    <dl class="result">
+      <dt>Versi terbaru</dt><dd id="versi">memuat...</dd>
+      <dt>Status HTTP</dt><dd id="status">-</dd>
+      <dt>Dari cache</dt><dd id="cached">-</dd>
+      <dt>Sisa kuota GitHub API</dt><dd id="kuota">-</dd>
+    </dl>
+
+    <button id="muat" type="button">Muat lagi</button>
+  </main>
+
+</body>
+</html>

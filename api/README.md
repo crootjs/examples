@@ -4,6 +4,12 @@ Swagger Documentation on Github Pages : [Demo](./swagger/) - [Source Code](https
 
 ## GET 
 
+### With Cache and Response Headers
+
+[Demo](./get/cache/) - [Source Code](https://github.com/crootjs/examples/tree/main/api/get/cache)
+
+`getJSON(url, null, { timeout, cache: { key, ttl } })` (lib 0.0.29): the latest CrootJS release from the GitHub API, kept in localStorage for a minute and then revalidated with `If-None-Match`. Shows the HTTP status, whether the result came from the cache, and the `X-RateLimit-Remaining` response header.
+
 ### From File
 
 [Demo](./get/fromfile/) - [Source Code](https://github.com/crootjs/examples/tree/main/api/get/fromfile)
@@ -38,7 +44,7 @@ html file
 get.js
 
 ```js
-import { getJSON } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.28/api.min.js";
+import { getJSON } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.29/api.min.js";
 import {URLGeoJson,responseData} from "./getfunction.js";
 
 getJSON(URLGeoJson,responseData);
@@ -47,7 +53,7 @@ getJSON(URLGeoJson,responseData);
 getfunction.js
 
 ```js
-import { addChild } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.28/element.min.js";
+import { addChild } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.29/element.min.js";
 
 export let URLGeoJson = "./data.json";
 export let tableTag="tr";
@@ -110,7 +116,7 @@ html
 get.js
 
 ```js
-import { getJSON } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.28/api.min.js";
+import { getJSON } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.29/api.min.js";
 import {URLGeoJson,responseData} from "./getfunction.js";
 
 getJSON(URLGeoJson,responseData);
@@ -119,7 +125,7 @@ getJSON(URLGeoJson,responseData);
 getfunction.js
 
 ```js
-import { addChild } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.28/element.min.js";
+import { addChild } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.29/element.min.js";
 
 export let URLGeoJson = "https://asia-southeast2-awangga.cloudfunctions.net/petapedia";
 export let tableTag="tr";
@@ -193,7 +199,7 @@ html file
 post.js
 
 ```js
-import { onClick } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.28/element.min.js";
+import { onClick } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.29/element.min.js";
 import PostSignUp from "./postfunction.js";
 
 onClick("button",PostSignUp);
@@ -202,8 +208,8 @@ onClick("button",PostSignUp);
 postfunction.js
 
 ```js
-import { setInner,getValue } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.28/element.min.js";
-import { postJSON } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.28/api.min.js";
+import { setInner,getValue } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.29/element.min.js";
+import { postJSON } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.29/api.min.js";
 
 export default function PostSignUp(){
     let target_url = "https://eol0j1lmdtbpzp.m.pipedream.net";
@@ -276,7 +282,7 @@ html file
 post.js
 
 ```js
-import { onClick } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.28/element.min.js";
+import { onClick } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.29/element.min.js";
 import PostSignUp from "./postfunction.js";
 
 onClick("button",PostSignUp);
@@ -284,9 +290,9 @@ onClick("button",PostSignUp);
 
 postfunction.js
 ```js
-import { setInner,getValue } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.28/element.min.js";
-import { postJSON } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.28/api.min.js";
-import { setCookieWithExpireHour } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.28/cookie.min.js";
+import { setInner,getValue } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.29/element.min.js";
+import { postJSON } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.29/api.min.js";
+import { setCookieWithExpireHour } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.29/cookie.min.js";
 
 export default function PostSignUp(){
     let target_url = "https://asia-southeast2-awangga.cloudfunctions.net/petapedia-post";
