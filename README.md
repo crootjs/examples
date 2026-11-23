@@ -17,6 +17,8 @@ Please follow every step in every section :
 3. [Geospatial Data](./geo/)
 4. [3D Model](./3d/)
 
+Styling: [croot.css showcase](./css/) — the 2 KB CSS framework used by the newer examples (`<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.31/croot.min.css">`).
+
 ## Cookies based User Session Handling
 To check the login cookies and redirect to the login page if the login cookie doesn't exist
 ```js

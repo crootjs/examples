@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>croot.css - Framework CSS CrootJS</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.31/croot.min.css">
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="index.js"></script>
+</head>
+<body>
+
+  <header class="container nav">
+    <strong>croot.css</strong>
+    <ul>
+      <li><a href="#dasar" aria-current="page">Dasar</a></li>
+      <li><a href="#form">Form</a></li>
+      <li><a href="#komponen">Komponen</a></li>
+      <li><button type="button" id="tema" class="secondary">Tema: otomatis</button></li>
+    </ul>
+  </header>
+
+  <main class="container stack page">
+    <section id="dasar">
+      <h1>HTML biasa, langsung rapi</h1>
+      <p>
+        Halaman ini hanya memuat <code>croot.min.css</code> (sekitar 2 KB gzip) dan satu file CSS kecil
+        untuk tata letak halaman ini. Tanpa JavaScript framework, tanpa web font, tanpa gambar.
+        Mode gelap mengikuti pengaturan perangkat.
+      </p>
+      <blockquote>Kutipan memakai garis di kiri dan warna redup.</blockquote>
+      <table>
+        <caption class="visually-hidden">Contoh tabel</caption>
+        <thead><tr><th>Modul</th><th>Isi</th><th>Ukuran</th></tr></thead>
+        <tbody>
+          <tr><td><code>api.js</code></td><td>Request JSON, unggah, unduh</td><td>kecil</td></tr>
+          <tr><td><code>map.js</code></td><td>Peta tanpa Leaflet</td><td>sedang</td></tr>
+          <tr><td><code>croot.css</code></td><td>Tampilan dasar dan komponen</td><td>kecil</td></tr>
+        </tbody>
+      </table>
+      <details>
+        <summary>Teks tersembunyi</summary>
+        <p>Elemen <code>&lt;details&gt;</code> juga sudah diberi gaya.</p>
+      </details>
+    </section>
+
+    <section id="form">
+      <h2>Form</h2>
+      <form id="contoh" class="stack">
+        <div>
+          <label for="nama">Nama</label>
+          <input id="nama" name="nama" required minlength="3" autocomplete="name">
+        </div>
+        <div>
+          <label for="kota">Kota</label>
+          <select id="kota" name="kota">
+            <option>Bandung</option>
+            <option>Jakarta</option>
+          </select>
+        </div>
+        <div>
+          <label for="catatan">Catatan</label>
+          <textarea id="catatan" name="catatan"></textarea>
+        </div>
+        <fieldset>
+          <legend>Peran</legend>
+          <label><input type="radio" name="peran" value="mahasiswa" required> Mahasiswa</label>
+          <label><input type="radio" name="peran" value="dosen"> Dosen</label>
+        </fieldset>
+        <label><input type="checkbox" name="kabar"> Kirim kabar terbaru</label>
+        <div class="cluster">
+          <button type="submit">Kirim</button>
+          <button type="reset" class="secondary">Kosongkan</button>
+          <button type="button" class="ghost" id="buka">Buka dialog</button>
+          <button type="button" class="danger" disabled>Hapus (nonaktif)</button>
+        </div>
+      </form>
+      <dialog id="dialog">
+        <h3>Dialog</h3>
+        <p><code>&lt;dialog&gt;</code> bawaan browser, dengan latar redup.</p>
+        <form method="dialog"><button>Tutup</button></form>
+      </dialog>
+    </section>
+
+    <section id="komponen">
+      <h2>Komponen</h2>
+      <div class="grid">
+        <article class="card">
+          <h3>Kartu <span class="badge">baru</span></h3>
+          <p>Kolom <code>.grid</code> menyesuaikan lebar layar sendiri.</p>
+        </article>
+        <article class="card">
+          <h3>Hijau</h3>
+          <p class="muted">Satu file, tanpa font dan gambar yang harus diunduh.</p>
+        </article>
+        <article class="card">
+          <h3>Bisa ditimpa</h3>
+          <p>Semua aturan di <code>@layer croot</code>; CSS Anda selalu menang.</p>
+        </article>
+      </div>
+      <div class="alert">Informasi biasa.</div>
+      <div class="alert success">Berhasil disimpan.</div>
+      <div class="alert warning">Kuota hampir habis.</div>
+      <div class="alert danger">Gagal mengirim.</div>
+      <label for="kemajuan">Kemajuan</label>
+      <progress id="kemajuan" max="100" value="60">60%</progress>
+    </section>
+  </main>
+
+</body>
+</html>

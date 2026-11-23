@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Papan Kanban + CrootJS</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.31/croot.min.css">
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="index.js"></script>
+</head>
+<body>
+
+  <main class="container page">
+    <h1>Papan Kanban</h1>
+    <p class="muted">
+      Seret kartu antarkolom dengan mouse, atau pakai tombol panah di kartu (keyboard dan layar
+      sentuh). Isi papan tersimpan di browser ini.
+    </p>
+
+    <div class="board" id="board"></div>
+
+    <div class="cluster">
+      <button type="button" class="secondary" id="reset">Kosongkan papan</button>
+    </div>
+
+    <div class="visually-hidden" role="status" id="status"></div>
+  </main>
+
+  <dialog id="dialog" aria-labelledby="dialog-title">
+    <h2 id="dialog-title">Kartu baru</h2>
+    <form id="new-card" class="stack">
+      <div>
+        <label for="text">Tugas</label>
+        <input id="text" name="text" required maxlength="120" autocomplete="off">
+      </div>
+      <div class="cluster">
+        <button type="submit">Tambah</button>
+        <button type="button" class="secondary" id="cancel">Batal</button>
+      </div>
+    </form>
+  </dialog>
+
+</body>
+</html>

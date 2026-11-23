@@ -1,0 +1,10 @@
+/* Hanya tata letak khusus halaman ini; tampilan lainnya dari croot.css. */
+.page {
+    padding-block: 32px 64px;
+    --croot-gap: 48px;
+}
+
+#form form {
+    max-width: 32rem;
+    --croot-gap: 1rem;
+}

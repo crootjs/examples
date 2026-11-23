@@ -1,0 +1,74 @@
+/* Tata letak papan; warna dan tombol dari croot.css. */
+.page {
+    padding-block: 32px 48px;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(16rem, 100%), 1fr));
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 12px;
+    border: 1px solid var(--croot-border);
+    border-radius: var(--croot-radius);
+    background-color: color-mix(in srgb, var(--croot-text) 4%, var(--croot-bg));
+}
+
+.column h2 {
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+    font-size: 1rem;
+}
+
+.column.over {
+    outline: 2px dashed var(--croot-accent);
+    outline-offset: 2px;
+}
+
+.cards {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    min-height: 3rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.card-item {
+    padding: 10px 12px;
+    border: 1px solid var(--croot-border);
+    border-radius: var(--croot-radius);
+    background-color: var(--croot-surface);
+    cursor: grab;
+    overflow-wrap: anywhere;
+}
+
+.card-item.dragging {
+    opacity: 0.4;
+}
+
+.card-item p {
+    margin: 0 0 8px;
+}
+
+.card-actions {
+    display: flex;
+    gap: 4px;
+}
+
+.card-actions button {
+    min-height: 2rem;
+    padding: 2px 10px;
+}
+
+.card-actions .remove {
+    margin-left: auto;
+}

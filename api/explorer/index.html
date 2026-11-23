@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Penjelajah File GitHub + CrootJS</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.31/croot.min.css">
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="index.js"></script>
+</head>
+<body>
+
+  <main class="container page">
+    <h1>Penjelajah File GitHub</h1>
+    <p class="muted">
+      Telusuri folder repo GitHub publik, lalu lihat PDF, gambar, atau teks di dalamnya, tanpa
+      server sendiri. Cocok untuk arsip dokumen (laporan, SK, materi kuliah) yang disimpan di repo.
+    </p>
+
+    <form id="open" class="cluster">
+      <label for="repo" class="visually-hidden">Repo (pemilik/nama)</label>
+      <input id="repo" name="repo" required pattern="[\w.-]+/[\w.-]+" title="Format pemilik/nama, misalnya crootjs/examples."
+             placeholder="pemilik/nama, misalnya crootjs/examples" autocomplete="off">
+      <button type="submit">Buka</button>
+    </form>
+
+    <nav aria-label="Lokasi folder" class="crumbs" id="crumbs"></nav>
+
+    <div class="explorer">
+      <section aria-labelledby="list-title">
+        <h2 id="list-title" class="visually-hidden">Isi folder</h2>
+        <ul class="entries" id="entries"></ul>
+        <p class="muted small" id="quota"></p>
+      </section>
+      <section class="preview card" aria-labelledby="preview-title" id="preview" hidden>
+        <div class="preview-head">
+          <h2 id="preview-title"></h2>
+          <a id="preview-link" target="_blank" rel="noopener">Buka di GitHub</a>
+        </div>
+        <div id="preview-body"></div>
+      </section>
+    </div>
+
+    <div class="visually-hidden" role="status" id="status"></div>
+  </main>
+
+</body>
+</html>

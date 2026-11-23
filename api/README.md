@@ -4,6 +4,12 @@ Swagger Documentation on Github Pages : [Demo](./swagger/) - [Source Code](https
 
 ## GET 
 
+### GitHub File Explorer
+
+[Demo](./explorer/) - [Source Code](https://github.com/crootjs/examples/tree/main/api/explorer)
+
+Ported from `jscroot/explorer` and `jscroot/view`: browse the folders of any public GitHub repo through the GitHub API (`getJSON` with an ETag cache, so revisits don't use the 60-requests-per-hour quota) and preview PDFs (the browser's own viewer, no pdf.js), images and text files fetched with `downloadFile`. The address bar keeps the location (`#owner/repo/folder/file.pdf`), so links can be shared.
+
 ### Upload With Progress
 
 [Demo](./upload/) - [Source Code](https://github.com/crootjs/examples/tree/main/api/upload)

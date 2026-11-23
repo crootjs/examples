@@ -1,5 +1,13 @@
 # Element 
 
+## Papan Kanban
+
+[Demo](./kanban/) and [Source Code](https://github.com/crootjs/examples/tree/main/element/kanban)
+
+Dibawa dari `jscroot/kanban`: kartu diseret antarkolom dengan mouse, atau dipindah dengan
+tombol panah dari keyboard dan layar sentuh. Kartu baru lewat `<dialog>` + `form.js`, isi
+papan tersimpan dengan `storage.js`, tampilan dari `croot.css`.
+
 ## Validasi Form
 
 [Demo](./form/) and [Source Code](https://github.com/crootjs/examples/tree/main/element/form)

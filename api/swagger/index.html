@@ -4,8 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CrootJS Example - Notes API Docs (Swagger)</title>
-    <link rel="stylesheet" type="text/css" href="https://unpkg.com/swagger-ui-dist@5/swagger-ui.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swagger-ui-dist@5.34.1/swagger-ui.css">
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/swagger-ui-dist@5.34.1/swagger-ui-bundle.js" defer></script>
+    <script type="module" src="./swagger.js"></script>
 </head>
 <body>
     <div class="container">
@@ -20,6 +22,12 @@
                 replace <code>openapi.yaml</code> with your own backend's spec to document it the
                 same way.
             </p>
+            <ol>
+                <li>Copy this folder into your GitHub Pages repo.</li>
+                <li>Write your spec in <a href="https://editor.swagger.io/">editor.swagger.io</a>, or convert a Postman collection to OpenAPI first.</li>
+                <li>Replace <code>openapi.yaml</code>. Add <code>example</code> values to request and response schemas so the page shows realistic JSON.</li>
+                <li>If the API needs a token, declare it under <code>components.securitySchemes</code>; the page then shows an Authorize button for trying requests.</li>
+            </ol>
         </div>
 
         <div id="swagger-ui"></div>
@@ -54,6 +62,5 @@
         </div>
     </div>
 
-    <script type="module" src="./swagger.js"></script>
 </body>
 </html>
