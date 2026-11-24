@@ -1,4 +1,4 @@
-import { onClick } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.35/element.min.js";
+import { onClick } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.36/element.min.js";
 import PostSignUp from "./postfunction.js";
 
 onClick("button",PostSignUp);

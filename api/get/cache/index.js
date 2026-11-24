@@ -1,5 +1,5 @@
-import { getJSON } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.35/api.min.js";
-import { setInnerText, onClick } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.35/element.min.js";
+import { getJSON } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.36/api.min.js";
+import { setInnerText, onClick } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.36/element.min.js";
 
 const URL_RILIS = "https://api.github.com/repos/crootjs/lib/releases/latest";
 

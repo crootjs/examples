@@ -38,7 +38,7 @@ dengan `getMarkdown`, dan bukti bahwa HTML atau tautan `javascript:` di masukan 
 sebagai SVG.
 
 ```js
-import { renderQR } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.35/qr.min.js";
+import { renderQR } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.36/qr.min.js";
 
 renderQR("qr", "https://croot.js.org", { label: "Kode QR ke croot.js.org" });
 ```
@@ -60,7 +60,7 @@ papan tersimpan dengan `storage.js`, tampilan dari `croot.css`.
 kata sandi, minimal satu minat), dan `fillForm` untuk mengisi form dari data.
 
 ```js
-import { handleForm } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.35/form.min.js";
+import { handleForm } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.36/form.min.js";
 
 handleForm("daftar", (data) => console.log(data), {
     rules: { ulang: (value, all) => (value !== all.sandi ? "Kata sandi tidak sama." : null) },
@@ -76,7 +76,7 @@ validasi, dan request-nya. Paket npm SweetAlert2 hanya mengirim JS lewat ES
 module, jadi CSS-nya dimuat terpisah dengan `addCSS()`.
 
 ```js
-import { onClick, getValue, addCSS } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.35/element.min.js";
+import { onClick, getValue, addCSS } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.36/element.min.js";
 import Swal from "https://cdn.jsdelivr.net/npm/sweetalert2@11/src/sweetalert2.js";
 
 await addCSS("https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.css");
@@ -124,8 +124,8 @@ index.html
 ```
 setinner.js  
 ```js
-import { setInner } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.35/element.min.js";
-import * as croot from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.35/element.min.js";
+import { setInner } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.36/element.min.js";
+import * as croot from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.36/element.min.js";
 
 
 setInner("demo","Dari croot.js import fungsi");
@@ -154,8 +154,8 @@ index.html
 
 index.js  
 ```js
-import { setInner } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.35/element.min.js";
-import * as croot from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.35/element.min.js";
+import { setInner } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.36/element.min.js";
+import * as croot from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.36/element.min.js";
 
 
 setInner("demo","anu");

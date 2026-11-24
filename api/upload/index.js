@@ -1,5 +1,5 @@
-import { uploadFile } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.35/api.min.js";
-import { onClick, getValue, setInnerText, disableInput, enableInput } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.35/element.min.js";
+import { uploadFile } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.36/api.min.js";
+import { onClick, getValue, setInnerText, disableInput, enableInput } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.36/element.min.js";
 
 // Layanan uji publik yang mengembalikan isi request sebagai JSON.
 const TARGET = "https://httpbin.org/post";
