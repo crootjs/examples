@@ -20,8 +20,13 @@
       <h2>Coba muat ulang beberapa kali</h2>
       <p>
         Dalam 1 menit, hasilnya diambil dari cache tanpa request. Sesudahnya, request membawa
-        <code>If-None-Match</code>; kalau belum ada rilis baru GitHub menjawab <code>304</code>,
-        yang tidak memotong kuota 60 request per jam.
+        <code>If-None-Match</code>; kalau belum ada rilis baru GitHub menjawab <code>304</code>.
+        Jawaban <code>304</code> tetap memotong kuota 60 request per jam (tanpa login), jadi yang
+        menghemat kuota hanya masa simpan 1 menit itu.
+      </p>
+      <p>
+        Hanya dua field yang disimpan (<code>select</code>), dan kalau kuota habis atau internet
+        putus, versi terakhir yang tersimpan tetap tampil (<code>staleIfError</code>).
       </p>
     </section>
 
