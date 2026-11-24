@@ -1,0 +1,12 @@
+main {
+    max-width: 64rem;
+    padding-block: 2rem;
+}
+
+#pilih-spec {
+    max-width: 100%;
+}
+
+#dokumentasi {
+    margin-top: 2rem;
+}

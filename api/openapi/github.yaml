@@ -1,0 +1,117 @@
+# Sebagian kecil GitHub REST API, ditulis ulang sebagai contoh. api.github.com mengizinkan CORS,
+# jadi "Kirim" benar-benar berjalan (tanpa login: 60 permintaan per jam per alamat IP).
+openapi: 3.0.3
+info:
+  title: GitHub REST API (sebagian)
+  version: "2022-11-28"
+  description: |
+    Tiga operasi baca dari [GitHub REST API](https://docs.github.com/rest), cukup untuk mencoba
+    tombol **Kirim**. Tanpa login, GitHub membatasi 60 permintaan per jam.
+servers:
+  - url: https://api.github.com
+tags:
+  - name: rilis
+  - name: repo
+paths:
+  /repos/{owner}/{repo}/releases/latest:
+    get:
+      tags: [rilis]
+      operationId: rilisTerbaru
+      summary: Rilis terbaru sebuah repo
+      parameters:
+        - $ref: "#/components/parameters/owner"
+        - $ref: "#/components/parameters/repo"
+      responses:
+        "200":
+          description: Rilis terbaru
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Rilis"
+        "404":
+          description: Repo tidak ada atau belum punya rilis
+  /repos/{owner}/{repo}/tags:
+    get:
+      tags: [rilis]
+      operationId: daftarTag
+      summary: Daftar tag
+      parameters:
+        - $ref: "#/components/parameters/owner"
+        - $ref: "#/components/parameters/repo"
+        - name: per_page
+          in: query
+          schema:
+            type: integer
+            minimum: 1
+            maximum: 100
+            default: 5
+      responses:
+        "200":
+          description: Tag, terbaru lebih dulu
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    name:
+                      type: string
+                      example: v0.0.35
+  /repos/{owner}/{repo}:
+    get:
+      tags: [repo]
+      operationId: infoRepo
+      summary: Informasi repo
+      parameters:
+        - $ref: "#/components/parameters/owner"
+        - $ref: "#/components/parameters/repo"
+      responses:
+        "200":
+          description: Repo
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  full_name:
+                    type: string
+                    example: crootjs/lib
+                  description:
+                    type: string
+                  stargazers_count:
+                    type: integer
+                  pushed_at:
+                    type: string
+                    format: date-time
+components:
+  parameters:
+    owner:
+      name: owner
+      in: path
+      required: true
+      schema:
+        type: string
+        example: crootjs
+    repo:
+      name: repo
+      in: path
+      required: true
+      schema:
+        type: string
+        example: lib
+  schemas:
+    Rilis:
+      type: object
+      properties:
+        tag_name:
+          type: string
+          example: v0.0.35
+        name:
+          type: string
+        published_at:
+          type: string
+          format: date-time
+        html_url:
+          type: string
+          format: uri

@@ -1,6 +1,6 @@
 # RESTFull API Example
 
-Swagger Documentation on Github Pages : [Demo](./swagger/) - [Source Code](https://github.com/crootjs/examples/tree/main/api/swagger)
+Dokumentasi API dari berkas OpenAPI dengan openapi.js (pengganti Swagger UI) : [Demo](./openapi/) - [Source Code](https://github.com/crootjs/examples/tree/main/api/openapi)
 
 ## GET 
 

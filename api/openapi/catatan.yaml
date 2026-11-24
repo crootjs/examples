@@ -1,0 +1,160 @@
+# Contoh API catatan. Servernya fiktif (api.example.com), jadi "Kirim" akan gagal; yang
+# diperlihatkan di sini adalah dokumentasi dan kode CrootJS untuk setiap operasi.
+openapi: 3.0.3
+info:
+  title: API Catatan (contoh)
+  version: 1.0.0
+  description: |
+    Contoh backend CRUD sederhana. Ganti berkas ini dengan spesifikasi backend Anda.
+
+    Semua operasi selain **daftar catatan** butuh token login (`Authorization: Bearer ...`).
+servers:
+  - url: https://api.example.com/v1
+    description: Produksi (fiktif)
+  - url: http://localhost:8080/v1
+    description: Pengembangan di komputer sendiri
+tags:
+  - name: catatan
+    description: Membuat, membaca, mengubah, dan menghapus catatan
+paths:
+  /catatan:
+    get:
+      tags: [catatan]
+      operationId: daftarCatatan
+      summary: Daftar catatan
+      security: []
+      parameters:
+        - name: selesai
+          in: query
+          description: Hanya catatan yang sudah (true) atau belum (false) selesai
+          schema:
+            type: boolean
+        - name: halaman
+          in: query
+          schema:
+            type: integer
+            minimum: 1
+            default: 1
+      responses:
+        "200":
+          description: Daftar catatan
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Catatan"
+    post:
+      tags: [catatan]
+      operationId: buatCatatan
+      summary: Membuat catatan
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/CatatanBaru"
+      responses:
+        "201":
+          description: Catatan dibuat
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Catatan"
+        "401":
+          $ref: "#/components/responses/BelumLogin"
+  /catatan/{id}:
+    parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+          example: 64f1a2b3c4d5e6f708192a3b
+    get:
+      tags: [catatan]
+      operationId: ambilCatatan
+      summary: Satu catatan
+      responses:
+        "200":
+          description: Catatan
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Catatan"
+        "404":
+          description: Catatan tidak ada
+    put:
+      tags: [catatan]
+      operationId: ubahCatatan
+      summary: Mengubah catatan
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/CatatanBaru"
+      responses:
+        "200":
+          description: Catatan diubah
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Catatan"
+        "401":
+          $ref: "#/components/responses/BelumLogin"
+        "404":
+          description: Catatan tidak ada
+    delete:
+      tags: [catatan]
+      operationId: hapusCatatan
+      summary: Menghapus catatan
+      responses:
+        "200":
+          description: Catatan dihapus
+        "401":
+          $ref: "#/components/responses/BelumLogin"
+        "404":
+          description: Catatan tidak ada
+security:
+  - token: []
+components:
+  securitySchemes:
+    token:
+      type: http
+      scheme: bearer
+  responses:
+    BelumLogin:
+      description: Token tidak ada atau tidak berlaku
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              pesan:
+                type: string
+                example: Silakan login dulu
+  schemas:
+    CatatanBaru:
+      type: object
+      required: [judul]
+      properties:
+        judul:
+          type: string
+          example: Beli sayur
+        selesai:
+          type: boolean
+          example: false
+    Catatan:
+      allOf:
+        - $ref: "#/components/schemas/CatatanBaru"
+        - type: object
+          properties:
+            id:
+              type: string
+              readOnly: true
+              example: 64f1a2b3c4d5e6f708192a3b
+            dibuat:
+              type: string
+              format: date-time
+              readOnly: true
