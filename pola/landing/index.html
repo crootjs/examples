@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kas Warga - catatan iuran RT (contoh landing page)</title>
+  <meta name="description" content="Contoh landing page dari pola halaman CrootJS untuk produk rekaan bernama Kas Warga.">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.41/croot.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.41/ui.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.41/themes.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="modulepreload" href="https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.41/storage.min.js">
+  <script type="module" src="../tema.js"></script>
+</head>
+<body>
+  <p class="pemberitahuan">Contoh landing page untuk produk rekaan. Kas Warga tidak ada; <a href="../">kembali ke pola halaman</a>.</p>
+
+  <header class="container nav">
+    <strong>Kas Warga</strong>
+    <ul>
+      <li><a href="#fitur">Fitur</a></li>
+      <li><a href="#mulai">Cara mulai</a></li>
+      <li><a href="#tanya">Tanya jawab</a></li>
+      <li><a href="../login/">Masuk</a></li>
+    </ul>
+  </header>
+
+  <main>
+    <section class="container pembuka">
+      <div>
+        <h1>Catatan iuran RT yang bisa dibaca semua warga</h1>
+        <p class="lead">Bendahara mencatat iuran dan pengeluaran dari ponsel. Laporan bulanan tersusun sendiri dan bisa dibagikan ke grup warga sebagai PDF.</p>
+        <div class="cluster">
+          <a class="button" href="../aplikasi/">Coba dengan data contoh</a>
+          <a class="button secondary" href="#fitur">Lihat fitur</a>
+        </div>
+      </div>
+      <figure class="tangkapan">
+        <div class="tempat-gambar" role="img" aria-label="Tempat tangkapan layar aplikasi">Tangkapan layar aplikasi</div>
+        <figcaption>Placeholder: ganti dengan tangkapan layar sungguhan dari aplikasinya.</figcaption>
+      </figure>
+    </section>
+
+    <section class="container bagian" id="fitur" aria-labelledby="judul-fitur">
+      <h2 id="judul-fitur">Yang dikerjakan Kas Warga</h2>
+      <dl class="fitur">
+        <div>
+          <dt>Iuran per rumah</dt>
+          <dd>Tandai rumah yang sudah membayar. Yang belum, masuk daftar tagihan bulan itu.</dd>
+        </div>
+        <div>
+          <dt>Pengeluaran dengan bukti</dt>
+          <dd>Foto nota dilampirkan pada setiap pengeluaran, jadi warga bisa memeriksanya.</dd>
+        </div>
+        <div>
+          <dt>Laporan bulanan</dt>
+          <dd>Saldo awal, pemasukan, pengeluaran, dan saldo akhir dalam satu halaman siap cetak.</dd>
+        </div>
+        <div>
+          <dt>Tetap jalan tanpa sinyal</dt>
+          <dd>Catatan disimpan di ponsel dan dikirim begitu tersambung lagi.</dd>
+        </div>
+      </dl>
+    </section>
+
+    <section class="container bagian" id="mulai" aria-labelledby="judul-mulai">
+      <h2 id="judul-mulai">Cara mulai</h2>
+      <ol class="langkah-mulai">
+        <li>Ketua RT membuat akun dan memasukkan daftar rumah, bisa disalin dari spreadsheet.</li>
+        <li>Bendahara diundang lewat nomor WhatsApp-nya.</li>
+        <li>Warga menerima tautan laporan setiap awal bulan, tanpa perlu membuat akun.</li>
+      </ol>
+    </section>
+
+    <section class="container bagian" id="tanya" aria-labelledby="judul-tanya">
+      <h2 id="judul-tanya">Tanya jawab</h2>
+      <div class="accordion">
+        <details name="tanya">
+          <summary>Apakah warga harus memasang aplikasi?</summary>
+          <p>Tidak. Laporan dibuka di browser lewat tautan. Hanya bendahara dan pengurus yang masuk.</p>
+        </details>
+        <details name="tanya">
+          <summary>Bagaimana kalau bendaharanya berganti?</summary>
+          <p>Ketua RT memindahkan peran bendahara ke akun lain. Riwayat catatan tetap tersimpan dan tercatat siapa yang mengisinya.</p>
+        </details>
+        <details name="tanya">
+          <summary>Bisakah dipakai untuk RW atau paguyuban?</summary>
+          <p>Bisa. Satu akun bisa mengelola beberapa kelompok dengan kas terpisah.</p>
+        </details>
+        <details name="tanya">
+          <summary>Bisakah data diekspor?</summary>
+          <p>Semua catatan bisa diunduh sebagai CSV kapan saja.</p>
+        </details>
+      </div>
+    </section>
+  </main>
+
+  <footer class="container site-footer">
+    <p>Kas Warga, produk rekaan untuk contoh pola halaman CrootJS.</p>
+    <ul>
+      <li><a href="../">Pola halaman</a></li>
+      <li><a href="https://croot.js.org/docs/css">Dokumentasi CSS</a></li>
+    </ul>
+  </footer>
+</body>
+</html>

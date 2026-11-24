@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pengaturan akun (contoh)</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.41/croot.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.41/ui.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.41/themes.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="modulepreload" href="https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.41/storage.min.js">
+  <link rel="modulepreload" href="https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.41/form.min.js">
+  <link rel="modulepreload" href="https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.41/element.min.js">
+  <link rel="modulepreload" href="https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.41/toast.min.js">
+  <script type="module" src="index.js"></script>
+</head>
+<body>
+  <header class="container nav">
+    <span><strong>Akun</strong> <span class="badge">Data contoh</span></span>
+    <ul>
+      <li><a href="../aplikasi/">Aplikasi</a></li>
+      <li><a href="../">Semua pola</a></li>
+    </ul>
+  </header>
+
+  <main class="container pengaturan">
+    <h1>Pengaturan</h1>
+    <p class="muted">Perubahan di halaman contoh ini tidak dikirim ke server, kecuali pilihan tampilan yang disimpan di browser.</p>
+
+    <div class="accordion">
+      <details name="pengaturan" open>
+        <summary>Profil</summary>
+        <form id="form-profil" class="stack">
+          <div>
+            <label for="nama">Nama</label>
+            <input id="nama" name="nama" required value="Dewi Wulandari" autocomplete="name">
+          </div>
+          <div>
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" required value="dewi@contoh.test" autocomplete="email">
+          </div>
+          <div class="actions">
+            <button type="submit">Simpan profil</button>
+          </div>
+        </form>
+      </details>
+
+      <details name="pengaturan">
+        <summary>Notifikasi</summary>
+        <div class="stack sakelar">
+          <label><input type="checkbox" role="switch" name="email_transaksi" checked> Email untuk setiap transaksi di atas Rp1.000.000</label>
+          <label><input type="checkbox" role="switch" name="ringkasan" checked> Ringkasan harian pukul 21.00</label>
+          <label><input type="checkbox" role="switch" name="stok"> Peringatan stok hampir habis</label>
+        </div>
+      </details>
+
+      <details name="pengaturan">
+        <summary>Tampilan</summary>
+        <div class="stack">
+          <div>
+            <label for="tema">Tema</label>
+            <select id="tema">
+              <option value="">Bawaan croot.css</option>
+              <option value="kampus">kampus</option>
+              <option value="kertas">kertas</option>
+              <option value="kontras">kontras</option>
+              <option value="niaga">niaga</option>
+            </select>
+          </div>
+          <fieldset>
+            <legend>Mode warna</legend>
+            <label><input type="radio" name="mode" value=""> Ikut perangkat</label>
+            <label><input type="radio" name="mode" value="light"> Terang</label>
+            <label><input type="radio" name="mode" value="dark"> Gelap</label>
+          </fieldset>
+        </div>
+      </details>
+
+      <details name="pengaturan">
+        <summary>Keamanan</summary>
+        <dl class="meta">
+          <div><dt>Kata sandi</dt><dd>Diganti 3 bulan lalu</dd></div>
+          <div><dt>Sesi aktif</dt><dd>Chrome di Android, Bandung (perangkat ini)</dd></div>
+        </dl>
+        <div class="cluster">
+          <button type="button" class="secondary" id="ganti-sandi">Ganti kata sandi</button>
+          <button type="button" class="secondary" id="keluar-semua">Keluar dari perangkat lain</button>
+        </div>
+      </details>
+    </div>
+
+    <section class="bahaya" aria-labelledby="judul-hapus">
+      <h2 id="judul-hapus">Hapus akun</h2>
+      <p>Semua data toko dan riwayat transaksi ikut terhapus dan tidak bisa dikembalikan.</p>
+      <button type="button" class="danger" id="hapus">Hapus akun</button>
+    </section>
+
+    <dialog id="dialog-hapus" aria-labelledby="judul-dialog">
+      <form method="dialog">
+        <h2 id="judul-dialog">Hapus akun ini?</h2>
+        <p>Akun Dewi Wulandari dan semua datanya akan dihapus permanen.</p>
+        <div class="actions">
+          <button type="submit" class="secondary" value="batal" autofocus>Batal</button>
+          <button type="submit" class="danger" value="hapus">Hapus permanen</button>
+        </div>
+      </form>
+    </dialog>
+  </main>
+</body>
+</html>

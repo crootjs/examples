@@ -20,15 +20,14 @@ body {
     line-height: 1;
 }
 
-/* Angka 0 diganti planet bercincin yang melayang. Animasinya dimatikan croot.css
-   kalau pengguna memilih kurangi gerakan. */
+/* Angka 0 diganti planet bercincin ("Balik ka Bumi"): bentuk polos berwarna aksen, tanpa
+   gradien dan animasi (docs/conventions.md, bagian 5). */
 .planet {
     position: relative;
     width: 96px;
     height: 96px;
     border-radius: 50%;
-    background: radial-gradient(circle at 30% 30%, #86efac, var(--croot-accent));
-    animation: float 3s ease-in-out infinite;
+    background-color: var(--croot-accent);
 }
 
 .planet::after {
@@ -41,10 +40,6 @@ body {
     border: 4px solid var(--croot-muted);
     border-radius: 50%;
     transform: rotate(-18deg);
-}
-
-@keyframes float {
-    50% { transform: translateY(-14px); }
 }
 
 h1 {

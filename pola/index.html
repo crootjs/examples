@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pola halaman - CrootJS</title>
+  <meta name="description" content="Pola halaman siap salin dari croot.css, ui.css, themes.css, dan icons.css: aplikasi, login, daftar dan detail, formulir, pengaturan, keadaan kosong, landing page.">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.41/croot.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.41/ui.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.41/themes.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="modulepreload" href="https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.41/storage.min.js">
+  <script type="module" src="index.js"></script>
+</head>
+<body>
+  <header class="container nav">
+    <a href="../"><strong>CrootJS</strong> contoh</a>
+    <ul>
+      <li><a href="https://croot.js.org/docs/css">Dokumentasi CSS</a></li>
+      <li><a href="../css/">croot.css</a></li>
+    </ul>
+  </header>
+
+  <main class="container galeri">
+    <h1>Pola halaman</h1>
+    <p class="lead">
+      Halaman lengkap yang bisa disalin lalu diubah seperlunya. Semuanya memakai
+      <code>croot.css</code>, komponen <code>ui.css</code>, ikon <code>icons.css</code>, dan
+      modul CrootJS; CSS khusus halamannya hanya beberapa baris tata letak. Isinya data contoh.
+    </p>
+
+    <form class="toolbar tampilan" aria-label="Tampilan">
+      <div>
+        <label for="tema">Tema</label>
+        <select id="tema">
+          <option value="">Bawaan croot.css</option>
+          <option value="kampus">kampus</option>
+          <option value="kertas">kertas</option>
+          <option value="kontras">kontras</option>
+          <option value="niaga">niaga</option>
+        </select>
+      </div>
+      <div class="button-group" role="group" aria-label="Mode warna">
+        <button type="button" class="secondary" data-mode="">Ikut perangkat</button>
+        <button type="button" class="secondary" data-mode="light">Terang</button>
+        <button type="button" class="secondary" data-mode="dark">Gelap</button>
+      </div>
+    </form>
+    <p class="muted catatan">Pilihan ini disimpan di browser dan dipakai semua halaman pola.</p>
+
+    <ul class="pola">
+      <li>
+        <h2><a href="aplikasi/">Aplikasi</a></h2>
+        <p>Kerangka aplikasi kantor: sidebar yang menjadi laci di ponsel, header dengan breadcrumb dan menu akun, angka ringkasan, grafik, dan tabel transaksi.</p>
+        <p class="muted"><code>.app</code>, <code>.stats</code>, <code>details.menu</code>, <code>table.js</code>, <code>chart.js</code></p>
+      </li>
+      <li>
+        <h2><a href="login/">Masuk</a></h2>
+        <p>Form masuk di tengah halaman, dengan validasi, tombol tampilkan kata sandi, dan tautan lupa kata sandi.</p>
+        <p class="muted"><code>form.js</code>, <code>.actions</code></p>
+      </li>
+      <li>
+        <h2><a href="daftar-detail/">Daftar dan detail</a></h2>
+        <p>Tabel permohonan di kiri, rincian yang dipilih di kanan (bertumpuk di ponsel), dengan tab Ringkasan, Riwayat, dan Berkas.</p>
+        <p class="muted"><code>table.js</code>, <code>tabs.js</code>, <code>dl.meta</code>, <code>.badge</code></p>
+      </li>
+      <li>
+        <h2><a href="formulir/">Formulir</a></h2>
+        <p>Formulir panjang yang dibagi per fieldset, dengan penanda langkah, sakelar, unggah berkas, dan tombol simpan/batal.</p>
+        <p class="muted"><code>ol.steps</code>, <code>role="switch"</code>, <code>form.js</code></p>
+      </li>
+      <li>
+        <h2><a href="pengaturan/">Pengaturan</a></h2>
+        <p>Pengaturan akun dalam akordeon yang hanya membuka satu bagian, dengan sakelar notifikasi dan pilihan tema.</p>
+        <p class="muted"><code>.accordion</code>, <code>&lt;details name&gt;</code>, <code>role="switch"</code></p>
+      </li>
+      <li>
+        <h2><a href="kosong-404/">Keadaan kosong dan 404</a></h2>
+        <p>Isi untuk tabel yang belum berisi data, pencarian tanpa hasil, pemuat kerangka, dan halaman tidak ditemukan.</p>
+        <p class="muted"><code>.empty</code>, <code>.skeleton</code></p>
+      </li>
+      <li>
+        <h2><a href="landing/">Landing page</a></h2>
+        <p>Halaman depan produk: judul yang menjelaskan kegunaannya, tempat tangkapan layar, daftar fitur, tanya jawab, dan footer.</p>
+        <p class="muted"><code>.accordion</code>, <code>.site-footer</code></p>
+      </li>
+    </ul>
+  </main>
+</body>
+</html>

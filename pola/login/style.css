@@ -1,0 +1,63 @@
+.masuk {
+    width: 100%;
+    max-width: 24rem;
+    margin: 0 auto;
+    padding: 12vh var(--croot-space) 2rem;
+}
+
+.instansi {
+    line-height: 1.4;
+}
+
+.masuk form {
+    padding: calc(var(--croot-space) * 1.5);
+    border: 1px solid var(--croot-border);
+    border-radius: var(--croot-radius);
+    background-color: var(--croot-surface);
+}
+
+.masuk h1 {
+    font-size: 1.5rem;
+}
+
+.label-baris {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 0 1rem;
+}
+
+.label-baris a {
+    margin-bottom: 0.25rem;
+    font-size: 0.9rem;
+}
+
+.sandi {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.sandi input {
+    flex: 1 1 0;
+    min-width: 0;
+}
+
+/* form.js menaruh pesan galat tepat sesudah input; di sini dipindah ke baris sendiri di bawah. */
+.sandi .crootjs-field-error {
+    flex-basis: 100%;
+    order: 1;
+    margin: 0;
+}
+
+.sandi button {
+    flex: none;
+    width: 2.75rem;
+    padding: 0;
+}
+
+.bantuan,
+.kembali {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+}

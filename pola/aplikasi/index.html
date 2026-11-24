@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ringkasan - Toko Contoh</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.41/croot.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.41/ui.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.41/themes.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.41/icons.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="modulepreload" href="https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.41/storage.min.js">
+  <link rel="modulepreload" href="https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.41/table.min.js">
+  <link rel="modulepreload" href="https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.41/chart.min.js">
+  <link rel="modulepreload" href="https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.41/toast.min.js">
+  <script type="module" src="index.js"></script>
+</head>
+<body>
+  <div class="app">
+    <header class="app-header">
+      <button type="button" class="app-toggle secondary" popovertarget="menu-utama">
+        <span class="icon icon-menu" aria-hidden="true"></span> Menu
+      </button>
+      <nav class="breadcrumb" aria-label="Lokasi">
+        <ol>
+          <li><a href="../">Pola</a></li>
+          <li><span aria-current="page">Ringkasan</span></li>
+        </ol>
+      </nav>
+      <details class="menu end">
+        <summary><span class="avatar" aria-hidden="true">DW</span> <span class="nama-akun">Dewi Wulandari</span></summary>
+        <ul>
+          <li><a href="#"><span class="icon icon-user" aria-hidden="true"></span> Profil</a></li>
+          <li><a href="../pengaturan/"><span class="icon icon-settings" aria-hidden="true"></span> Pengaturan</a></li>
+          <li><hr></li>
+          <li><a href="../login/"><span class="icon icon-logout" aria-hidden="true"></span> Keluar</a></li>
+        </ul>
+      </details>
+    </header>
+
+    <nav class="app-sidebar" id="menu-utama" popover aria-label="Menu utama">
+      <p class="merek"><strong>Toko Contoh</strong><br><span class="muted">Kasir dan stok</span></p>
+      <ul>
+        <li><a href="#" aria-current="page"><span class="icon icon-dashboard" aria-hidden="true"></span> Ringkasan</a></li>
+        <li><a href="#"><span class="icon icon-chart" aria-hidden="true"></span> Penjualan</a></li>
+        <li><a href="#"><span class="icon icon-table" aria-hidden="true"></span> Barang</a></li>
+        <li><a href="#"><span class="icon icon-users" aria-hidden="true"></span> Pelanggan</a></li>
+      </ul>
+      <h2>Laporan</h2>
+      <ul>
+        <li><a href="#"><span class="icon icon-file" aria-hidden="true"></span> Laporan bulanan</a></li>
+        <li><a href="#"><span class="icon icon-download" aria-hidden="true"></span> Ekspor data</a></li>
+      </ul>
+      <h2>Lainnya</h2>
+      <ul>
+        <li><a href="../pengaturan/"><span class="icon icon-settings" aria-hidden="true"></span> Pengaturan</a></li>
+      </ul>
+    </nav>
+
+    <main class="app-main">
+      <div class="toolbar">
+        <div class="judul">
+          <h1>Ringkasan</h1>
+          <span class="badge">Data contoh</span>
+        </div>
+        <div>
+          <button type="button" class="secondary" id="unduh"><span class="icon icon-download" aria-hidden="true"></span> Unduh</button>
+          <button type="button" id="baru"><span class="icon icon-plus" aria-hidden="true"></span> Transaksi baru</button>
+        </div>
+      </div>
+
+      <section class="stats" aria-label="Angka hari ini">
+        <div class="stat">
+          <p class="stat-label">Penjualan hari ini</p>
+          <p class="stat-value">Rp4.320.000</p>
+          <p class="stat-change up">Naik 6% dari kemarin</p>
+        </div>
+        <div class="stat">
+          <p class="stat-label">Transaksi</p>
+          <p class="stat-value">87</p>
+          <p class="stat-change down">Turun 4 dari kemarin</p>
+        </div>
+        <div class="stat">
+          <p class="stat-label">Barang hampir habis</p>
+          <p class="stat-value">5</p>
+          <p class="stat-change muted">Sama dengan kemarin</p>
+        </div>
+        <div class="stat">
+          <p class="stat-label">Belum lunas</p>
+          <p class="stat-value">Rp1.150.000</p>
+          <p class="stat-change muted">3 pelanggan</p>
+        </div>
+      </section>
+
+      <div class="dua-kolom">
+        <section class="panel" aria-labelledby="judul-grafik">
+          <h2 id="judul-grafik">Penjualan 7 hari terakhir</h2>
+          <div id="grafik"></div>
+        </section>
+        <section class="panel" aria-labelledby="judul-stok">
+          <h2 id="judul-stok">Hampir habis</h2>
+          <table>
+            <thead><tr><th>Barang</th><th class="angka">Sisa</th></tr></thead>
+            <tbody>
+              <tr><td>Gula pasir 1 kg</td><td class="angka">4</td></tr>
+              <tr><td>Minyak goreng 2 L</td><td class="angka">6</td></tr>
+              <tr><td>Teh celup isi 25</td><td class="angka">3</td></tr>
+              <tr><td>Sabun cuci piring</td><td class="angka">7</td></tr>
+              <tr><td>Kopi bubuk 200 g</td><td class="angka">2</td></tr>
+            </tbody>
+          </table>
+        </section>
+      </div>
+
+      <section aria-labelledby="judul-transaksi">
+        <h2 id="judul-transaksi">Transaksi terakhir</h2>
+        <div id="transaksi"></div>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

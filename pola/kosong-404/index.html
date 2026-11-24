@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Keadaan kosong - Pola halaman CrootJS</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.41/croot.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.41/ui.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.41/themes.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.41/icons.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="modulepreload" href="https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.41/storage.min.js">
+  <script type="module" src="../tema.js"></script>
+</head>
+<body>
+  <header class="container nav">
+    <strong>Keadaan kosong</strong>
+    <ul>
+      <li><a href="404.html">Halaman 404</a></li>
+      <li><a href="../">Semua pola</a></li>
+    </ul>
+  </header>
+
+  <main class="container kosong">
+    <section aria-labelledby="judul-pelanggan">
+      <div class="toolbar">
+        <h2 id="judul-pelanggan">Pelanggan</h2>
+        <a class="button" href="#"><span class="icon icon-plus" aria-hidden="true"></span> Tambah pelanggan</a>
+      </div>
+      <div class="empty">
+        <span class="icon icon-users" aria-hidden="true"></span>
+        <h3>Belum ada pelanggan</h3>
+        <p>Pelanggan yang ditambahkan, atau yang tercatat saat transaksi, akan muncul di sini.</p>
+        <p><a class="button secondary" href="#">Impor dari CSV</a></p>
+      </div>
+    </section>
+
+    <section aria-labelledby="judul-cari">
+      <h2 id="judul-cari">Hasil pencarian</h2>
+      <div class="empty" role="status">
+        <span class="icon icon-search" aria-hidden="true"></span>
+        <h3>Tidak ada barang yang cocok dengan "gula aren"</h3>
+        <p>Periksa ejaannya, atau cari dengan kata yang lebih pendek, misalnya "gula".</p>
+      </div>
+    </section>
+
+    <section aria-labelledby="judul-muat">
+      <h2 id="judul-muat">Sedang memuat</h2>
+      <p class="muted">Kerangka pemuat menggantikan isi sampai data datang. Animasinya berhenti kalau perangkat meminta gerakan dikurangi.</p>
+      <div class="pemuat" aria-busy="true" aria-label="Memuat daftar transaksi">
+        <span class="skeleton judul-semu" aria-hidden="true"></span>
+        <span class="skeleton" aria-hidden="true"></span>
+        <span class="skeleton" aria-hidden="true"></span>
+        <span class="skeleton pendek" aria-hidden="true"></span>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

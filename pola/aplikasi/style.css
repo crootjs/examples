@@ -1,0 +1,71 @@
+.merek {
+    margin: 0.25rem 0.5rem 1rem;
+    line-height: 1.3;
+}
+
+.judul {
+    display: flex;
+    align-items: baseline;
+    gap: 0.75rem;
+}
+
+.judul h1 {
+    margin: 0;
+    font-size: 1.6rem;
+}
+
+.dua-kolom {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--croot-space);
+    margin-bottom: var(--croot-space);
+}
+
+@media (min-width: 70rem) {
+    .dua-kolom {
+        grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+    }
+}
+
+.panel {
+    padding: var(--croot-space);
+    border: 1px solid var(--croot-border);
+    border-radius: var(--croot-radius);
+    background-color: var(--croot-surface);
+}
+
+.panel h2,
+section > h2 {
+    margin: 0 0 0.75rem;
+    font-size: 1.1rem;
+}
+
+.panel table {
+    margin: 0;
+}
+
+/* Grafik memakai warna aksen tema, bukan palet bawaan chart.js. */
+.crootjs-chart {
+    --croot-chart-1: var(--croot-accent);
+}
+
+.kode {
+    white-space: nowrap;
+}
+
+.angka {
+    text-align: right;
+    font-variant-numeric: tabular-nums;
+}
+
+/* Di ponsel nama akun hanya dibacakan; avatarnya yang terlihat. */
+@media (max-width: 40rem) {
+    .nama-akun {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        clip-path: inset(50%);
+        white-space: nowrap;
+    }
+}

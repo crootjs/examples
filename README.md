@@ -18,6 +18,24 @@ Please follow every step in every section :
 4. [3D Model](./3d/)
 5. [Aplikasi offline (PWA)](./pwa/): catatan sederhana yang tetap terbuka tanpa internet dan bisa dipasang, dengan `pwa.js` dan `serviceworker.js`
 
+## Pola halaman
+
+[Pola halaman](./pola/): halaman lengkap siap salin yang tidak terlihat seperti buatan AI, dari `croot.css`, `ui.css` (komponen aplikasi), `themes.css` (tema `kampus`, `kertas`, `kontras`, `niaga`), dan `icons.css`. Galerinya punya pemilih tema dan mode terang/gelap yang dipakai semua pola.
+
+- [Aplikasi](./pola/aplikasi/): sidebar yang menjadi laci di ponsel, breadcrumb, menu akun, angka ringkasan, grafik `chart.js`, tabel `table.js`
+- [Masuk](./pola/login/): form masuk dengan validasi `form.js` dan tombol tampilkan kata sandi
+- [Daftar dan detail](./pola/daftar-detail/): tabel di kiri, rincian dengan tab `tabs.js` di kanan
+- [Formulir](./pola/formulir/): fieldset, penanda langkah, sakelar, unggah berkas, simpan/batal
+- [Pengaturan](./pola/pengaturan/): akordeon `<details name>`, sakelar, dialog konfirmasi
+- [Keadaan kosong dan 404](./pola/kosong-404/): belum ada data, pencarian tanpa hasil, skeleton, [halaman 404](./pola/kosong-404/404.html)
+- [Landing page](./pola/landing/): judul, tempat tangkapan layar, daftar fitur, tanya jawab, footer
+
+```html
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.41/croot.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.41/ui.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.41/themes.min.css">
+```
+
 Styling: [croot.css showcase](./css/) — the 2 KB CSS framework used by the examples, plus the gallery of the 49 `icons.css` icons (`<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.40/croot.min.css">`).
 
 ## Cookies based User Session Handling

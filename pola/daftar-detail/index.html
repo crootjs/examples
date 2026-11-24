@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Permohonan surat - Kelurahan Contoh</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.41/croot.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.41/ui.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.41/themes.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.41/icons.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="modulepreload" href="https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.41/storage.min.js">
+  <link rel="modulepreload" href="https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.41/table.min.js">
+  <link rel="modulepreload" href="https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.41/tabs.min.js">
+  <link rel="modulepreload" href="https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.41/toast.min.js">
+  <script type="module" src="index.js"></script>
+</head>
+<body>
+  <header class="container nav">
+    <span><strong>Layanan Surat</strong> <span class="badge">Data contoh</span></span>
+    <ul>
+      <li><a href="#" aria-current="page">Permohonan</a></li>
+      <li><a href="#">Arsip</a></li>
+      <li><a href="../">Semua pola</a></li>
+    </ul>
+  </header>
+
+  <main class="container halaman">
+    <nav class="breadcrumb" aria-label="Lokasi">
+      <ol>
+        <li><a href="../">Pola</a></li>
+        <li><span aria-current="page">Permohonan surat</span></li>
+      </ol>
+    </nav>
+
+    <div class="daftar-detail">
+      <section aria-labelledby="judul-daftar">
+        <h1 id="judul-daftar">Permohonan surat</h1>
+        <div id="daftar"></div>
+      </section>
+
+      <section class="detail" id="detail" aria-labelledby="judul-detail" tabindex="-1">
+        <div class="toolbar">
+          <div class="judul-detail">
+            <h2 id="judul-detail"></h2>
+            <span id="status-detail" class="badge"></span>
+          </div>
+          <div>
+            <button type="button" class="secondary" id="tolak">Tolak</button>
+            <button type="button" id="setujui"><span class="icon icon-check" aria-hidden="true"></span> Setujui</button>
+          </div>
+        </div>
+
+        <div role="tablist" id="tab-detail" aria-label="Rincian permohonan">
+          <button type="button" role="tab" id="tab-ringkasan" aria-controls="panel-ringkasan" aria-selected="true">Ringkasan</button>
+          <button type="button" role="tab" id="tab-riwayat" aria-controls="panel-riwayat">Riwayat</button>
+          <button type="button" role="tab" id="tab-berkas" aria-controls="panel-berkas">Berkas</button>
+        </div>
+        <div role="tabpanel" id="panel-ringkasan" aria-labelledby="tab-ringkasan">
+          <dl class="meta">
+            <div><dt>Pemohon</dt><dd id="d-pemohon"></dd></div>
+            <div><dt>Jenis surat</dt><dd id="d-jenis"></dd></div>
+            <div><dt>Diajukan</dt><dd id="d-tanggal"></dd></div>
+            <div><dt>RT/RW</dt><dd id="d-rt"></dd></div>
+            <div><dt>Petugas</dt><dd id="d-petugas"></dd></div>
+            <div><dt>Keperluan</dt><dd id="d-keperluan"></dd></div>
+          </dl>
+        </div>
+        <div role="tabpanel" id="panel-riwayat" aria-labelledby="tab-riwayat" hidden>
+          <ol class="riwayat" id="d-riwayat"></ol>
+        </div>
+        <div role="tabpanel" id="panel-berkas" aria-labelledby="tab-berkas" hidden>
+          <ul class="berkas" id="d-berkas"></ul>
+          <p class="muted">Berkas contoh tidak bisa diunduh.</p>
+        </div>
+      </section>
+    </div>
+  </main>
+</body>
+</html>

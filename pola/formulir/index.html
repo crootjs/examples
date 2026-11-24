@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Data usaha - Pendaftaran UMKM binaan (contoh)</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.41/croot.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.41/ui.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.41/themes.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="modulepreload" href="https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.41/storage.min.js">
+  <link rel="modulepreload" href="https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.41/form.min.js">
+  <link rel="modulepreload" href="https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.41/element.min.js">
+  <link rel="modulepreload" href="https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.41/toast.min.js">
+  <script type="module" src="index.js"></script>
+</head>
+<body>
+  <header class="container nav">
+    <span><strong>Pendaftaran UMKM binaan</strong> <span class="badge">Contoh</span></span>
+    <ul>
+      <li><a href="../">Semua pola</a></li>
+    </ul>
+  </header>
+
+  <main class="container formulir">
+    <h1>Data usaha</h1>
+    <ol class="steps" aria-label="Tahap pendaftaran">
+      <li>Akun dibuat</li>
+      <li aria-current="step">Data usaha</li>
+      <li>Verifikasi petugas</li>
+      <li>Selesai</li>
+    </ol>
+    <p class="muted">Isian bertanda wajib harus diisi. Data bisa diubah sampai petugas mulai memverifikasi.</p>
+
+    <form id="form-usaha">
+      <fieldset>
+        <legend>Identitas usaha</legend>
+        <div class="kolom">
+          <div>
+            <label for="nama">Nama usaha (wajib)</label>
+            <input id="nama" name="nama" required minlength="3" autocomplete="organization">
+          </div>
+          <div>
+            <label for="bidang">Bidang usaha (wajib)</label>
+            <select id="bidang" name="bidang" required>
+              <option value="">Pilih bidang</option>
+              <option>Makanan dan minuman</option>
+              <option>Kerajinan</option>
+              <option>Pakaian</option>
+              <option>Jasa</option>
+              <option>Pertanian</option>
+            </select>
+          </div>
+          <div>
+            <label for="berdiri">Tahun berdiri</label>
+            <input id="berdiri" name="berdiri" type="number" min="1950" max="2026" inputmode="numeric">
+          </div>
+          <div>
+            <label for="karyawan">Jumlah pekerja</label>
+            <input id="karyawan" name="karyawan" type="number" min="0" inputmode="numeric">
+          </div>
+        </div>
+        <label for="alamat">Alamat tempat usaha (wajib)</label>
+        <textarea id="alamat" name="alamat" required autocomplete="street-address"></textarea>
+      </fieldset>
+
+      <fieldset>
+        <legend>Kontak</legend>
+        <div class="kolom">
+          <div>
+            <label for="telepon">Nomor WhatsApp (wajib)</label>
+            <input id="telepon" name="telepon" type="tel" required pattern="[0-9+ -]{9,16}" autocomplete="tel" aria-describedby="telepon-bantuan">
+            <p class="muted bantuan" id="telepon-bantuan">Contoh penulisan: 0812 3456 7890</p>
+          </div>
+          <div>
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" autocomplete="email">
+          </div>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Dokumen</legend>
+        <div class="kolom">
+          <div>
+            <label for="nib">NIB (PDF, wajib)</label>
+            <input id="nib" name="nib" type="file" accept="application/pdf" required>
+          </div>
+          <div>
+            <label for="foto">Foto produk (boleh lebih dari satu)</label>
+            <input id="foto" name="foto" type="file" accept="image/*" multiple>
+          </div>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Pemberitahuan</legend>
+        <div class="stack sakelar">
+          <label><input type="checkbox" role="switch" name="kabar_wa" checked> Kabari perkembangan verifikasi lewat WhatsApp</label>
+          <label><input type="checkbox" role="switch" name="katalog"> Tampilkan usaha di katalog UMKM publik</label>
+        </div>
+      </fieldset>
+
+      <div class="actions">
+        <a class="button secondary" href="../">Batal</a>
+        <button type="submit">Simpan data usaha</button>
+      </div>
+    </form>
+  </main>
+</body>
+</html>

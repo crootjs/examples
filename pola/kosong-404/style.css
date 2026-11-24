@@ -1,0 +1,40 @@
+.kosong {
+    max-width: 52rem;
+    padding-block: 1.5rem 3rem;
+}
+
+.kosong section + section {
+    margin-top: 2.5rem;
+}
+
+.kosong h2 {
+    font-size: 1.25rem;
+}
+
+.empty h3 {
+    font-size: 1.1rem;
+}
+
+.pemuat {
+    max-width: 32rem;
+}
+
+.judul-semu {
+    width: 40%;
+    height: 1.4em;
+}
+
+.pendek {
+    width: 60%;
+}
+
+.tidak-ada {
+    max-width: 36rem;
+    padding-block: 15vh 3rem;
+}
+
+.kode {
+    margin-bottom: 0.25rem;
+    color: var(--croot-muted);
+    font-family: var(--croot-mono);
+}

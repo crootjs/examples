@@ -1,0 +1,33 @@
+.formulir {
+    max-width: 52rem;
+    padding-block: 1.5rem 3rem;
+}
+
+.formulir h1 {
+    font-size: 1.6rem;
+}
+
+fieldset {
+    margin-bottom: 1.5rem;
+    padding-bottom: var(--croot-space);
+}
+
+.kolom {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(16rem, 100%), 1fr));
+    gap: var(--croot-space);
+    margin-bottom: var(--croot-space);
+}
+
+.bantuan {
+    margin: 0.25rem 0 0;
+    font-size: 0.875rem;
+}
+
+.sakelar {
+    --croot-gap: 0.75rem;
+}
+
+.sakelar label {
+    margin: 0;
+}

@@ -1,0 +1,31 @@
+.pengaturan {
+    max-width: 44rem;
+    padding-block: 1.5rem 3rem;
+}
+
+.pengaturan h1 {
+    font-size: 1.6rem;
+}
+
+.sakelar {
+    --croot-gap: 0.75rem;
+}
+
+.sakelar label {
+    margin: 0;
+}
+
+.bahaya {
+    margin-top: 2.5rem;
+    padding: var(--croot-space);
+    border: 1px solid var(--croot-danger);
+    border-radius: var(--croot-radius);
+}
+
+.bahaya h2 {
+    font-size: 1.1rem;
+}
+
+dialog h2 {
+    font-size: 1.2rem;
+}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Masuk - Sistem Kepegawaian Contoh</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.41/croot.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.41/ui.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.41/themes.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.41/icons.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="modulepreload" href="https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.41/storage.min.js">
+  <link rel="modulepreload" href="https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.41/form.min.js">
+  <link rel="modulepreload" href="https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.41/element.min.js">
+  <link rel="modulepreload" href="https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.41/toast.min.js">
+  <script type="module" src="index.js"></script>
+</head>
+<body>
+  <main class="masuk">
+    <p class="instansi">Sistem Kepegawaian<br><span class="muted">Contoh pola halaman, tidak terhubung ke server</span></p>
+    <form id="form-masuk" class="stack">
+      <h1>Masuk</h1>
+      <div>
+        <label for="pengguna">Email atau NIP</label>
+        <input id="pengguna" name="pengguna" required autocomplete="username" autocapitalize="none" spellcheck="false">
+      </div>
+      <div>
+        <div class="label-baris">
+          <label for="sandi">Kata sandi</label>
+          <a href="#lupa">Lupa kata sandi?</a>
+        </div>
+        <div class="sandi">
+          <input id="sandi" name="sandi" type="password" required minlength="8" autocomplete="current-password">
+          <button type="button" class="secondary" id="lihat-sandi" aria-controls="sandi" title="Tampilkan kata sandi" aria-pressed="false">
+            <span class="icon icon-eye" aria-hidden="true"></span><span class="visually-hidden">Tampilkan kata sandi</span>
+          </button>
+        </div>
+      </div>
+      <label><input type="checkbox" name="ingat"> Ingat saya di perangkat ini</label>
+      <button type="submit">Masuk</button>
+    </form>
+    <p class="muted bantuan" id="lupa">Lupa kata sandi atau belum punya akun? Hubungi admin kepegawaian di unit Anda.</p>
+    <p class="kembali"><a href="../">Semua pola</a></p>
+  </main>
+</body>
+</html>

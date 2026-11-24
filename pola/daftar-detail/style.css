@@ -1,0 +1,74 @@
+.halaman {
+    padding-block: 1rem 3rem;
+}
+
+.halaman h1 {
+    margin: 1rem 0 0.5rem;
+    font-size: 1.6rem;
+}
+
+.daftar-detail {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 2rem;
+}
+
+@media (min-width: 64rem) {
+    .daftar-detail {
+        grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+        align-items: start;
+    }
+}
+
+.detail {
+    padding: var(--croot-space);
+    border: 1px solid var(--croot-border);
+    border-radius: var(--croot-radius);
+    background-color: var(--croot-surface);
+}
+
+.judul-detail {
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+}
+
+.judul-detail h2 {
+    font-size: 1.25rem;
+    font-family: var(--croot-mono);
+}
+
+/* Nomor di tabel berupa tombol, tetapi tampil seperti tautan supaya baris tetap rapat. */
+.buka {
+    min-height: 0;
+    padding: 0;
+    font-family: var(--croot-mono);
+    font-weight: 400;
+    text-decoration: underline;
+    white-space: nowrap;
+}
+
+.riwayat {
+    padding-left: 1.25rem;
+}
+
+.riwayat li {
+    margin-bottom: 0.5rem;
+}
+
+.riwayat time {
+    display: block;
+    color: var(--croot-muted);
+    font-size: 0.875rem;
+    font-variant-numeric: tabular-nums;
+}
+
+.berkas {
+    padding: 0;
+    list-style: none;
+}
+
+.berkas li {
+    padding-block: 0.4rem;
+    border-bottom: 1px solid var(--croot-border);
+}

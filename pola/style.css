@@ -1,0 +1,43 @@
+.galeri {
+    max-width: 48rem;
+    padding-block: 2rem 4rem;
+}
+
+.lead {
+    font-size: 1.1rem;
+}
+
+.tampilan {
+    justify-content: flex-start;
+    align-items: flex-end;
+    margin: 1.5rem 0 0.25rem;
+}
+
+.tampilan select {
+    width: auto;
+}
+
+.catatan {
+    font-size: 0.9rem;
+}
+
+.pola {
+    margin: 2rem 0 0;
+    padding: 0;
+    list-style: none;
+    border-top: 1px solid var(--croot-border);
+}
+
+.pola li {
+    padding-block: 1rem;
+    border-bottom: 1px solid var(--croot-border);
+}
+
+.pola h2 {
+    margin: 0 0 0.25rem;
+    font-size: 1.2rem;
+}
+
+.pola p {
+    margin: 0 0 0.25rem;
+}
