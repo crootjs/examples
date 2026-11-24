@@ -1,7 +1,7 @@
-import { getJSON, downloadFile } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.36/api.min.js";
-import { setInnerText, setValue } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.36/element.min.js";
-import { onHashChange } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.36/url.min.js";
-import { handleForm } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.36/form.min.js";
+import { getJSON, downloadFile } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.37/api.min.js";
+import { setInnerText, setValue } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.37/element.min.js";
+import { onHashChange } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.37/url.min.js";
+import { handleForm } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.37/form.min.js";
 
 // Alamat halaman = lokasi di repo: #pemilik/nama/folder/berkas.pdf. Bisa dibagikan.
 const DEFAULT_REPO = "crootjs/examples";

@@ -1,6 +1,6 @@
-import { onClick, setInnerText } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.36/element.min.js";
-import { getLocal, setLocal } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.36/storage.min.js";
-import { handleForm } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.36/form.min.js";
+import { onClick, setInnerText } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.37/element.min.js";
+import { getLocal, setLocal } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.37/storage.min.js";
+import { handleForm } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.37/form.min.js";
 
 const COLUMNS = [
     { id: "todo", name: "Tugas" },

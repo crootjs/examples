@@ -1,7 +1,7 @@
-import { handleForm } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.36/form.min.js";
-import { onClick, setInnerText } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.36/element.min.js";
-import { getLocal, setLocal } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.36/storage.min.js";
-import { toastSuccess } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.36/toast.min.js";
+import { handleForm } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.37/form.min.js";
+import { onClick, setInnerText } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.37/element.min.js";
+import { getLocal, setLocal } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.37/storage.min.js";
+import { toastSuccess } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.37/toast.min.js";
 
 // Tema: otomatis (ikut perangkat) -> terang -> gelap, diingat di localStorage.
 const THEMES = ["otomatis", "terang", "gelap"];
