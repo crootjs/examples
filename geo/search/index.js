@@ -1,7 +1,7 @@
 // Pencarian tempat dan alamat: kotak pencarian di peta, dan alamat dari titik yang diklik.
-import { createMap, onMapClick, showPopup } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.38/map.min.js";
-import { addSearchControl, reverseGeocode } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.38/mapsearch.min.js";
-import { setInnerText } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.38/element.min.js";
+import { createMap, onMapClick, showPopup } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.39/map.min.js";
+import { addSearchControl, reverseGeocode } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.39/mapsearch.min.js";
+import { setInnerText } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.39/element.min.js";
 
 createMap("map", { center: [107.6098, -6.9147], zoom: 13 });
 

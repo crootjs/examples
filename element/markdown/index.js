@@ -1,5 +1,5 @@
-import { renderMarkdown, getMarkdown } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.38/markdown.min.js";
-import { debounce } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.38/debounce.min.js";
+import { renderMarkdown, getMarkdown } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.39/markdown.min.js";
+import { debounce } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.39/debounce.min.js";
 
 const source = document.getElementById("source");
 const headingIds = document.getElementById("heading-ids");

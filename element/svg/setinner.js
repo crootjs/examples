@@ -1,5 +1,5 @@
-import { setInner } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.38/element.min.js";
-import * as croot from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.38/element.min.js";
+import { setInner } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.39/element.min.js";
+import * as croot from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.39/element.min.js";
 
 
 setInner("demo","anu");

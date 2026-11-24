@@ -1,5 +1,5 @@
-import { handleForm } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.38/form.min.js";
-import { fillForm, onClick, setInnerText } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.38/element.min.js";
+import { handleForm } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.39/form.min.js";
+import { fillForm, onClick, setInnerText } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.39/element.min.js";
 
 // Contoh ini tidak mengirim apa pun; di aplikasi sendiri, kirim data dengan postJSON dari api.js.
 handleForm("daftar", (data) => {

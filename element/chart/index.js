@@ -1,6 +1,6 @@
-import { createChart } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.38/chart.min.js";
-import { onClick, setInnerText } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.38/element.min.js";
-import { getLocal, setLocal } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.38/storage.min.js";
+import { createChart } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.39/chart.min.js";
+import { onClick, setInnerText } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.39/element.min.js";
+import { getLocal, setLocal } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.39/storage.min.js";
 
 // Dua set data contoh (karangan) supaya tombol "Ganti data contoh" memperlihatkan update().
 const BULAN = ["Jan", "Feb", "Mar", "Apr", "Mei", "Jun", "Jul", "Agu", "Sep", "Okt", "Nov", "Des"];
