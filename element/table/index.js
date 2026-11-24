@@ -1,6 +1,6 @@
-import { getJSON } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.34/api.min.js";
-import { setInnerText } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.34/element.min.js";
-import { createTable } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.34/table.min.js";
+import { getJSON } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.35/api.min.js";
+import { setInnerText } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.35/element.min.js";
+import { createTable } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.35/table.min.js";
 
 const tanggal = new Intl.DateTimeFormat("id-ID", { day: "numeric", month: "short", year: "numeric" });
 

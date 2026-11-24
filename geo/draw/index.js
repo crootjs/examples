@@ -1,10 +1,10 @@
 // Menggambar dan mengubah geometri di peta; hasilnya GeoJSON yang diukur dan bisa diunduh.
-import { createMap } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.34/map.min.js";
-import { addScaleBar } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.34/mapcontrol.min.js";
-import { addDrawControl } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.34/mapdraw.min.js";
-import { getLength, getArea } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.34/geomeasure.min.js";
-import { formatLength, formatArea } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.34/maptools.min.js";
-import { onClick, setValue } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.34/element.min.js";
+import { createMap } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.35/map.min.js";
+import { addScaleBar } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.35/mapcontrol.min.js";
+import { addDrawControl } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.35/mapdraw.min.js";
+import { getLength, getArea } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.35/geomeasure.min.js";
+import { formatLength, formatArea } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.35/maptools.min.js";
+import { onClick, setValue } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.35/element.min.js";
 
 // Satu area contoh di sekitar Gedung Sate, supaya alat Ubah dan Hapus langsung bisa dicoba.
 const SAMPLE = {

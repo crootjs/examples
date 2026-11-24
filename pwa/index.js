@@ -1,5 +1,5 @@
-import { registerServiceWorker, onNetworkChange, isStandalone, installButton } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.34/pwa.min.js";
-import { getLocal, setLocal } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.34/storage.min.js";
+import { registerServiceWorker, onNetworkChange, isStandalone, installButton } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.35/pwa.min.js";
+import { getLocal, setLocal } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.35/storage.min.js";
 
 const KEY = "contoh-pwa-catatan";
 let notes = getLocal(KEY) || [];
