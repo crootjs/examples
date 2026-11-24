@@ -18,13 +18,13 @@ Please follow every step in every section :
 4. [3D Model](./3d/)
 5. [Aplikasi offline (PWA)](./pwa/): catatan sederhana yang tetap terbuka tanpa internet dan bisa dipasang, dengan `pwa.js` dan `serviceworker.js`
 
-Styling: [croot.css showcase](./css/) — the 2 KB CSS framework used by the examples, plus the gallery of the 49 `icons.css` icons (`<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.37/croot.min.css">`).
+Styling: [croot.css showcase](./css/) — the 2 KB CSS framework used by the examples, plus the gallery of the 49 `icons.css` icons (`<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.38/croot.min.css">`).
 
 ## Cookies based User Session Handling
 To check the login cookies and redirect to the login page if the login cookie doesn't exist
 ```js
-import {getCookie} from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.37/cookie.min.js";
-import {redirect} from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.37/url.min.js";
+import {getCookie} from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.38/cookie.min.js";
+import {redirect} from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.38/url.min.js";
 
 //check if login cookies is exist
 if(!getCookie("login")){
@@ -35,9 +35,9 @@ if(!getCookie("login")){
 ## Form Handling
 Get data from Form and Post to the server
 ```js
-import {onClick,getValue} from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.37/element.min.js";
-import {postJSON} from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.37/api.min.js";
-import {getCookie} from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.37/cookie.min.js";
+import {onClick,getValue} from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.38/element.min.js";
+import {postJSON} from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.38/api.min.js";
+import {getCookie} from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.38/cookie.min.js";
 
 onClick("submit",PostSignUp);
 
@@ -63,7 +63,7 @@ function responseFunction(response){
 ## Async Handling
 This is a sample of a four-step run of the js command, where js can be run in serial and parallel mode:
 ```js
-import {addCSS, addJS, runAfterDOM, runAfterAll} from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.37/element.min.js";
+import {addCSS, addJS, runAfterDOM, runAfterAll} from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.38/element.min.js";
 // Step 1: run and wait until finish execute
 await addCSS("https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css");
 // Step 2: Just run without waiting until finished, immediately go to the next step

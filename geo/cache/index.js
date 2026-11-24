@@ -1,6 +1,6 @@
-import { createMap } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.37/map.min.js";
-import { cachedTiles } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.37/mapcache.min.js";
-import { onClick, setInnerText } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.37/element.min.js";
+import { createMap } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.38/map.min.js";
+import { cachedTiles } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.38/mapcache.min.js";
+import { onClick, setInnerText } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.38/element.min.js";
 
 const tiles = cachedTiles(undefined, { name: "contoh-crootjs-osm" });
 createMap("map", { tiles, center: [107.6098, -6.9147], zoom: 15 });
