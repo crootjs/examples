@@ -1,7 +1,7 @@
 import "../tema.js";
-import { createTable } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.42/table.min.js";
-import { createChart } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.42/chart.min.js";
-import { toastInfo } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.42/toast.min.js";
+import { createTable } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.43/table.min.js";
+import { createChart } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.43/chart.min.js";
+import { toastInfo } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.43/toast.min.js";
 
 // Semua angka di halaman ini data contoh.
 const rupiah = new Intl.NumberFormat("id-ID", { style: "currency", currency: "IDR", maximumFractionDigits: 0 }).format;

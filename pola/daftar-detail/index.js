@@ -1,7 +1,7 @@
 import "../tema.js";
-import { createTable } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.42/table.min.js";
-import { initTabs } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.42/tabs.min.js";
-import { toastInfo } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.42/toast.min.js";
+import { createTable } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.43/table.min.js";
+import { initTabs } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.43/tabs.min.js";
+import { toastInfo } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.43/toast.min.js";
 
 // Data contoh. Di aplikasi sungguhan daftar dan rinciannya diambil dengan api.js.
 const permohonan = [

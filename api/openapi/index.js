@@ -1,5 +1,5 @@
-import { renderOpenAPI } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.42/openapi.min.js";
-import { onChange, getValue } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.42/element.min.js";
+import { renderOpenAPI } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.43/openapi.min.js";
+import { onChange, getValue } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.43/element.min.js";
 
 let tampilan = null;
 let giliran = 0;

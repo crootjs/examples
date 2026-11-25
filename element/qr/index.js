@@ -1,5 +1,5 @@
-import { qrSVG } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.42/qr.min.js";
-import { debounce } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.42/debounce.min.js";
+import { qrSVG } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.43/qr.min.js";
+import { debounce } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.43/debounce.min.js";
 
 const input = document.getElementById("isi");
 const level = document.getElementById("ecc");

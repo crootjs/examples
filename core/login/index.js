@@ -1,7 +1,7 @@
-import {setCookieWithExpireHour,getCookie} from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.42/cookie.min.js";
-import {onClick,getValue,addCSS} from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.42/element.min.js";
-import {postJSON,getJSON} from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.42/api.min.js";
-import {redirect} from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.42/url.min.js";
+import {setCookieWithExpireHour,getCookie} from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.43/cookie.min.js";
+import {onClick,getValue,addCSS} from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.43/element.min.js";
+import {postJSON,getJSON} from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.43/api.min.js";
+import {redirect} from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.43/url.min.js";
 
 //start import Sweet Alert
 import Swal from 'https://cdn.jsdelivr.net/npm/sweetalert2@11/src/sweetalert2.js';

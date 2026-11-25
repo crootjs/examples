@@ -1,6 +1,6 @@
 import "../tema.js";
-import { handleForm } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.42/form.min.js";
-import { toastInfo } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.42/toast.min.js";
+import { handleForm } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.43/form.min.js";
+import { toastInfo } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.43/toast.min.js";
 
 const sandi = document.getElementById("sandi");
 const tombol = document.getElementById("lihat-sandi");

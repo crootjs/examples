@@ -1,5 +1,5 @@
-import { startRouter } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.42/router.min.js";
-import { getJSON } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.42/api.min.js";
+import { startRouter } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.43/router.min.js";
+import { getJSON } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.43/api.min.js";
 
 // Membuat elemen dengan teks lewat textContent, supaya isi dari URL atau data tidak pernah
 // dibaca sebagai HTML.
