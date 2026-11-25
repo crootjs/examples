@@ -1,6 +1,6 @@
 import { currentTheme, currentMode, setTheme, setMode } from "../tema.js";
-import { handleForm } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.41/form.min.js";
-import { toastInfo, toastSuccess } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.41/toast.min.js";
+import { handleForm } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.42/form.min.js";
+import { toastInfo, toastSuccess } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.42/toast.min.js";
 
 handleForm("form-profil", () => toastSuccess("Contoh: profil tidak dikirim ke server."));
 

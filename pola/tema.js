@@ -1,4 +1,4 @@
-import { getLocal, setLocal } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.41/storage.min.js";
+import { getLocal, setLocal } from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.42/storage.min.js";
 
 // Tema pilihan di galeri pola juga dipakai setiap halaman pola, supaya satu halaman bisa
 // dibandingkan dalam beberapa tema. "" = tampilan bawaan croot.css / mengikuti perangkat.

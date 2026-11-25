@@ -31,18 +31,18 @@ Please follow every step in every section :
 - [Landing page](./pola/landing/): judul, tempat tangkapan layar, daftar fitur, tanya jawab, footer
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.41/croot.min.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.41/ui.min.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.41/themes.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.42/croot.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.42/ui.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.42/themes.min.css">
 ```
 
-Styling: [croot.css showcase](./css/) — the 2 KB CSS framework used by the examples, plus the gallery of the 49 `icons.css` icons (`<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.41/croot.min.css">`).
+Styling: [croot.css showcase](./css/) — the 2 KB CSS framework used by the examples, plus the gallery of the 49 `icons.css` icons (`<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.42/croot.min.css">`).
 
 ## Cookies based User Session Handling
 To check the login cookies and redirect to the login page if the login cookie doesn't exist
 ```js
-import {getCookie} from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.41/cookie.min.js";
-import {redirect} from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.41/url.min.js";
+import {getCookie} from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.42/cookie.min.js";
+import {redirect} from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.42/url.min.js";
 
 //check if login cookies is exist
 if(!getCookie("login")){
@@ -53,9 +53,9 @@ if(!getCookie("login")){
 ## Form Handling
 Get data from Form and Post to the server
 ```js
-import {onClick,getValue} from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.41/element.min.js";
-import {postJSON} from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.41/api.min.js";
-import {getCookie} from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.41/cookie.min.js";
+import {onClick,getValue} from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.42/element.min.js";
+import {postJSON} from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.42/api.min.js";
+import {getCookie} from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.42/cookie.min.js";
 
 onClick("submit",PostSignUp);
 
@@ -81,7 +81,7 @@ function responseFunction(response){
 ## Async Handling
 This is a sample of a four-step run of the js command, where js can be run in serial and parallel mode:
 ```js
-import {addCSS, addJS, runAfterDOM, runAfterAll} from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.41/element.min.js";
+import {addCSS, addJS, runAfterDOM, runAfterAll} from "https://cdn.jsdelivr.net/gh/crootjs/lib@0.0.42/element.min.js";
 // Step 1: run and wait until finish execute
 await addCSS("https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css");
 // Step 2: Just run without waiting until finished, immediately go to the next step
